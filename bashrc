@@ -1,3 +1,6 @@
+# I have listed here only the changes I've made to the 'default' settings of bashrc.
+# Therefore only what I deem useful for a wider audience is included.
+
 # get current branch in git repo
 function parse_git_branch() {
 	BRANCH=`git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'`
@@ -47,3 +50,11 @@ function parse_git_dirty {
 
 export PS1="\[\e[36m\]\u\[\e[m\]\[\e[36m\]@\[\e[m\]\[\e[36m\]\h\[\e[m\]:\[\e[33m\]\`parse_git_branch\`\[\e[m\] \[\e[37m\]\\$\[\e[m\] "
 
+# I have a standard installation of MySQL as well as a Bitnami LAMP stack.
+# These are some aliases I find useful.
+alias bitnami_mysql='/home/bv/bin/lampstack-7.3.6-1/mysql/bin/mysql'
+alias ctlscript='/home/bv/bin/lampstack-7.3.6-1/ctlscript.sh'
+
+# Install Ruby Gems to ~/gems
+export GEM_HOME="$HOME/.gems"
+export PATH="$HOME/.gems/bin:$PATH"
