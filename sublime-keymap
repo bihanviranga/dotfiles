@@ -1,0 +1,6 @@
+[
+	// When alt+enter is pressed, insert semicolon at the end of current line
+	// and insert a new line.
+    // Requires the semicolon-enter.sublime-macro found with this file.
+	{ "keys": ["alt+enter"], "command": "run_macro_file", "args": {"file": "res://Packages/User/semicolon-enter.sublime-macro"} }	
+]
