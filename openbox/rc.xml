@@ -189,6 +189,21 @@
         <command>pcmanfm</command>
       </action>
     </keybind>
+	<keybind key="XF86AudioRaiseVolume">
+		<action name="Execute">
+			<command>sh -c "pactl set-sink-mute 0 false ; pactl set-sink-volume 0 +1%"</command>
+		</action>
+	</keybind>
+	<keybind key="XF86AudioLowerVolume">
+		<action name="Execute">
+			<command>sh -c "pactl set-sink-mute 0 false ; pactl set-sink-volume 0 -1%"</command>
+		</action>
+	</keybind>
+	<keybind key="XF86AudioMute">
+		<action name="Execute">
+			<command>pactl set-sink-mute 0 toggle</command>
+		</action>
+	</keybind>
     <!-- Keybindings for desktop switching -->
     <keybind key="C-A-Left">
       <action name="GoToDesktop">
