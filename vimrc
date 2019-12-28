@@ -1,8 +1,10 @@
 " colorscheme badwolf " cool color scheme
 syntax enable " enable syntax processing
 set tabstop=4 " number of VISUAL spaces per TAB
+set shiftwidth=4 " auto tabbing
 set number " enable line numbers
 set cursorline " highlight current line
+hi CursorLine term=bold cterm=bold 
 filetype indent on " load filetype-specific indent files
 set wildmenu " visual autocomplete for command menu
 set lazyredraw " redraw only when needed
