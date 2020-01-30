@@ -17,5 +17,7 @@
 #xfce-mcs-manager &
 
 #pcmanfm --desktop &
+pcmanfm -d &
 tint2 &
+nm-applet &
 feh --bg-scale --randomize ~/Pictures/* &
