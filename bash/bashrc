@@ -49,6 +49,8 @@ function parse_git_dirty {
 }
 
 export PS1="\[\e[36m\]\u\[\e[m\]\[\e[36m\]@\[\e[m\]\[\e[36m\]\h\[\e[m\]:\[\e[33m\]\`parse_git_branch\`\[\e[m\] \[\e[37m\]\\$\[\e[m\] "
+# PS1="[\[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;10m\]\u@\h\[$(tput sgr0)\] \[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;4m\]\W\[$(tput sgr0)\]]\\$ \[$(tput sgr0)\]"
+
 
 # I have a standard installation of MySQL as well as a Bitnami LAMP stack.
 # These are some aliases I find useful.
