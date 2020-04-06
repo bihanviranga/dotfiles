@@ -1,3 +1,14 @@
+;; List of configuration layers to load.
+dotspacemacs-configuration-layers
+'(
+  python
+  ivy
+  emacs-lisp
+  git
+  org
+  themes-megapack
+)
+
 ;; Switches the vim mode escape sequence to "jk"
 (defun dotspacemacs/user-config ()
   (setq-default evil-escape-key-sequence "jk")
