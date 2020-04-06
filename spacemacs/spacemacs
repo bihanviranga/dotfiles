@@ -15,6 +15,9 @@ dotspacemacs-configuration-layers
   (setq powerline-default-separator "slant")
 )
 
+;; enable line numbers
+dotspacemacs-line-numbers t
+
 ;; Fixes the crappy rendering of the powerline.
 ;; Changing scale didn't help, so I set it back to 1.1
 ;; This was no longer needed once I changed the
