@@ -1,0 +1,9 @@
+;; Switches the vim mode escape sequence to "jk"
+(defun dotspacemacs/user-config ()
+  (setq-default evil-escape-key-sequence "jk")
+)
+
+;; Fixes the crappy rendering of the powerline.
+;; Changing scale didn't help, so I set it back to 1.1
+dotspacemacs-mode-line-unicode-symbols nil
+
