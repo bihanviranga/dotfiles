@@ -11,6 +11,5 @@ Currently using
 ## Utilities
 - [LSD](https://github.com/Peltoche/lsd)
 - [Bat](https://github.com/sharkdp/bat)
-
-
+- [Bash-completion](https://github.com/scop/bash-completion)
 
