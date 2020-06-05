@@ -10,5 +10,7 @@ Currently using
 
 ## Utilities
 - [LSD](https://github.com/Peltoche/lsd)
+- [Bat](https://github.com/sharkdp/bat)
+
 
 

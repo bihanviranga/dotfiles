@@ -16,6 +16,7 @@ alias egrep='egrep --color=auto'
 alias diff='diff --color=auto'
 
 alias ls='lsd'
+alias cat='bat'
 
 ##################################################
 # Prompt
