@@ -17,6 +17,7 @@ alias diff='diff --color=auto'
 
 alias ls='lsd'
 alias cat='bat'
+alias vim='nvim'
 
 ##################################################
 # Prompt

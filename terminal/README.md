@@ -14,3 +14,6 @@ Currently using
 - [Bash-completion](https://github.com/scop/bash-completion)
 - [z](https://github.com/rupa/z)
 
+## Tools
+- [NeoVim](https://neovim.io)
+
