@@ -30,6 +30,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'mattn/emmet-vim'
 	Plug 'itchyny/lightline.vim'
 	Plug 'sjl/badwolf'
+	Plug 'raimondi/delimitmate'
 call plug#end()
 
 colorscheme badwolf

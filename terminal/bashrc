@@ -36,6 +36,11 @@ export LESS_TERMCAP_ue=$'\e[0m'
 export LESS_TERMCAP_us=$'\e[1;4;31m'
 
 ##################################################
+# Environment variables
+##################################################
+export DOTNET_CLI_TELEMETRY_OPTOUT="true"
+
+##################################################
 # Loading bash-completion
 ##################################################
 if [ -f /usr/share/bash-completion/bash_completion ]; then
