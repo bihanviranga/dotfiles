@@ -18,6 +18,7 @@ alias diff='diff --color=auto'
 alias ls='lsd'
 alias cat='bat'
 alias vim='nvim'
+alias gitlog='git log --oneline -n 10'
 
 ##################################################
 # Prompt
