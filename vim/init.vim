@@ -10,6 +10,7 @@ set lazyredraw " redraw only when needed
 set showmatch " highlight matching bracket
 set hlsearch " highlight matches
 
+let mapleader="," " leader is comma
 nnoremap <leader><space> :nohlsearch<CR>
 " with space, stop highlighting search results
 
@@ -21,9 +22,11 @@ nnoremap <space> za
 " space open/closes folds
 
 set foldmethod=indent " fold based on indent level
-" let mapleader="," " leader is comma
 
-inoremap jk <esc>
+" list buffers. Enter buffer number/name to switch
+:nnoremap <leader>b :buffers<CR>:buffer<Space>
+
+noremap jk <esc>
 " jk is escape
 
 call plug#begin('~/.vim/plugged')
