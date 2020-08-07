@@ -62,6 +62,9 @@ map <C-n> :NERDTreeToggle<CR>
 " airline theme
 let g:airline_theme='gruvbox'
 
+" set javascript indentation to 2 instead of the default 4
+autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
+
 """"""""""""""""""""""""""""
 " COC config
 " TextEdit might fail if hidden is not set.
