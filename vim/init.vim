@@ -44,11 +44,15 @@ call plug#end()
 colorscheme gruvbox
 
 " Open NERDTREE automatically when vim starts
-autocmd VimEnter * NERDTree
-" Set focus on editors instead of NERDTree
-autocmd VimEnter * wincmd p
+"autocmd VimEnter * NERDTree
+
+" Open NERDTREE automatically when no files are specified
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
 " Close NERDTree when last file buffer is closed
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
 " NERDTree toggle with Ctrl+n
 map <C-n> :NERDTreeToggle<CR>
 
