@@ -40,8 +40,8 @@ call plug#begin('~/.vim/plugged')
 	Plug 'vim-airline/vim-airline'
 	Plug 'vim-airline/vim-airline-themes'
 	Plug 'tpope/vim-fugitive'
-	Plug 'ctrlpvim/ctrlp.vim'
 	Plug 'yuttie/comfortable-motion.vim'
+	Plug 'junegunn/fzf'
 call plug#end()
 
 colorscheme gruvbox
@@ -64,6 +64,10 @@ let g:airline_theme='gruvbox'
 
 " set javascript indentation to 2 instead of the default 4
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
+
+" FZF settings
+map <C-p> :FZF<CR>
+let g:fzf_action = {'ctrl-t':'tab split', 'ctrl-s':'split', 'ctrl-v':'vsplit'}
 
 """"""""""""""""""""""""""""
 " COC config
