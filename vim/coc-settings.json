@@ -1,0 +1,5 @@
+{
+	"coc.preferences.formatOnSaveFiletypes": ["javascript"],
+	"python.jediEnabled": false
+}
+

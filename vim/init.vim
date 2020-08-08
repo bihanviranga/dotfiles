@@ -5,6 +5,7 @@ set number " enable line numbers
 set cursorline " highlight current line
 hi CursorLine term=bold cterm=bold 
 filetype indent on " load filetype-specific indent files
+filetype plugin on " required for nerdcommenter
 set wildmenu " visual autocomplete for command menu
 set lazyredraw " redraw only when needed
 set showmatch " highlight matching bracket
@@ -36,13 +37,16 @@ call plug#begin('~/.vim/plugged')
 	Plug 'herringtondarkholme/yats.vim'
 	Plug 'neoclide/coc.nvim', {'branch': 'release'}
 	Plug 'preservim/nerdtree'
-	Plug 'Xuyuanp/nerdtree-git-plugin'
+	Plug 'vwxyutarooo/nerdtree-devicons-syntax'
 	Plug 'vim-airline/vim-airline'
 	Plug 'vim-airline/vim-airline-themes'
 	Plug 'tpope/vim-fugitive'
 	Plug 'yuttie/comfortable-motion.vim'
 	Plug 'junegunn/fzf'
+	Plug 'scrooloose/nerdcommenter'
+	Plug 'ryanoasis/vim-devicons'
 call plug#end()
+" NOTE: always load devicons as the last one
 
 colorscheme gruvbox
 
