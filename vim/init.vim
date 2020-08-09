@@ -30,10 +30,13 @@ set foldmethod=indent " fold based on indent level
 noremap jk <esc>
 " jk is escape
 
-call plug#begin('~/.vim/plugged')
+ call plug#begin('~/.vim/plugged')
 	Plug 'mattn/emmet-vim'
 	Plug 'raimondi/delimitmate'
 	Plug 'morhetz/gruvbox'
+	Plug 'nanotech/jellybeans.vim'
+	Plug 'jonathanfilip/vim-lucius'
+	Plug 'mhartington/oceanic-next'
 	Plug 'herringtondarkholme/yats.vim'
 	Plug 'neoclide/coc.nvim', {'branch': 'release'}
 	Plug 'preservim/nerdtree'
@@ -48,7 +51,7 @@ call plug#begin('~/.vim/plugged')
 call plug#end()
 " NOTE: always load devicons as the last one
 
-colorscheme gruvbox
+colorscheme jellybeans
 
 " Open NERDTREE automatically when vim starts
 "autocmd VimEnter * NERDTree
@@ -73,6 +76,13 @@ autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
 map <C-p> :FZF<CR>
 let g:fzf_action = {'ctrl-t':'tab split', 'ctrl-s':'split', 'ctrl-v':'vsplit'}
 
+ " Other custom maps.
+" For opening a new line between two curly braces when you press { and enter.
+inoremap {<CR> {<CR>}<ESC>O
+" For opening a new line between two parentheses with a semicolon behind the
+" second parentheses.
+inoremap (;<CR> (<CR>);<ESC>O
+ 
 """"""""""""""""""""""""""""
 " COC config
 " TextEdit might fail if hidden is not set.
