@@ -1,36 +1,33 @@
-syntax enable " enable syntax processing
-set tabstop=4 " number of VISUAL spaces per TAB
-set shiftwidth=4 " uh
-set number " enable line numbers
-set cursorline " highlight current line
-hi CursorLine term=bold cterm=bold 
-filetype indent on " load filetype-specific indent files
-filetype plugin on " required for nerdcommenter
-set wildmenu " visual autocomplete for command menu
-set lazyredraw " redraw only when needed
-set showmatch " highlight matching bracket
-set hlsearch " highlight matches
+syntax enable 	" enable syntax processing
+
+set tabstop=4 			" number of VISUAL spaces per TAB
+set shiftwidth=4 		" uh
+set number 				" enable line numbers
+set cursorline 			" highlight current line
+set wildmenu 			" visual autocomplete for command menu
+set lazyredraw 			" redraw only when needed
+set showmatch 			" highlight matching bracket
+set foldenable 			" enable folding
+set foldlevelstart=10 	" open most folds by default
+set foldnestmax=10 		" 10 nested fold max
+set foldmethod=indent 	" fold based on indent level
+
+filetype indent on 	" load filetype-specific indent files
+filetype plugin on 	" required for nerdcommenter
 
 let mapleader="," " leader is comma
+
+" Stop hightlighting search results
 nnoremap <leader><space> :nohlsearch<CR>
-" with space, stop highlighting search results
-
-set foldenable " enable folding
-set foldlevelstart=10 " open most folds by default
-set foldnestmax=10 " 10 nested fold max
-
+" Space open/closes folds
 nnoremap <space> za
-" space open/closes folds
-
-set foldmethod=indent " fold based on indent level
-
-" list buffers. Enter buffer number/name to switch
+" List buffers. Enter buffer number/name to switch
 :nnoremap <leader>b :buffers<CR>:buffer<Space>
-
-noremap jk <esc>
 " jk is escape
+inoremap jk <esc>
 
- call plug#begin('~/.vim/plugged')
+" Plug plugins
+call plug#begin('~/.vim/plugged')
 	Plug 'mattn/emmet-vim'
 	Plug 'raimondi/delimitmate'
 	Plug 'morhetz/gruvbox'
@@ -47,27 +44,30 @@ noremap jk <esc>
 	Plug 'yuttie/comfortable-motion.vim'
 	Plug 'junegunn/fzf'
 	Plug 'scrooloose/nerdcommenter'
+	Plug 'OmniSharp/omnisharp-vim'
+	Plug 'vim-syntastic/syntastic'
 	Plug 'ryanoasis/vim-devicons'
 call plug#end()
 " NOTE: always load devicons as the last one
 
 colorscheme jellybeans
 
-" Open NERDTREE automatically when vim starts
-"autocmd VimEnter * NERDTree
-
-" Open NERDTREE automatically when no files are specified
+" Open NERDTree automatically when no files are specified
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-
 " Close NERDTree when last file buffer is closed
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-
 " NERDTree toggle with Ctrl+n
 map <C-n> :NERDTreeToggle<CR>
+" If more than one window and previous buffer was NERDTree, go back to it.
+" This is useful to prevent opening files in the NERDTree window.
+autocmd BufEnter * if bufname('#') =~# "^NERD_tree_" && winnr('$') > 1 | b# | endif
+" This line (from NERDTree repo wiki) is to prevent crashing when vim-plug
+" functions are called while the cursor is on the nerdtree window.
+let g:plug_window = 'noautocmd vertical topleft new'
 
 " airline theme
-let g:airline_theme='gruvbox'
+let g:airline_theme='jellybeans'
 
 " set javascript indentation to 2 instead of the default 4
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
@@ -76,13 +76,24 @@ autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
 map <C-p> :FZF<CR>
 let g:fzf_action = {'ctrl-t':'tab split', 'ctrl-s':'split', 'ctrl-v':'vsplit'}
 
- " Other custom maps.
+" Other custom maps.
 " For opening a new line between two curly braces when you press { and enter.
 inoremap {<CR> {<CR>}<ESC>O
 " For opening a new line between two parentheses with a semicolon behind the
 " second parentheses.
 inoremap (;<CR> (<CR>);<ESC>O
- 
+
+" Omnisharp Code Actions
+map <C-m> :OmniSharpGetCodeActions<CR>
+
+" Syntastic settings
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_cs_checkers = ['code_checker']
+let g:syntastic_aggregate_errors = 1 " don't stop checking after first error
+
 """"""""""""""""""""""""""""
 " COC config
 " TextEdit might fail if hidden is not set.
@@ -184,7 +195,7 @@ augroup end
 " Applying codeAction to the selected region.
 " Example: `<leader>aap` for current paragraph
 xmap <leader>a  <Plug>(coc-codeaction-selected)
-nmap <leader>a  <Plug>(coc-odeaction-selected)
+nmap <leader>a  <Plug>(coc-codeaction-selected)
 
 " Remap keys for applying codeAction to the current buffer.
 nmap <leader>ac  <Plug>(coc-codeaction)
