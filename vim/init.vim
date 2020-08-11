@@ -11,6 +11,7 @@ set foldenable 			" enable folding
 set foldlevelstart=10 	" open most folds by default
 set foldnestmax=10 		" 10 nested fold max
 set foldmethod=indent 	" fold based on indent level
+set nocompatible 		" required for vimwiki
 
 filetype indent on 	" load filetype-specific indent files
 filetype plugin on 	" required for nerdcommenter
@@ -46,6 +47,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'scrooloose/nerdcommenter'
 	Plug 'OmniSharp/omnisharp-vim'
 	Plug 'vim-syntastic/syntastic'
+	Plug 'vimwiki/vimwiki'
 	Plug 'ryanoasis/vim-devicons'
 call plug#end()
 " NOTE: always load devicons as the last one
@@ -93,6 +95,13 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_cs_checkers = ['code_checker']
 let g:syntastic_aggregate_errors = 1 " don't stop checking after first error
+
+" Sample VimWiki settings
+let wiki_1 = {}
+let wiki_1.path = '~/Documents/wiki'
+let wiki_2 = {}
+let wiki_2.path = '~/Documents/notes'
+let g:vimwiki_list = [wiki_1, wiki_2]
 
 """"""""""""""""""""""""""""
 " COC config
