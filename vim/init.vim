@@ -29,26 +29,38 @@ inoremap jk <esc>
 
 " Plug plugins
 call plug#begin('~/.vim/plugged')
-	Plug 'mattn/emmet-vim'
-	Plug 'raimondi/delimitmate'
+"-------------- Colorschemes --------------"
 	Plug 'morhetz/gruvbox'
 	Plug 'nanotech/jellybeans.vim'
 	Plug 'jonathanfilip/vim-lucius'
 	Plug 'mhartington/oceanic-next'
-	Plug 'herringtondarkholme/yats.vim'
+	Plug 'dracula/vim', { 'as': 'dracula' }
+	Plug 'roosta/srcery'
+	Plug 'tomasr/molokai'
+	Plug 'ajh17/spacegray.vim'
+	Plug 'cocopon/iceberg.vim'
+	Plug 'vim-airline/vim-airline-themes'
+"-------------- Language ------------------"
+	Plug 'mattn/emmet-vim'
+	Plug 'raimondi/delimitmate'
+	Plug 'sheerun/vim-polyglot'
 	Plug 'neoclide/coc.nvim', {'branch': 'release'}
+	Plug 'OmniSharp/omnisharp-vim'
+	Plug 'vim-syntastic/syntastic'
+"-------------- Interface -----------------"
 	Plug 'preservim/nerdtree'
 	Plug 'vwxyutarooo/nerdtree-devicons-syntax'
 	Plug 'vim-airline/vim-airline'
-	Plug 'vim-airline/vim-airline-themes'
-	Plug 'tpope/vim-fugitive'
+	Plug 'ryanoasis/vim-devicons'
+"-------------- Commands ------------------"
 	Plug 'yuttie/comfortable-motion.vim'
+	Plug 'vimwiki/vimwiki'
+	Plug 'unblevable/quick-scope'
+"-------------- Integrations --------------"
+	Plug 'tpope/vim-fugitive'
 	Plug 'junegunn/fzf'
 	Plug 'scrooloose/nerdcommenter'
-	Plug 'OmniSharp/omnisharp-vim'
-	Plug 'vim-syntastic/syntastic'
-	Plug 'vimwiki/vimwiki'
-	Plug 'ryanoasis/vim-devicons'
+	Plug 'wakatime/vim-wakatime'
 call plug#end()
 " NOTE: always load devicons as the last one
 
@@ -73,6 +85,7 @@ let g:airline_theme='jellybeans'
 
 " set javascript indentation to 2 instead of the default 4
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
+autocmd FileType javascriptreact setlocal shiftwidth=2 tabstop=2
 
 " FZF settings
 map <C-p> :FZF<CR>
@@ -85,8 +98,16 @@ inoremap {<CR> {<CR>}<ESC>O
 " second parentheses.
 inoremap (;<CR> (<CR>);<ESC>O
 
+let g:qs_highlight_on_keys = ['f', 'F']
+
 " Omnisharp Code Actions
 map <C-m> :OmniSharpGetCodeActions<CR>
+" Omnisharp code format
+autocmd FileType cs nmap <silent> <buffer> <Leader>os <Plug>(omnisharp_code_format)
+
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+nmap <leader>do <Plug>(coc-codeaction)
 
 " Syntastic settings
 let g:syntastic_always_populate_loc_list = 1
