@@ -1,5 +1,7 @@
 # Terminal Emulator and Bash
 
+![Terminal](terminalss.png)
+
 Currently using 
 - ~~Terminator~~
 - Qterminal
