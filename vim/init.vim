@@ -24,7 +24,7 @@ nnoremap <leader><space> :nohlsearch<CR>
 nnoremap <space> za
 " List buffers. Enter buffer number/name to switch
 :nnoremap <leader>b :buffers<CR>:buffer<Space>
-" jk is escape
+" jk is escape  
 inoremap jk <esc>
 
 " Plug plugins
@@ -46,7 +46,6 @@ call plug#begin('~/.vim/plugged')
 	Plug 'sheerun/vim-polyglot'
 	Plug 'neoclide/coc.nvim', {'branch': 'release'}
 	Plug 'OmniSharp/omnisharp-vim'
-	Plug 'vim-syntastic/syntastic'
 "-------------- Interface -----------------"
 	Plug 'preservim/nerdtree'
 	Plug 'vwxyutarooo/nerdtree-devicons-syntax'
@@ -61,10 +60,11 @@ call plug#begin('~/.vim/plugged')
 	Plug 'junegunn/fzf'
 	Plug 'scrooloose/nerdcommenter'
 	Plug 'wakatime/vim-wakatime'
+	" Plug 'tweekmonster/startuptime.vim'
 call plug#end()
 " NOTE: always load devicons as the last one
 
-colorscheme jellybeans
+colorscheme jellybeans 
 
 " Open NERDTree automatically when no files are specified
 autocmd StdinReadPre * let s:std_in=1
@@ -78,7 +78,7 @@ map <C-n> :NERDTreeToggle<CR>
 autocmd BufEnter * if bufname('#') =~# "^NERD_tree_" && winnr('$') > 1 | b# | endif
 " This line (from NERDTree repo wiki) is to prevent crashing when vim-plug
 " functions are called while the cursor is on the nerdtree window.
-let g:plug_window = 'noautocmd vertical topleft new'
+" let g:plug_window = 'noautocmd vertical topleft new'
 
 " airline theme
 let g:airline_theme='jellybeans'
@@ -87,6 +87,9 @@ let g:airline_theme='jellybeans'
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
 autocmd FileType javascriptreact setlocal shiftwidth=2 tabstop=2
 
+" treat all *.svelte files as HTML
+au! BufNewFile,BufRead *.svelte set ft=html
+
 " FZF settings
 map <C-p> :FZF<CR>
 let g:fzf_action = {'ctrl-t':'tab split', 'ctrl-s':'split', 'ctrl-v':'vsplit'}
@@ -94,11 +97,17 @@ let g:fzf_action = {'ctrl-t':'tab split', 'ctrl-s':'split', 'ctrl-v':'vsplit'}
 " Other custom maps.
 " For opening a new line between two curly braces when you press { and enter.
 inoremap {<CR> {<CR>}<ESC>O
+" Same, but for square brackets
+inoremap [<CR> [<CR>]<ESC>O
 " For opening a new line between two parentheses with a semicolon behind the
 " second parentheses.
 inoremap (;<CR> (<CR>);<ESC>O
 
+" quick scope plugin
 let g:qs_highlight_on_keys = ['f', 'F']
+
+" emmet-vim plugin
+let g:user_emmet_leader_key='<C-x>'
 
 " Omnisharp Code Actions
 map <C-m> :OmniSharpGetCodeActions<CR>
@@ -109,20 +118,18 @@ nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
 nmap <leader>do <Plug>(coc-codeaction)
 
-" Syntastic settings
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_cs_checkers = ['code_checker']
-let g:syntastic_aggregate_errors = 1 " don't stop checking after first error
+" VimWiki settings
+let wiki_notes = {}
+let wiki_notes.path = '/mnt/a/University/y3s1/notes'
+let wiki_notes.syntax = 'markdown'
+let wiki_notes.ext = '.md'
 
-" Sample VimWiki settings
-let wiki_1 = {}
-let wiki_1.path = '~/Documents/wiki'
-let wiki_2 = {}
-let wiki_2.path = '~/Documents/notes'
-let g:vimwiki_list = [wiki_1, wiki_2]
+let wiki_self = {}
+let wiki_self.path = '~/Documents/wiki'
+let wiki_self.syntax = 'markdown'
+let wiki_self.ext = '.md'
+
+let g:vimwiki_list = [wiki_notes, wiki_self]
 
 """"""""""""""""""""""""""""
 " COC config
