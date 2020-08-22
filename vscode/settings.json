@@ -5,13 +5,13 @@
     "mssql.connections": [
         {
             "server": "localhost",
-            "database": "CommanderDB",
+            "database": "XXX",
             "authenticationType": "SqlLogin",
-            "user": "dev",
-            "password": "",
+            "user": "XXX",
+            "password": "XXX",
             "emptyPasswordInput": false,
             "savePassword": true,
-            "profileName": "Commander"
+            "profileName": "XXX"
         }
     ],
     "csharp.referencesCodeLens.enabled": false,
