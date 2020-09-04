@@ -56,3 +56,20 @@ fi
 ##################################################
 . ~/bin/z
 
+##################################################
+# Functions
+##################################################
+
+# virtual environment activate
+activate() {
+	ENV_NAMES=(env venv)
+	ACTIVATE_PATH="bin/activate"
+	for env_name in "${ENV_NAMES[@]}"
+	do
+		if [ -d ${env_name} ]; then
+			source $env_name/$ACTIVATE_PATH
+			return
+		fi
+	done
+}
+

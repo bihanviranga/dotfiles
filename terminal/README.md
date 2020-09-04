@@ -5,6 +5,9 @@
 Currently using 
 - Qterminal
 
+## Functions
+- `activate()`: Once called, activates any virtual environment in thecurrent directory. By default it searches for a __env__ or __venv__ folder, and activates by sourcing that folder+__/bin/activate__. Default folders and activate path can be easily changed.
+
 ## Fonts
 - [Caskaydia Cove Nerd Font](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/CascadiaCode)
 
