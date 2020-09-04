@@ -32,7 +32,6 @@ call plug#begin('~/.vim/plugged')
 "-------------- Colorschemes --------------"
 	Plug 'morhetz/gruvbox'
 	Plug 'nanotech/jellybeans.vim'
-	Plug 'jonathanfilip/vim-lucius'
 	Plug 'mhartington/oceanic-next'
 	Plug 'dracula/vim', { 'as': 'dracula' }
 	Plug 'roosta/srcery'
@@ -46,6 +45,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'sheerun/vim-polyglot'
 	Plug 'neoclide/coc.nvim', {'branch': 'release'}
 	Plug 'OmniSharp/omnisharp-vim'
+	Plug 'leafoftree/vim-svelte-plugin'
 "-------------- Interface -----------------"
 	Plug 'preservim/nerdtree'
 	Plug 'vwxyutarooo/nerdtree-devicons-syntax'
@@ -86,9 +86,11 @@ let g:airline_theme='jellybeans'
 " set javascript indentation to 2 instead of the default 4
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
 autocmd FileType javascriptreact setlocal shiftwidth=2 tabstop=2
+autocmd FileType svelte setlocal shiftwidth=2 tabstop=2
+autocmd FileType htmldjango setlocal shiftwidth=2 tabstop=2
 
 " treat all *.svelte files as HTML
-au! BufNewFile,BufRead *.svelte set ft=html
+" au! BufNewFile,BufRead *.svelte set ft=html
 
 " FZF settings
 map <C-p> :FZF<CR>

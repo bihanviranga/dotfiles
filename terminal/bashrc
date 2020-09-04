@@ -19,6 +19,7 @@ alias ls='lsd'
 alias cat='bat'
 alias vim='nvim'
 alias gitlog='git log --oneline -n 10'
+alias wiki='vim ~/Documents/wiki/index.md'
 
 ##################################################
 # Prompt
