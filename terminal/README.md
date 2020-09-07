@@ -19,3 +19,4 @@ Currently using
 - [htop](https://hisham.hm/htop/)
 - [NeoVim](https://neovim.io)
 - [tmux](https://github.com/tmux/tmux/wiki)
+- [sdcv](http://dushistov.github.io/sdcv/)
