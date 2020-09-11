@@ -1,31 +1,75 @@
-syntax enable 	" enable syntax processing
+" number of VISUAL spaces per TAB
+set tabstop=4
+" uh
+set shiftwidth=4
+" enable line numbers
+set number
+" highlight current line
+set cursorline
+" visual autocomplete for command menu
+set wildmenu
+" redraw only when needed
+set lazyredraw
+" highlight matching bracket
+set showmatch
+" enable folding
+set foldenable
+" open most folds by default
+set foldlevelstart=10
+" 10 nested fold max
+set foldnestmax=10
+" fold based on indent level
+set foldmethod=indent
+" required for vimwiki
+set nocompatible
+" Use system keyboard
+set clipboard+=unnamedplus
+" new splits get added to right or below
+set splitbelow splitright
 
-set tabstop=4 			" number of VISUAL spaces per TAB
-set shiftwidth=4 		" uh
-set number 				" enable line numbers
-set cursorline 			" highlight current line
-set wildmenu 			" visual autocomplete for command menu
-set lazyredraw 			" redraw only when needed
-set showmatch 			" highlight matching bracket
-set foldenable 			" enable folding
-set foldlevelstart=10 	" open most folds by default
-set foldnestmax=10 		" 10 nested fold max
-set foldmethod=indent 	" fold based on indent level
-set nocompatible 		" required for vimwiki
+" enable syntax processing
+syntax enable
 
-filetype indent on 	" load filetype-specific indent files
-filetype plugin on 	" required for nerdcommenter
+" load filetype-specific indent files
+filetype indent on
+" required for nerdcommenter
+filetype plugin on
 
-let mapleader="," " leader is comma
+" leader is comma
+let mapleader=","
 
+" When entering insert mode, vertically center current line
+autocmd InsertEnter * norm zz
+" Strip trailing whitespace on save
+autocmd BufWritePre * %s/\s\+$//e
+" set custom indentation - 2 instead of the default 4
+autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
+autocmd FileType javascriptreact setlocal shiftwidth=2 tabstop=2
+autocmd FileType svelte setlocal shiftwidth=2 tabstop=2
+autocmd FileType htmldjango setlocal shiftwidth=2 tabstop=2
+
+" Mappings for window switching
+map <M-h> <C-w>h
+map <M-l> <C-w>l
+map <M-j> <C-w>j
+map <M-k> <C-w>k
+" Close all windows except current
+map <M-o> <C-w>o
 " Stop hightlighting search results
 nnoremap <leader><space> :nohlsearch<CR>
 " Space open/closes folds
 nnoremap <space> za
 " List buffers. Enter buffer number/name to switch
 :nnoremap <leader>b :buffers<CR>:buffer<Space>
-" jk is escape  
+" jk is escape
 inoremap jk <esc>
+" For opening a new line between two curly braces when you press { and enter.
+inoremap {<CR> {<CR>}<ESC>O
+" Same, but for square brackets
+inoremap [<CR> [<CR>]<ESC>O
+" For opening a new line between two parentheses with a semicolon behind the
+" second parentheses.
+inoremap (;<CR> (<CR>);<ESC>O
 
 " Plug plugins
 call plug#begin('~/.vim/plugged')
@@ -64,7 +108,7 @@ call plug#begin('~/.vim/plugged')
 call plug#end()
 " NOTE: always load devicons as the last one
 
-colorscheme jellybeans 
+colorscheme spacegray
 
 " Open NERDTree automatically when no files are specified
 autocmd StdinReadPre * let s:std_in=1
@@ -83,27 +127,9 @@ autocmd BufEnter * if bufname('#') =~# "^NERD_tree_" && winnr('$') > 1 | b# | en
 " airline theme
 let g:airline_theme='jellybeans'
 
-" set javascript indentation to 2 instead of the default 4
-autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
-autocmd FileType javascriptreact setlocal shiftwidth=2 tabstop=2
-autocmd FileType svelte setlocal shiftwidth=2 tabstop=2
-autocmd FileType htmldjango setlocal shiftwidth=2 tabstop=2
-
-" treat all *.svelte files as HTML
-" au! BufNewFile,BufRead *.svelte set ft=html
-
 " FZF settings
 map <C-p> :FZF<CR>
 let g:fzf_action = {'ctrl-t':'tab split', 'ctrl-s':'split', 'ctrl-v':'vsplit'}
-
-" Other custom maps.
-" For opening a new line between two curly braces when you press { and enter.
-inoremap {<CR> {<CR>}<ESC>O
-" Same, but for square brackets
-inoremap [<CR> [<CR>]<ESC>O
-" For opening a new line between two parentheses with a semicolon behind the
-" second parentheses.
-inoremap (;<CR> (<CR>);<ESC>O
 
 " quick scope plugin
 let g:qs_highlight_on_keys = ['f', 'F']
