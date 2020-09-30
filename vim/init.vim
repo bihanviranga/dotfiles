@@ -71,6 +71,11 @@ inoremap [<CR> [<CR>]<ESC>O
 " second parentheses.
 inoremap (;<CR> (<CR>);<ESC>O
 
+" netrw settings
+let g:netrw_banner = 0
+let g:netrw_liststyle = 3
+let g:netrw_altv = 1
+
 " Plug plugins
 call plug#begin('~/.vim/plugged')
 "-------------- Colorschemes --------------"
@@ -91,7 +96,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'OmniSharp/omnisharp-vim'
 	Plug 'leafoftree/vim-svelte-plugin'
 "-------------- Interface -----------------"
-	Plug 'preservim/nerdtree'
+	"Plug 'preservim/nerdtree'
 	Plug 'vwxyutarooo/nerdtree-devicons-syntax'
 	Plug 'vim-airline/vim-airline'
 	Plug 'ryanoasis/vim-devicons'
@@ -104,22 +109,22 @@ call plug#begin('~/.vim/plugged')
 	Plug 'junegunn/fzf'
 	Plug 'scrooloose/nerdcommenter'
 	Plug 'wakatime/vim-wakatime'
-	" Plug 'tweekmonster/startuptime.vim'
+	"Plug 'tweekmonster/startuptime.vim'
 call plug#end()
 " NOTE: always load devicons as the last one
 
 colorscheme spacegray
 
 " Open NERDTree automatically when no files are specified
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+"autocmd StdinReadPre * let s:std_in=1
+"autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 " Close NERDTree when last file buffer is closed
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 " NERDTree toggle with Ctrl+n
-map <C-n> :NERDTreeToggle<CR>
+"map <C-n> :NERDTreeToggle<CR>
 " If more than one window and previous buffer was NERDTree, go back to it.
 " This is useful to prevent opening files in the NERDTree window.
-autocmd BufEnter * if bufname('#') =~# "^NERD_tree_" && winnr('$') > 1 | b# | endif
+"autocmd BufEnter * if bufname('#') =~# "^NERD_tree_" && winnr('$') > 1 | b# | endif
 " This line (from NERDTree repo wiki) is to prevent crashing when vim-plug
 " functions are called while the cursor is on the nerdtree window.
 " let g:plug_window = 'noautocmd vertical topleft new'
