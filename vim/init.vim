@@ -47,6 +47,7 @@ autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
 autocmd FileType javascriptreact setlocal shiftwidth=2 tabstop=2
 autocmd FileType svelte setlocal shiftwidth=2 tabstop=2
 autocmd FileType htmldjango setlocal shiftwidth=2 tabstop=2
+autocmd FileType c setlocal shiftwidth=2 tabstop=2
 
 " Mappings for window switching
 map <M-h> <C-w>h
@@ -81,13 +82,12 @@ call plug#begin('~/.vim/plugged')
 "-------------- Colorschemes --------------"
 	Plug 'morhetz/gruvbox'
 	Plug 'nanotech/jellybeans.vim'
-	Plug 'mhartington/oceanic-next'
-	Plug 'dracula/vim', { 'as': 'dracula' }
 	Plug 'roosta/srcery'
 	Plug 'tomasr/molokai'
-	Plug 'ajh17/spacegray.vim'
 	Plug 'cocopon/iceberg.vim'
 	Plug 'vim-airline/vim-airline-themes'
+	Plug 'jaredgorski/spacecamp'
+	Plug 'bluz71/vim-moonfly-colors'
 "-------------- Language ------------------"
 	Plug 'mattn/emmet-vim'
 	Plug 'raimondi/delimitmate'
