@@ -93,7 +93,6 @@ call plug#begin('~/.vim/plugged')
 	Plug 'raimondi/delimitmate'
 	Plug 'sheerun/vim-polyglot'
 	Plug 'neoclide/coc.nvim', {'branch': 'release'}
-	Plug 'OmniSharp/omnisharp-vim'
 	Plug 'leafoftree/vim-svelte-plugin'
 "-------------- Interface -----------------"
 	"Plug 'preservim/nerdtree'
@@ -103,7 +102,6 @@ call plug#begin('~/.vim/plugged')
 "-------------- Commands ------------------"
 	Plug 'yuttie/comfortable-motion.vim'
 	Plug 'vimwiki/vimwiki'
-	Plug 'unblevable/quick-scope'
 "-------------- Integrations --------------"
 	Plug 'tpope/vim-fugitive'
 	Plug 'junegunn/fzf'
