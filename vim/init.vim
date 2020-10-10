@@ -4,6 +4,8 @@ set tabstop=4
 set shiftwidth=4
 " enable line numbers
 set number
+" Minimum width of line numbers column
+set numberwidth=2
 " highlight current line
 set cursorline
 " visual autocomplete for command menu
