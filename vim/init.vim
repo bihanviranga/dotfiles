@@ -50,6 +50,7 @@ autocmd FileType javascriptreact setlocal shiftwidth=2 tabstop=2
 autocmd FileType svelte setlocal shiftwidth=2 tabstop=2
 autocmd FileType htmldjango setlocal shiftwidth=2 tabstop=2
 autocmd FileType c setlocal shiftwidth=2 tabstop=2
+autocmd FileType cpp setlocal shiftwidth=2 tabstop=2
 
 " Mappings for window switching
 map <M-h> <C-w>h
@@ -64,6 +65,9 @@ nnoremap <leader><space> :nohlsearch<CR>
 nnoremap <space> za
 " List buffers. Enter buffer number/name to switch
 :nnoremap <leader>b :buffers<CR>:buffer<Space>
+" Switch between buffers with alt+n alt+p
+nnoremap <M-n> :bnext<CR>
+nnoremap <M-p> :bprevious<CR>
 " jk is escape
 inoremap jk <esc>
 " For opening a new line between two curly braces when you press { and enter.
@@ -82,7 +86,7 @@ let g:netrw_altv = 1
 " Plug plugins
 call plug#begin('~/.vim/plugged')
 "-------------- Colorschemes --------------"
-	Plug 'morhetz/gruvbox'
+	Plug 'lifepillar/vim-gruvbox8'
 	Plug 'nanotech/jellybeans.vim'
 	Plug 'roosta/srcery'
 	Plug 'tomasr/molokai'
@@ -97,8 +101,6 @@ call plug#begin('~/.vim/plugged')
 	Plug 'neoclide/coc.nvim', {'branch': 'release'}
 	Plug 'leafoftree/vim-svelte-plugin'
 "-------------- Interface -----------------"
-	"Plug 'preservim/nerdtree'
-	Plug 'vwxyutarooo/nerdtree-devicons-syntax'
 	Plug 'vim-airline/vim-airline'
 	Plug 'ryanoasis/vim-devicons'
 "-------------- Commands ------------------"
@@ -113,7 +115,7 @@ call plug#begin('~/.vim/plugged')
 call plug#end()
 " NOTE: always load devicons as the last one
 
-colorscheme spacegray
+colorscheme spacecamp
 
 " Open NERDTree automatically when no files are specified
 "autocmd StdinReadPre * let s:std_in=1
@@ -130,7 +132,8 @@ colorscheme spacegray
 " let g:plug_window = 'noautocmd vertical topleft new'
 
 " airline theme
-let g:airline_theme='jellybeans'
+let g:airline_theme='minimalist'
+let g:airline#extensions#tabline#enabled = 1
 
 " FZF settings
 map <C-p> :FZF<CR>
@@ -174,7 +177,7 @@ set nobackup
 set nowritebackup
 
 " Give more space for displaying messages.
-set cmdheight=2
+set cmdheight=1
 
 " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 " delays and poor user experience.
