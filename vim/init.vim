@@ -68,6 +68,8 @@ nnoremap <space> za
 " Switch between buffers with alt+n alt+p
 nnoremap <M-n> :bnext<CR>
 nnoremap <M-p> :bprevious<CR>
+" Close/delete buffer with alt+x
+nnoremap <M-x> :bd<CR>
 " jk is escape
 inoremap jk <esc>
 " For opening a new line between two curly braces when you press { and enter.
@@ -94,6 +96,9 @@ call plug#begin('~/.vim/plugged')
 	Plug 'vim-airline/vim-airline-themes'
 	Plug 'jaredgorski/spacecamp'
 	Plug 'bluz71/vim-moonfly-colors'
+	Plug 'kaicataldo/material.vim', {'branch': 'main'}
+	Plug 'djjcast/mirodark'
+	Plug 'fenetikm/falcon'
 "-------------- Language ------------------"
 	Plug 'mattn/emmet-vim'
 	Plug 'raimondi/delimitmate'
