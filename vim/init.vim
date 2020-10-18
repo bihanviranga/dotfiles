@@ -52,6 +52,11 @@ autocmd FileType htmldjango setlocal shiftwidth=2 tabstop=2
 autocmd FileType c setlocal shiftwidth=2 tabstop=2
 autocmd FileType cpp setlocal shiftwidth=2 tabstop=2
 
+" Swap line with the line below/above
+nmap - ddp
+nmap _ ddkP
+" Open line below without leaving insert mode
+imap <C-o> <esc>o
 " Mappings for window switching
 map <M-h> <C-w>h
 map <M-l> <C-w>l
