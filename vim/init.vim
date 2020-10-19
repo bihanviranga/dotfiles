@@ -127,20 +127,6 @@ call plug#end()
 
 colorscheme spacecamp
 
-" Open NERDTree automatically when no files are specified
-"autocmd StdinReadPre * let s:std_in=1
-"autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-" Close NERDTree when last file buffer is closed
-"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-" NERDTree toggle with Ctrl+n
-"map <C-n> :NERDTreeToggle<CR>
-" If more than one window and previous buffer was NERDTree, go back to it.
-" This is useful to prevent opening files in the NERDTree window.
-"autocmd BufEnter * if bufname('#') =~# "^NERD_tree_" && winnr('$') > 1 | b# | endif
-" This line (from NERDTree repo wiki) is to prevent crashing when vim-plug
-" functions are called while the cursor is on the nerdtree window.
-" let g:plug_window = 'noautocmd vertical topleft new'
-
 " airline theme
 let g:airline_theme='minimalist'
 let g:airline#extensions#tabline#enabled = 1
@@ -149,20 +135,8 @@ let g:airline#extensions#tabline#enabled = 1
 noremap <C-p> :FZF<CR>
 let g:fzf_action = {'ctrl-t':'tab split', 'ctrl-s':'split', 'ctrl-v':'vsplit'}
 
-" quick scope plugin
-let g:qs_highlight_on_keys = ['f', 'F']
-
 " emmet-vim plugin
 let g:user_emmet_leader_key='<C-x>'
-
-" Omnisharp Code Actions
-noremap <C-m> :OmniSharpGetCodeActions<CR>
-" Omnisharp code format
-autocmd FileType cs nmap <silent> <buffer> <Leader>os <Plug>(omnisharp_code_format)
-
-nnoremap <silent> [g <Plug>(coc-diagnostic-prev)
-nnoremap <silent> ]g <Plug>(coc-diagnostic-next)
-nnoremap <leader>do <Plug>(coc-codeaction)
 
 " VimWiki settings
 let wiki_notes = {}
