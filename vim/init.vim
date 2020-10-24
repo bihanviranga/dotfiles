@@ -84,6 +84,8 @@ inoremap [<CR> [<CR>]<ESC>O
 " For opening a new line between two parentheses with a semicolon behind the
 " second parentheses.
 inoremap (;<CR> (<CR>);<ESC>O
+" Append semicolon and enter new line
+inoremap <M-CR> <esc>A;<esc>o
 
 " netrw settings
 let g:netrw_banner = 0
