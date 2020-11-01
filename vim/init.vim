@@ -57,6 +57,8 @@ nnoremap - ddp
 nnoremap _ ddkP
 " Jump to next line without leaving insert mode
 inoremap <C-o> <esc>o
+" Jump two lines without leaving insert mode
+inoremap <C-O> <esc>jo
 " Mappings for window switching
 noremap <M-h> <C-w>h
 noremap <M-l> <C-w>l
@@ -106,6 +108,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'kaicataldo/material.vim', {'branch': 'main'}
 	Plug 'djjcast/mirodark'
 	Plug 'fenetikm/falcon'
+	Plug 'nlknguyen/papercolor-theme'
 "-------------- Language ------------------"
 	Plug 'mattn/emmet-vim'
 	Plug 'raimondi/delimitmate'
