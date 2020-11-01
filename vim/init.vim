@@ -1,7 +1,7 @@
 " number of VISUAL spaces per TAB
-set tabstop=4
+set tabstop=2
 " uh
-set shiftwidth=4
+set shiftwidth=2
 " enable line numbers
 set number
 " Minimum width of line numbers column
@@ -44,13 +44,8 @@ let mapleader=","
 autocmd InsertEnter * norm zz
 " Strip trailing whitespace on save
 autocmd BufWritePre * %s/\s\+$//e
-" set custom indentation - 2 instead of the default 4
-autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
-autocmd FileType javascriptreact setlocal shiftwidth=2 tabstop=2
-autocmd FileType svelte setlocal shiftwidth=2 tabstop=2
-autocmd FileType htmldjango setlocal shiftwidth=2 tabstop=2
-autocmd FileType c setlocal shiftwidth=2 tabstop=2
-autocmd FileType cpp setlocal shiftwidth=2 tabstop=2
+" set custom indentation per file type
+"autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
 
 " Swap line with the line below/above
 nnoremap - ddp
