@@ -1,6 +1,5 @@
 {
 	"coc.preferences.formatOnSaveFiletypes": ["javascript", "javascriptreact", "html", "svelte", "htmldjango", "c", "cpp", "typescript"],
-	"coc.preferences.formatOnType": true,
 	"prettier.eslintIntegration": true,
 	"python.jediEnabled": false,
 	"python.venvFolders": ["env", "venv"]
