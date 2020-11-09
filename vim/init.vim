@@ -28,6 +28,8 @@ set nocompatible
 set clipboard+=unnamedplus
 " new splits get added to right or below
 set splitbelow splitright
+" Hide the status/mode because lightline already shows it
+set noshowmode
 
 " enable syntax processing
 syntax enable
@@ -97,7 +99,6 @@ call plug#begin('~/.vim/plugged')
 	Plug 'roosta/srcery'
 	Plug 'tomasr/molokai'
 	Plug 'cocopon/iceberg.vim'
-	Plug 'vim-airline/vim-airline-themes'
 	Plug 'jaredgorski/spacecamp'
 	Plug 'bluz71/vim-moonfly-colors'
 	Plug 'kaicataldo/material.vim', {'branch': 'main'}
@@ -111,8 +112,8 @@ call plug#begin('~/.vim/plugged')
 	Plug 'neoclide/coc.nvim', {'branch': 'release'}
 	Plug 'leafoftree/vim-svelte-plugin'
 "-------------- Interface -----------------"
-	Plug 'vim-airline/vim-airline'
 	Plug 'ryanoasis/vim-devicons'
+	Plug 'itchyny/lightline.vim'
 "-------------- Commands ------------------"
 	Plug 'yuttie/comfortable-motion.vim'
 	Plug 'vimwiki/vimwiki'
@@ -125,11 +126,7 @@ call plug#begin('~/.vim/plugged')
 call plug#end()
 " NOTE: always load devicons as the last one
 
-colorscheme spacecamp
-
-" airline theme
-let g:airline_theme='minimalist'
-let g:airline#extensions#tabline#enabled = 1
+colorscheme molokai
 
 " FZF settings
 noremap <C-p> :FZF<CR>
@@ -150,6 +147,19 @@ let wiki_self.syntax = 'markdown'
 let wiki_self.ext = '.md'
 
 let g:vimwiki_list = [wiki_notes, wiki_self]
+
+" lightline settings
+let g:lightline = {
+	\ 'colorscheme': 'seoul256',
+	\ 'active': {
+	\ 	'left': [ [ 'mode', 'paste' ],
+	\ 					  [ 'gitbranch', 'readonly', 'filename', 'modified', 'cocstatus' ] ]
+	\ },
+	\ 'component_function': {
+	\ 	'gitbranch': 'FugitiveHead',
+	\ 	'cocstatus': 'coc#status'
+	\ },
+	\ }
 
 """"""""""""""""""""""""""""
 " COC config
