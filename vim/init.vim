@@ -55,7 +55,7 @@ nnoremap _ ddkP
 " Jump to next line without leaving insert mode
 inoremap <C-o> <esc>o
 " Jump two lines without leaving insert mode
-inoremap <C-O> <esc>jo
+inoremap <C-l> <esc>jo
 " Mappings for window switching
 noremap <M-h> <C-w>h
 noremap <M-l> <C-w>l
