@@ -49,6 +49,10 @@ autocmd BufWritePre * %s/\s\+$//e
 " set custom indentation per file type
 "autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
 
+" Open vimrc file in a vertical split
+nnoremap <Leader>ev :vsplit $MYVIMRC<CR>
+" Source vimrc file
+nnoremap <Leader>sv :source $MYVIMRC<CR>
 " Swap line with the line below/above
 nnoremap - ddp
 nnoremap _ ddkP
