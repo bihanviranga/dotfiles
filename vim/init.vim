@@ -46,8 +46,15 @@ let mapleader=","
 "autocmd InsertEnter * norm zz
 " Strip trailing whitespace on save
 autocmd BufWritePre * %s/\s\+$//e
+
 " set custom indentation per file type
 "autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
+
+" Disable automatic comment insertion
+" Means that when you enter a comment and create a newline,
+" the newline becomes a comment line too.
+" This disables it for all filetypes
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " Open vimrc file in a vertical split
 nnoremap <Leader>ev :vsplit $MYVIMRC<CR>
