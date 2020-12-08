@@ -118,6 +118,7 @@ call plug#begin('~/.vim/plugged')
 "-------------- Interface -----------------"
 	Plug 'ryanoasis/vim-devicons'
 	Plug 'itchyny/lightline.vim'
+	Plug 'Yggdroot/indentLine'
 "-------------- Commands ------------------"
 	Plug 'yuttie/comfortable-motion.vim'
 	Plug 'vimwiki/vimwiki'
