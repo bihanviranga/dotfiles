@@ -43,7 +43,7 @@ filetype plugin on
 let mapleader=","
 
 " When entering insert mode, vertically center current line
-"autocmd InsertEnter * norm zz
+autocmd InsertEnter * norm zz
 " Strip trailing whitespace on save
 autocmd BufWritePre * %s/\s\+$//e
 
