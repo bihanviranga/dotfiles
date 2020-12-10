@@ -74,6 +74,8 @@ nnoremap <M-n> :bnext<CR>
 nnoremap <M-p> :bprevious<CR>
 " Close/delete buffer with alt+x
 nnoremap <M-x> :bd<CR>
+" View unsaved changes in file
+nnoremap <leader>vu :w !diff % -<CR>
 " Mappings for window switching
 noremap <M-h> <C-w>h
 noremap <M-l> <C-w>l
