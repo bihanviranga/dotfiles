@@ -57,23 +57,12 @@ autocmd BufWritePre * %s/\s\+$//e
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " Open vimrc file in a vertical split
-nnoremap <Leader>ev :vsplit $MYVIMRC<CR>
+nnoremap <leader>ev :vsplit $MYVIMRC<CR>
 " Source vimrc file
-nnoremap <Leader>sv :source $MYVIMRC<CR>
+nnoremap <leader>sv :source $MYVIMRC<CR>
 " Swap line with the line below/above
 nnoremap - ddp
 nnoremap _ ddkP
-" Jump to next line without leaving insert mode
-inoremap <C-o> <esc>o
-" Jump two lines without leaving insert mode
-inoremap <C-j> <esc>jo
-" Mappings for window switching
-noremap <M-h> <C-w>h
-noremap <M-l> <C-w>l
-noremap <M-j> <C-w>j
-noremap <M-k> <C-w>k
-" Close all windows except current
-noremap <M-o> <C-w>o
 " Stop hightlighting search results
 nnoremap <leader><space> :nohlsearch<CR>
 " Space open/closes folds
@@ -85,6 +74,13 @@ nnoremap <M-n> :bnext<CR>
 nnoremap <M-p> :bprevious<CR>
 " Close/delete buffer with alt+x
 nnoremap <M-x> :bd<CR>
+" Mappings for window switching
+noremap <M-h> <C-w>h
+noremap <M-l> <C-w>l
+noremap <M-j> <C-w>j
+noremap <M-k> <C-w>k
+" Close all windows except current
+noremap <M-o> <C-w>o
 " jk is escape
 inoremap jk <esc>
 " For opening a new line between two curly braces when you press { and enter.
@@ -96,6 +92,10 @@ inoremap [<CR> [<CR>]<ESC>O
 inoremap (;<CR> (<CR>);<ESC>O
 " Append semicolon and enter new line
 inoremap <M-CR> <esc>A;<esc>o
+" Jump to next line without leaving insert mode
+inoremap <C-o> <esc>o
+" Jump two lines without leaving insert mode
+inoremap <C-j> <esc>jo
 
 " netrw settings
 let g:netrw_banner = 0
