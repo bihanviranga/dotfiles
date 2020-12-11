@@ -131,6 +131,7 @@ call plug#begin('~/.vim/plugged')
 "-------------- Commands ------------------"
 	Plug 'yuttie/comfortable-motion.vim'
 	Plug 'vimwiki/vimwiki'
+	Plug 'chrisbra/NrrwRgn'
 "-------------- Integrations --------------"
 	Plug 'tpope/vim-fugitive'
 	Plug 'junegunn/fzf'
@@ -174,6 +175,14 @@ let g:lightline = {
 	\ 	'cocstatus': 'coc#status'
 	\ },
 	\ }
+
+" NrrwRgn settings
+" Open new buffer in a vertical split
+let g:nrrw_rgn_vert = 1
+" Set the size (absolute=rows or cols, relative=percentage)
+let g:nrrw_rgn_resize_window = 'relative'
+" Set the new buffer width
+let g:nrrw_rgn_wdth = 50
 
 """"""""""""""""""""""""""""
 " COC config
