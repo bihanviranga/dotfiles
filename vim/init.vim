@@ -98,6 +98,8 @@ inoremap <M-CR> <esc>A;<esc>o
 inoremap <C-o> <esc>o
 " Jump two lines without leaving insert mode
 inoremap <C-j> <esc>jo
+" Jump to the end of the line without leaving insert mode
+inoremap <C-l> <esc>A
 
 " netrw settings
 let g:netrw_banner = 0
