@@ -109,17 +109,15 @@ let g:netrw_altv = 1
 " Plug plugins
 call plug#begin('~/.vim/plugged')
 "-------------- Colorschemes --------------"
-	Plug 'lifepillar/vim-gruvbox8'
 	Plug 'nanotech/jellybeans.vim'
 	Plug 'roosta/srcery'
 	Plug 'tomasr/molokai'
 	Plug 'cocopon/iceberg.vim'
 	Plug 'jaredgorski/spacecamp'
 	Plug 'bluz71/vim-moonfly-colors'
-	Plug 'kaicataldo/material.vim', {'branch': 'main'}
 	Plug 'djjcast/mirodark'
 	Plug 'fenetikm/falcon'
-	Plug 'nlknguyen/papercolor-theme'
+	Plug 'kristijanhusak/vim-hybrid-material'
 "-------------- Language ------------------"
 	Plug 'mattn/emmet-vim'
 	Plug 'raimondi/delimitmate'
@@ -143,7 +141,7 @@ call plug#begin('~/.vim/plugged')
 call plug#end()
 " NOTE: always load devicons as the last one
 
-colorscheme molokai
+colorscheme hybrid_material
 
 " FZF settings
 noremap <C-p> :FZF<CR>
