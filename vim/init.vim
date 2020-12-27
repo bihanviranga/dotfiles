@@ -132,6 +132,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'yuttie/comfortable-motion.vim'
 	Plug 'vimwiki/vimwiki'
 	Plug 'chrisbra/NrrwRgn'
+	Plug 'godlygeek/tabular'
 "-------------- Integrations --------------"
 	Plug 'tpope/vim-fugitive'
 	Plug 'junegunn/fzf'
