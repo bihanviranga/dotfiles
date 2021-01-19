@@ -16,6 +16,8 @@ alias egrep='egrep --color=auto'
 alias diff='diff --color=auto'
 alias pacman='pacman --color=auto'
 alias xclip='xclip -selection "clipboard"'
+alias copy='rsync -ah --progress'
+alias move='rsync -ah --progress --remove-source-files'
 
 alias ls='lsd'
 alias cat='bat'
