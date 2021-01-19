@@ -9,10 +9,11 @@
 		"cpp",
 		"typescript",
 		"typescriptreact",
-		"python"
+		"python",
+		"cs"
 	],
 	"prettier.eslintIntegration": true,
 	"python.jediEnabled": false,
-	"python.venvFolders": ["env", "venv"]
+	"python.venvFolders": ["env", "venv"],
 }
 

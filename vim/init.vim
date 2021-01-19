@@ -49,6 +49,7 @@ autocmd BufWritePre * %s/\s\+$//e
 
 " set custom indentation per file type
 "autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
+autocmd FileType cs setlocal shiftwidth=4 tabstop=4
 
 " Disable automatic comment insertion
 " Means that when you enter a comment and create a newline,
@@ -124,6 +125,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'sheerun/vim-polyglot'
 	Plug 'neoclide/coc.nvim', {'branch': 'release'}
 	Plug 'leafoftree/vim-svelte-plugin'
+	Plug 'OmniSharp/omnisharp-vim'
 "-------------- Interface -----------------"
 	Plug 'ryanoasis/vim-devicons'
 	Plug 'itchyny/lightline.vim'
@@ -341,3 +343,5 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
+" Show actions
+nnoremap <silent><nowait> <leader>. :CocAction<CR>
