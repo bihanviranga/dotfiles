@@ -5,7 +5,7 @@ set shiftwidth=2
 " enable line numbers
 set number
 " Minimum width of line numbers column
-set numberwidth=2
+set numberwidth=3
 " highlight current line
 set cursorline
 " visual autocomplete for command menu
@@ -144,7 +144,7 @@ call plug#begin('~/.vim/plugged')
 call plug#end()
 " NOTE: always load devicons as the last one
 
-colorscheme hybrid_material
+colorscheme spacecamp
 
 " FZF settings
 noremap <C-p> :FZF<CR>
@@ -168,7 +168,7 @@ let g:vimwiki_list = [wiki_notes, wiki_self]
 
 " lightline settings
 let g:lightline = {
-	\ 'colorscheme': 'seoul256',
+	\ 'colorscheme': 'powerlineish',
 	\ 'active': {
 	\ 	'left': [ [ 'mode', 'paste' ],
 	\ 					  [ 'gitbranch', 'readonly', 'filename', 'modified', 'cocstatus' ] ]
@@ -177,7 +177,7 @@ let g:lightline = {
 	\ 	'gitbranch': 'FugitiveHead',
 	\ 	'cocstatus': 'coc#status'
 	\ },
-	\ }
+	\}
 
 " NrrwRgn settings
 " Open new buffer in a vertical split
