@@ -119,6 +119,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'djjcast/mirodark'
 	Plug 'fenetikm/falcon'
 	Plug 'kristijanhusak/vim-hybrid-material'
+	Plug 'drewtempelmeyer/palenight.vim'
 "-------------- Language ------------------"
 	Plug 'mattn/emmet-vim'
 	Plug 'raimondi/delimitmate'
