@@ -167,6 +167,8 @@ let wiki_self.syntax = 'markdown'
 let wiki_self.ext = '.md'
 
 let g:vimwiki_list = [wiki_notes, wiki_self]
+" Stop vimwiki from treating all markdown files as vimwiki entries
+let g:vimwiki_global_ext = 0
 
 " lightline settings
 let g:lightline = {
