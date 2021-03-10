@@ -69,7 +69,7 @@ nnoremap <leader><space> :nohlsearch<CR>
 " Space open/closes folds
 nnoremap <space> za
 " List buffers. Enter buffer number/name to switch
-nnoremap <leader>b :buffers<CR>:buffer<Space>
+nnoremap <leader>b :Buffers<CR>
 " Switch between buffers with alt+n alt+p
 nnoremap <M-n> :bnext<CR>
 nnoremap <M-p> :bprevious<CR>
@@ -139,6 +139,7 @@ call plug#begin('~/.vim/plugged')
 "-------------- Integrations --------------"
 	Plug 'tpope/vim-fugitive'
 	Plug 'junegunn/fzf'
+	Plug 'junegunn/fzf.vim'
 	Plug 'scrooloose/nerdcommenter'
 	Plug 'wakatime/vim-wakatime'
 	"Plug 'tweekmonster/startuptime.vim'
@@ -148,7 +149,7 @@ call plug#end()
 colorscheme spacecamp
 
 " FZF settings
-noremap <C-p> :FZF<CR>
+noremap <C-p> :GFiles<CR>
 let g:fzf_action = {'ctrl-t':'tab split', 'ctrl-s':'split', 'ctrl-v':'vsplit'}
 
 " emmet-vim plugin
