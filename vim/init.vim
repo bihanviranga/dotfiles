@@ -47,9 +47,13 @@ autocmd InsertEnter * norm zz
 " Strip trailing whitespace on save
 autocmd BufWritePre * %s/\s\+$//e
 
+" Set filetype for extension
+au BufRead,BufNewFile *.vtl set filetype=vtl
+
 " set custom indentation per file type
 "autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
 autocmd FileType cs setlocal shiftwidth=4 tabstop=4
+autocmd FileType vtl setlocal shiftwidth=4 tabstop=4
 
 " Disable automatic comment insertion
 " Means that when you enter a comment and create a newline,
