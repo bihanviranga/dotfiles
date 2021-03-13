@@ -52,6 +52,17 @@ export JUNIT_HOME="/home/bv/src/lib"
 export CLASSPATH="$CLASSPATH:$JUNIT_HOME/junit-4.13.jar:$JUNIT_HOME/hamcrest-core-1.3.jar:."
 
 ##################################################
+# PATH extensions
+##################################################
+export PATH="$PATH:/home/bv/bin/flutter/bin"
+export PATH="$PATH:/home/bv/bin/android-studio/bin"
+export PATH="$PATH:/home/bv/.gem/ruby/2.7.0/bin"
+export PATH="$PATH:/home/bv/.dotnet/tools"
+export PATH="$PATH:/home/bv/.yarn/bin"
+export PATH="$PATH:/home/bv/.local/bin"
+export PATH="$PATH:/home/bv/bin"
+
+##################################################
 # Loading bash-completion
 ##################################################
 if [ -f /usr/share/bash-completion/bash_completion ]; then
