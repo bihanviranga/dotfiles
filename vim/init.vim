@@ -1,7 +1,8 @@
 " number of VISUAL spaces per TAB
 set tabstop=2
-" uh
 set shiftwidth=2
+" Use spaces instead of tabs
+set expandtab
 " enable line numbers
 set number
 " Minimum width of line numbers column
@@ -124,6 +125,8 @@ call plug#begin('~/.vim/plugged')
 	Plug 'fenetikm/falcon'
 	Plug 'kristijanhusak/vim-hybrid-material'
 	Plug 'drewtempelmeyer/palenight.vim'
+	Plug 'issadarkthing/vim-rex'
+	Plug 'ChristianChiarulli/nvcode-color-schemes.vim'
 "-------------- Language ------------------"
 	Plug 'mattn/emmet-vim'
 	Plug 'raimondi/delimitmate'
@@ -140,6 +143,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'vimwiki/vimwiki'
 	Plug 'chrisbra/NrrwRgn'
 	Plug 'godlygeek/tabular'
+	Plug 'tpope/vim-surround'
 "-------------- Integrations --------------"
 	Plug 'tpope/vim-fugitive'
 	Plug 'junegunn/fzf'
@@ -150,7 +154,7 @@ call plug#begin('~/.vim/plugged')
 call plug#end()
 " NOTE: always load devicons as the last one
 
-colorscheme spacecamp
+colorscheme mirodark
 
 " FZF settings
 noremap <C-p> :GFiles<CR>

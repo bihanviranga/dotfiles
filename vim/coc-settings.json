@@ -10,7 +10,9 @@
 		"typescript",
 		"typescriptreact",
 		"python",
-		"cs"
+		"cs",
+		"css",
+		"scss"
 	],
 	"prettier.eslintIntegration": true,
 	"python.jediEnabled": false,
