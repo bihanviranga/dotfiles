@@ -62,6 +62,9 @@ autocmd FileType vtl setlocal shiftwidth=4 tabstop=4
 " This disables it for all filetypes
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
+" JSDoc shortcut
+autocmd Filetype javascript,typescript,javascriptreact,typescriptreact inoremap <buffer> /** /**  */<esc>hhi
+
 " Open vimrc file in a vertical split
 nnoremap <leader>ev :vsplit $MYVIMRC<CR>
 " Source vimrc file
@@ -154,7 +157,7 @@ call plug#begin('~/.vim/plugged')
 call plug#end()
 " NOTE: always load devicons as the last one
 
-colorscheme mirodark
+colorscheme snazzy
 
 " FZF settings
 noremap <C-p> :GFiles<CR>
