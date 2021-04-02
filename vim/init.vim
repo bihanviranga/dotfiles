@@ -8,7 +8,7 @@ set number
 " Minimum width of line numbers column
 set numberwidth=3
 " highlight current line
-set cursorline
+"set cursorline
 " visual autocomplete for command menu
 set wildmenu
 " redraw only when needed
@@ -44,7 +44,7 @@ filetype plugin on
 let mapleader=","
 
 " When entering insert mode, vertically center current line
-autocmd InsertEnter * norm zz
+"autocmd InsertEnter * norm zz
 " Strip trailing whitespace on save
 autocmd BufWritePre * %s/\s\+$//e
 
@@ -130,19 +130,20 @@ call plug#begin('~/.vim/plugged')
 	Plug 'drewtempelmeyer/palenight.vim'
 	Plug 'issadarkthing/vim-rex'
 	Plug 'ChristianChiarulli/nvcode-color-schemes.vim'
+	Plug 'vim-airline/vim-airline-themes'
 "-------------- Language ------------------"
 	Plug 'mattn/emmet-vim'
-	Plug 'raimondi/delimitmate'
+	"Plug 'raimondi/delimitmate'
 	Plug 'sheerun/vim-polyglot'
 	Plug 'neoclide/coc.nvim', {'branch': 'release'}
 	Plug 'leafoftree/vim-svelte-plugin'
 	Plug 'OmniSharp/omnisharp-vim'
 "-------------- Interface -----------------"
-	Plug 'ryanoasis/vim-devicons'
-	Plug 'itchyny/lightline.vim'
+	"Plug 'ryanoasis/vim-devicons'
+	Plug 'vim-airline/vim-airline'
 	Plug 'Yggdroot/indentLine'
 "-------------- Commands ------------------"
-	Plug 'yuttie/comfortable-motion.vim'
+	"Plug 'yuttie/comfortable-motion.vim'
 	Plug 'vimwiki/vimwiki'
 	Plug 'chrisbra/NrrwRgn'
 	Plug 'godlygeek/tabular'
@@ -155,7 +156,6 @@ call plug#begin('~/.vim/plugged')
 	Plug 'wakatime/vim-wakatime'
 	"Plug 'tweekmonster/startuptime.vim'
 call plug#end()
-" NOTE: always load devicons as the last one
 
 colorscheme snazzy
 
@@ -167,32 +167,19 @@ let g:fzf_action = {'ctrl-t':'tab split', 'ctrl-s':'split', 'ctrl-v':'vsplit'}
 let g:user_emmet_leader_key='<C-x>'
 
 " VimWiki settings
-let wiki_notes = {}
-let wiki_notes.path = '/mnt/a/University/y3s1/notes'
-let wiki_notes.syntax = 'markdown'
-let wiki_notes.ext = '.md'
+"let wiki_notes = {}
+"let wiki_notes.path = '/mnt/a/University/y3s1/notes'
+"let wiki_notes.syntax = 'markdown'
+"let wiki_notes.ext = '.md'
 
-let wiki_self = {}
-let wiki_self.path = '~/Documents/wiki'
-let wiki_self.syntax = 'markdown'
-let wiki_self.ext = '.md'
+"let wiki_self = {}
+"let wiki_self.path = '~/Documents/wiki'
+"let wiki_self.syntax = 'markdown'
+"let wiki_self.ext = '.md'
 
-let g:vimwiki_list = [wiki_notes, wiki_self]
+"let g:vimwiki_list = [wiki_notes, wiki_self]
 " Stop vimwiki from treating all markdown files as vimwiki entries
 let g:vimwiki_global_ext = 0
-
-" lightline settings
-let g:lightline = {
-	\ 'colorscheme': 'powerlineish',
-	\ 'active': {
-	\ 	'left': [ [ 'mode', 'paste' ],
-	\ 					  [ 'gitbranch', 'readonly', 'filename', 'modified', 'cocstatus' ] ]
-	\ },
-	\ 'component_function': {
-	\ 	'gitbranch': 'FugitiveHead',
-	\ 	'cocstatus': 'coc#status'
-	\ },
-	\}
 
 " NrrwRgn settings
 " Open new buffer in a vertical split
@@ -201,6 +188,8 @@ let g:nrrw_rgn_vert = 1
 let g:nrrw_rgn_resize_window = 'relative'
 " Set the new buffer width
 let g:nrrw_rgn_wdth = 50
+
+let g:airline_theme='lucius'
 
 """"""""""""""""""""""""""""
 " COC config
@@ -216,7 +205,7 @@ set cmdheight=1
 
 " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 " delays and poor user experience.
-set updatetime=300
+set updatetime=1000
 
 " Don't pass messages to |ins-completion-menu|.
 set shortmess+=c
@@ -266,7 +255,7 @@ nnoremap <silent> [g <Plug>(coc-diagnostic-prev)
 nnoremap <silent> ]g <Plug>(coc-diagnostic-next)
 
 " GoTo code navigation.
-nnoremap <silent> gd <Plug>(coc-definition)
+nnoremap <leader>gd <plug>(coc-definition)
 nnoremap <silent> gy <Plug>(coc-type-definition)
 nnoremap <silent> gi <Plug>(coc-implementation)
 nnoremap <silent> gr <Plug>(coc-references)
@@ -283,14 +272,14 @@ function! s:show_documentation()
 endfunction
 
 " Highlight the symbol and its references when holding the cursor.
-autocmd CursorHold * silent call CocActionAsync('highlight')
+"autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " Symbol renaming.
-nnoremap <leader>rn <Plug>(coc-rename)
+"nnoremap <leader>rn <Plug>(coc-rename)
 
 " Formatting selected code.
-xnoremap <leader>f  <Plug>(coc-format-selected)
-nnoremap <leader>f  <Plug>(coc-format-selected)
+"xnoremap <leader>f  <Plug>(coc-format-selected)
+"nnoremap <leader>f  <Plug>(coc-format-selected)
 
 augroup mygroup
   autocmd!
@@ -302,35 +291,27 @@ augroup end
 
 " Applying codeAction to the selected region.
 " Example: `<leader>aap` for current paragraph
-xnoremap <leader>a  <Plug>(coc-codeaction-selected)
-nnoremap <leader>a  <Plug>(coc-codeaction-selected)
+"xnoremap <leader>a  <Plug>(coc-codeaction-selected)
+"nnoremap <leader>a  <Plug>(coc-codeaction-selected)
 
 " Remap keys for applying codeAction to the current buffer.
-nnoremap <leader>ac  <Plug>(coc-codeaction)
+"nnoremap <leader>ac  <Plug>(coc-codeaction)
 " Apply AutoFix to problem on the current line.
-nnoremap <leader>qf  <Plug>(coc-fix-current)
+"nnoremap <leader>qf  <Plug>(coc-fix-current)
 
 " Map function and class text objects
 " NOTE: Requires 'textDocument.documentSymbol' support from the language server.
-xnoremap if <Plug>(coc-funcobj-i)
-onoremap if <Plug>(coc-funcobj-i)
-xnoremap af <Plug>(coc-funcobj-a)
-onoremap af <Plug>(coc-funcobj-a)
-xnoremap ic <Plug>(coc-classobj-i)
-onoremap ic <Plug>(coc-classobj-i)
-xnoremap ac <Plug>(coc-classobj-a)
-onoremap ac <Plug>(coc-classobj-a)
-
-" Use CTRL-S for selections ranges.
-" Requires 'textDocument/selectionRange' support of LS, ex: coc-tsserver
-nnoremap <silent> <C-s> <Plug>(coc-range-select)
-xnoremap <silent> <C-s> <Plug>(coc-range-select)
+"xnoremap if <Plug>(coc-funcobj-i)
+"onoremap if <Plug>(coc-funcobj-i)
+"xnoremap af <Plug>(coc-funcobj-a)
+"onoremap af <Plug>(coc-funcobj-a)
+"xnoremap ic <Plug>(coc-classobj-i)
+"onoremap ic <Plug>(coc-classobj-i)
+"xnoremap ac <Plug>(coc-classobj-a)
+"onoremap ac <Plug>(coc-classobj-a)
 
 " Add `:Format` command to format current buffer.
 command! -nargs=0 Format :call CocAction('format')
-
-" Add `:Fold` command to fold current buffer.
-command! -nargs=? Fold :call     CocAction('fold', <f-args>)
 
 " Add `:OR` command for organize imports of the current buffer.
 command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
