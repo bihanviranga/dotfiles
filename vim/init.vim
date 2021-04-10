@@ -16,15 +16,15 @@ set lazyredraw
 " highlight matching bracket
 set showmatch
 " enable folding
-set foldenable
+"set foldenable
 " open most folds by default
-set foldlevelstart=10
+"set foldlevelstart=10
 " 10 nested fold max
-set foldnestmax=10
+"set foldnestmax=10
 " fold based on indent level
-set foldmethod=indent
+"set foldmethod=indent
 " required for vimwiki
-set nocompatible
+"set nocompatible
 " Use system keyboard
 set clipboard+=unnamedplus
 " new splits get added to right or below
@@ -75,7 +75,7 @@ nnoremap _ ddkP
 " Stop hightlighting search results
 nnoremap <leader><space> :nohlsearch<CR>
 " Space open/closes folds
-nnoremap <space> za
+"nnoremap <space> za
 " List buffers. Enter buffer number/name to switch
 nnoremap <leader>b :Buffers<CR>
 " Switch between buffers with alt+n alt+p
@@ -129,22 +129,22 @@ call plug#begin('~/.vim/plugged')
 	Plug 'kristijanhusak/vim-hybrid-material'
 	Plug 'drewtempelmeyer/palenight.vim'
 	Plug 'issadarkthing/vim-rex'
-	Plug 'ChristianChiarulli/nvcode-color-schemes.vim'
 	Plug 'vim-airline/vim-airline-themes'
+	Plug 'morhetz/gruvbox'
 "-------------- Language ------------------"
-	Plug 'mattn/emmet-vim'
-	"Plug 'raimondi/delimitmate'
+	"Plug 'mattn/emmet-vim'
+	Plug 'raimondi/delimitmate'
 	Plug 'sheerun/vim-polyglot'
 	Plug 'neoclide/coc.nvim', {'branch': 'release'}
-	Plug 'leafoftree/vim-svelte-plugin'
-	Plug 'OmniSharp/omnisharp-vim'
+	"Plug 'leafoftree/vim-svelte-plugin'
+	"Plug 'OmniSharp/omnisharp-vim'
 "-------------- Interface -----------------"
 	"Plug 'ryanoasis/vim-devicons'
 	Plug 'vim-airline/vim-airline'
 	Plug 'Yggdroot/indentLine'
 "-------------- Commands ------------------"
 	"Plug 'yuttie/comfortable-motion.vim'
-	Plug 'vimwiki/vimwiki'
+	"Plug 'vimwiki/vimwiki'
 	Plug 'chrisbra/NrrwRgn'
 	Plug 'godlygeek/tabular'
 	Plug 'tpope/vim-surround'
@@ -153,18 +153,18 @@ call plug#begin('~/.vim/plugged')
 	Plug 'junegunn/fzf'
 	Plug 'junegunn/fzf.vim'
 	Plug 'scrooloose/nerdcommenter'
-	Plug 'wakatime/vim-wakatime'
+	"Plug 'wakatime/vim-wakatime'
 	"Plug 'tweekmonster/startuptime.vim'
 call plug#end()
 
-colorscheme snazzy
+colorscheme gruvbox
 
 " FZF settings
 noremap <C-p> :GFiles<CR>
 let g:fzf_action = {'ctrl-t':'tab split', 'ctrl-s':'split', 'ctrl-v':'vsplit'}
 
 " emmet-vim plugin
-let g:user_emmet_leader_key='<C-x>'
+"let g:user_emmet_leader_key='<C-x>'
 
 " VimWiki settings
 "let wiki_notes = {}
@@ -179,7 +179,7 @@ let g:user_emmet_leader_key='<C-x>'
 
 "let g:vimwiki_list = [wiki_notes, wiki_self]
 " Stop vimwiki from treating all markdown files as vimwiki entries
-let g:vimwiki_global_ext = 0
+"let g:vimwiki_global_ext = 0
 
 " NrrwRgn settings
 " Open new buffer in a vertical split
@@ -255,10 +255,10 @@ nnoremap <silent> [g <Plug>(coc-diagnostic-prev)
 nnoremap <silent> ]g <Plug>(coc-diagnostic-next)
 
 " GoTo code navigation.
-nnoremap <leader>gd <plug>(coc-definition)
-nnoremap <silent> gy <Plug>(coc-type-definition)
-nnoremap <silent> gi <Plug>(coc-implementation)
-nnoremap <silent> gr <Plug>(coc-references)
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
 
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<CR>
@@ -275,7 +275,7 @@ endfunction
 "autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " Symbol renaming.
-"nnoremap <leader>rn <Plug>(coc-rename)
+nmap <leader>rn <Plug>(coc-rename)
 
 " Formatting selected code.
 "xnoremap <leader>f  <Plug>(coc-format-selected)
