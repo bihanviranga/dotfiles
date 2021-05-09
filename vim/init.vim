@@ -148,6 +148,8 @@ call plug#begin('~/.vim/plugged')
 	Plug 'chrisbra/NrrwRgn'
 	Plug 'godlygeek/tabular'
 	Plug 'tpope/vim-surround'
+	Plug 'kana/vim-textobj-user'
+	Plug 'kana/vim-textobj-line'
 "-------------- Integrations --------------"
 	Plug 'tpope/vim-fugitive'
 	Plug 'junegunn/fzf'
