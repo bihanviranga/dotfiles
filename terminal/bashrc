@@ -27,6 +27,12 @@ alias dic='sdcv --color'
 alias wifi='nmcli device wifi'
 alias gitdo='gitdo -v'
 
+alias gs='git status'
+alias gc='git checkout'
+alias gl='git log --oneline -n 10'
+alias gb='git branch'
+alias gd='git diff'
+
 ##################################################
 # Prompt
 ##################################################
