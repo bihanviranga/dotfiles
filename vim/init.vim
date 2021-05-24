@@ -31,6 +31,8 @@ set clipboard+=unnamedplus
 set splitbelow splitright
 " Hide the status/mode because lightline already shows it
 set noshowmode
+" Enable 24-bit color
+set termguicolors
 
 " enable syntax processing
 syntax enable
