@@ -131,6 +131,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'issadarkthing/vim-rex'
 	Plug 'vim-airline/vim-airline-themes'
 	Plug 'morhetz/gruvbox'
+	Plug 'embark-theme/vim', { 'as': 'embark' }
 "-------------- Language ------------------"
 	"Plug 'mattn/emmet-vim'
 	Plug 'raimondi/delimitmate'
@@ -159,6 +160,10 @@ call plug#begin('~/.vim/plugged')
 	"Plug 'tweekmonster/startuptime.vim'
 call plug#end()
 
+" Gruvbox only enables italics for GUI Vim.
+" Since my terminal supports italics, this line
+" manually enables it
+let g:gruvbox_italic=1
 colorscheme gruvbox
 
 " FZF settings
@@ -169,15 +174,6 @@ let g:fzf_action = {'ctrl-t':'tab split', 'ctrl-s':'split', 'ctrl-v':'vsplit'}
 "let g:user_emmet_leader_key='<C-x>'
 
 " VimWiki settings
-"let wiki_notes = {}
-"let wiki_notes.path = '/mnt/a/University/y3s1/notes'
-"let wiki_notes.syntax = 'markdown'
-"let wiki_notes.ext = '.md'
-
-"let wiki_self = {}
-"let wiki_self.path = '~/Documents/wiki'
-"let wiki_self.syntax = 'markdown'
-"let wiki_self.ext = '.md'
 
 "let g:vimwiki_list = [wiki_notes, wiki_self]
 " Stop vimwiki from treating all markdown files as vimwiki entries
