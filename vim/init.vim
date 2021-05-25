@@ -79,7 +79,7 @@ nnoremap <leader><space> :nohlsearch<CR>
 " Space open/closes folds
 "nnoremap <space> za
 " List buffers. Enter buffer number/name to switch
-nnoremap <leader>b :Buffers<CR>
+nnoremap <leader>p :Buffers<CR>
 " Switch between buffers with alt+n alt+p
 nnoremap <M-n> :bnext<CR>
 nnoremap <M-p> :bprevious<CR>
@@ -170,6 +170,7 @@ colorscheme gruvbox
 
 " FZF settings
 noremap <C-p> :GFiles<CR>
+noremap <leader>f :FZF<CR>
 let g:fzf_action = {'ctrl-t':'tab split', 'ctrl-s':'split', 'ctrl-v':'vsplit'}
 
 " emmet-vim plugin
