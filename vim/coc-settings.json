@@ -15,8 +15,6 @@
 		"scss"
 	],
 	"prettier.eslintIntegration": true,
-	"python.jediEnabled": false,
-	"python.venvFolders": ["env", "venv"],
 	"javascript.updateImportsOnFileMove.enable": true,
 	"typescript.updateImportsOnFileMove.enable": true,
 	"eslint.alwaysShowStatus": true,
