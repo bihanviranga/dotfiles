@@ -1,6 +1,6 @@
 # Terminal Emulator and Bash
 
-![Terminal](terminalss.png)
+![Terminal](e6bef84.png)
 
 Currently using
 - ~~Qterminal~~
