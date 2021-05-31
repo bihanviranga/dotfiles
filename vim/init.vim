@@ -16,13 +16,13 @@ set lazyredraw
 " highlight matching bracket
 set showmatch
 " enable folding
-"set foldenable
+set foldenable
 " open most folds by default
-"set foldlevelstart=10
+set foldlevelstart=10
 " 10 nested fold max
-"set foldnestmax=10
+set foldnestmax=10
 " fold based on indent level
-"set foldmethod=indent
+set foldmethod=indent
 " required for vimwiki
 "set nocompatible
 " Use system keyboard
