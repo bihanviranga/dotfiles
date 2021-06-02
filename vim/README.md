@@ -1,5 +1,5 @@
 # Vim Configuration
-![Vim](157dbfa.png)
+![Vim](17723fe.png)
 
 - Vim distribution : [NeoVim](https://neovim.io)
 
