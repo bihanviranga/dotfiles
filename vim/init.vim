@@ -134,6 +134,8 @@ call plug#begin('~/.vim/plugged')
 	Plug 'vim-airline/vim-airline-themes'
 	Plug 'morhetz/gruvbox'
 	Plug 'embark-theme/vim', { 'as': 'embark' }
+	Plug 'sainnhe/gruvbox-material'
+	Plug 'sainnhe/edge'
 "-------------- Language ------------------"
 	"Plug 'mattn/emmet-vim'
 	Plug 'raimondi/delimitmate'
