@@ -212,18 +212,18 @@
         <wrap>no</wrap>
       </action>
     </keybind>
-    <keybind key="C-A-Up">
-      <action name="GoToDesktop">
-        <to>up</to>
-        <wrap>no</wrap>
-      </action>
-    </keybind>
-    <keybind key="C-A-Down">
-      <action name="GoToDesktop">
-        <to>down</to>
-        <wrap>no</wrap>
-      </action>
-    </keybind>
+    <!--<keybind key="C-A-Up">-->
+      <!--<action name="GoToDesktop">-->
+        <!--<to>up</to>-->
+        <!--<wrap>no</wrap>-->
+      <!--</action>-->
+    <!--</keybind>-->
+    <!--<keybind key="C-A-Down">-->
+      <!--<action name="GoToDesktop">-->
+        <!--<to>down</to>-->
+        <!--<wrap>no</wrap>-->
+      <!--</action>-->
+    <!--</keybind>-->
     <keybind key="S-A-Left">
       <action name="SendToDesktop">
         <to>left</to>
@@ -236,42 +236,48 @@
         <wrap>no</wrap>
       </action>
     </keybind>
-    <keybind key="S-A-Up">
-      <action name="SendToDesktop">
-        <to>up</to>
-        <wrap>no</wrap>
-      </action>
-    </keybind>
-    <keybind key="S-A-Down">
-      <action name="SendToDesktop">
-        <to>down</to>
-        <wrap>no</wrap>
-      </action>
-    </keybind>
-    <keybind key="W-F1">
-      <action name="GoToDesktop">
-        <to>1</to>
-      </action>
-    </keybind>
-    <keybind key="W-F2">
-      <action name="GoToDesktop">
-        <to>2</to>
-      </action>
-    </keybind>
-    <keybind key="W-F3">
-      <action name="GoToDesktop">
-        <to>3</to>
-      </action>
-    </keybind>
-    <keybind key="W-F4">
-      <action name="GoToDesktop">
-        <to>4</to>
-      </action>
-    </keybind>
-    <keybind key="W-d">
-      <action name="ToggleShowDesktop"/>
-    </keybind>
+    <!--<keybind key="S-A-Up">-->
+      <!--<action name="SendToDesktop">-->
+        <!--<to>up</to>-->
+        <!--<wrap>no</wrap>-->
+      <!--</action>-->
+    <!--</keybind>-->
+    <!--<keybind key="S-A-Down">-->
+      <!--<action name="SendToDesktop">-->
+        <!--<to>down</to>-->
+        <!--<wrap>no</wrap>-->
+      <!--</action>-->
+    <!--</keybind>-->
+    <!--<keybind key="W-F1">-->
+      <!--<action name="GoToDesktop">-->
+        <!--<to>1</to>-->
+      <!--</action>-->
+    <!--</keybind>-->
+    <!--<keybind key="W-F2">-->
+      <!--<action name="GoToDesktop">-->
+        <!--<to>2</to>-->
+      <!--</action>-->
+    <!--</keybind>-->
+    <!--<keybind key="W-F3">-->
+      <!--<action name="GoToDesktop">-->
+        <!--<to>3</to>-->
+      <!--</action>-->
+    <!--</keybind>-->
+    <!--<keybind key="W-F4">-->
+      <!--<action name="GoToDesktop">-->
+        <!--<to>4</to>-->
+      <!--</action>-->
+    <!--</keybind>-->
+    <!--<keybind key="W-d">-->
+      <!--<action name="ToggleShowDesktop"/>-->
+    <!--</keybind>-->
     <!-- Keybindings for windows -->
+    <keybind key="C-Prior">
+      <action name="ToggleMaximize"/>
+    </keybind>
+    <keybind key="C-Next">
+      <action name="Iconify"/>
+    </keybind>
     <keybind key="A-F4">
       <action name="Close"/>
     </keybind>
@@ -737,7 +743,7 @@
   # order that they appear in this list
 
 
-    # each rule element can be left out or set to 'default' to specify to not 
+    # each rule element can be left out or set to 'default' to specify to not
     # change that attribute of the window
 
     <decor>yes</decor>
@@ -806,7 +812,7 @@
 	<application class="Firefox">
 		<decor>no</decor>
 	</application>
-	
+
 	<application name="firefox">
 		<decor>no</decor>
 	</application>
