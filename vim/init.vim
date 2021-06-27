@@ -136,8 +136,9 @@ call plug#begin('~/.vim/plugged')
 	Plug 'embark-theme/vim', { 'as': 'embark' }
 	Plug 'sainnhe/gruvbox-material'
 	Plug 'sainnhe/edge'
+	Plug 'ayu-theme/ayu-vim'
 "-------------- Language ------------------"
-	"Plug 'mattn/emmet-vim'
+	Plug 'mattn/emmet-vim'
 	Plug 'raimondi/delimitmate'
 	Plug 'sheerun/vim-polyglot'
 	Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -168,7 +169,7 @@ call plug#end()
 " Since my terminal supports italics, this line
 " manually enables it
 let g:gruvbox_italic=1
-colorscheme gruvbox
+colorscheme ayu
 
 " FZF settings
 noremap <C-p> :GFiles<CR>
@@ -176,7 +177,7 @@ noremap <leader>f :FZF<CR>
 let g:fzf_action = {'ctrl-t':'tab split', 'ctrl-s':'split', 'ctrl-v':'vsplit'}
 
 " emmet-vim plugin
-"let g:user_emmet_leader_key='<C-x>'
+let g:user_emmet_leader_key='<C-x>'
 
 " VimWiki settings
 
