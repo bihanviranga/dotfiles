@@ -23,10 +23,10 @@ font:
     style: Bold
   size: 9.0
 
-bell:
-  animation: Ease
-  duration: 100
-  color: '#282828'
+#bell:
+  #animation: Ease
+  #duration: 100
+  #color: '#282828'
 
 env:
   TERM: xterm-256color

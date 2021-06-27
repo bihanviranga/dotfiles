@@ -96,6 +96,8 @@ nnoremap <leader>vu :w !diff % -<CR>
 "noremap <M-k> <C-w>k
 " Close all windows except current
 noremap <M-o> <C-w>o
+" Create vertical split
+nnoremap vv :vsplit<CR>
 " jk is escape
 inoremap jk <esc>
 " For opening a new line between two curly braces when you press { and enter.
