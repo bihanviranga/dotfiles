@@ -88,10 +88,12 @@ nnoremap <M-x> :bd<CR>
 " View unsaved changes in file
 nnoremap <leader>vu :w !diff % -<CR>
 " Mappings for window switching
-noremap <M-h> <C-w>h
-noremap <M-l> <C-w>l
-noremap <M-j> <C-w>j
-noremap <M-k> <C-w>k
+" Now managed by vim-tmux-navigator
+" See vim_tmux_navigator_config
+"noremap <M-h> <C-w>h
+"noremap <M-l> <C-w>l
+"noremap <M-j> <C-w>j
+"noremap <M-k> <C-w>k
 " Close all windows except current
 noremap <M-o> <C-w>o
 " jk is escape
@@ -161,6 +163,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'junegunn/fzf'
 	Plug 'junegunn/fzf.vim'
 	Plug 'scrooloose/nerdcommenter'
+	Plug 'christoomey/vim-tmux-navigator'
 	"Plug 'wakatime/vim-wakatime'
 	"Plug 'tweekmonster/startuptime.vim'
 call plug#end()
@@ -211,6 +214,14 @@ let g:airline#extensions#default#section_truncate_width = {
 " %m is the modified flag
 " %r is the read only flag
 let g:airline_section_c = '%t%m%r'
+
+" vim_tmux_navigator_config
+" This allows using the same keys to switch tmux panes and vim windows
+nnoremap <silent> <M-h> :TmuxNavigateLeft<cr>
+nnoremap <silent> <M-j> :TmuxNavigateDown<cr>
+nnoremap <silent> <M-k> :TmuxNavigateUp<cr>
+nnoremap <silent> <M-l> :TmuxNavigateRight<cr>
+"nnoremap <silent> {Previous-Mapping} :TmuxNavigatePrevious<cr>
 
 """"""""""""""""""""""""""""
 " COC config
