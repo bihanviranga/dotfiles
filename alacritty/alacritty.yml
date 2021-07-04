@@ -16,12 +16,12 @@ scrolling:
 
 font:
   normal:
-    family: FiraCode Nerd Font
+    family: Anonymice Nerd Font
     style: Light
   bold:
-    family: FiraCode Nerd Font
+    family: Anonymice Nerd Font
     style: Bold
-  size: 9.0
+  size: 10.0
 
 #bell:
   #animation: Ease
@@ -34,11 +34,14 @@ env:
 shell:
   program: /usr/bin/tmux
 
-# Colors (Gruvbox dark)
+# Colors (Ayu Dark)
 colors:
+  # Default colors
   primary:
     background: '0x0A0E14'
     foreground: '0xB3B1AD'
+
+  # Normal colors
   normal:
     black:   '0x01060E'
     red:     '0xEA6C73'
@@ -48,6 +51,8 @@ colors:
     magenta: '0xFAE994'
     cyan:    '0x90E1C6'
     white:   '0xC7C7C7'
+
+  # Bright colors
   bright:
     black:   '0x686868'
     red:     '0xF07178'
