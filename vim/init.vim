@@ -173,7 +173,11 @@ call plug#end()
 " Gruvbox only enables italics for GUI Vim.
 " Since my terminal supports italics, this line
 " manually enables it
-let g:gruvbox_italic=1
+" let g:gruvbox_italic=1
+
+" mode of the ayu colorscheme (light, mirage, dark)
+let ayucolor="mirage"
+
 colorscheme ayu
 
 " FZF settings
