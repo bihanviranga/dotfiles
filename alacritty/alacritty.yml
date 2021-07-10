@@ -16,12 +16,12 @@ scrolling:
 
 font:
   normal:
-    family: Anonymice Nerd Font
+    family: Fantasque Sans Mono
     style: Light
   bold:
-    family: Anonymice Nerd Font
+    family: Fantasque Sans Mono
     style: Bold
-  size: 10.0
+  size: 11.0
 
 #bell:
   #animation: Ease
