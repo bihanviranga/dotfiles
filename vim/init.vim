@@ -135,7 +135,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'kristijanhusak/vim-hybrid-material'
 	Plug 'drewtempelmeyer/palenight.vim'
 	Plug 'issadarkthing/vim-rex'
-	Plug 'vim-airline/vim-airline-themes'
+	"Plug 'vim-airline/vim-airline-themes'
 	Plug 'morhetz/gruvbox'
 	Plug 'embark-theme/vim', { 'as': 'embark' }
 	Plug 'sainnhe/gruvbox-material'
@@ -150,8 +150,9 @@ call plug#begin('~/.vim/plugged')
 	"Plug 'OmniSharp/omnisharp-vim'
 "-------------- Interface -----------------"
 	"Plug 'ryanoasis/vim-devicons'
-	Plug 'vim-airline/vim-airline'
+	"Plug 'vim-airline/vim-airline'
 	Plug 'Yggdroot/indentLine'
+	Plug 'itchyny/lightline.vim'
 "-------------- Commands ------------------"
 	"Plug 'yuttie/comfortable-motion.vim'
 	"Plug 'vimwiki/vimwiki'
@@ -178,7 +179,7 @@ call plug#end()
 " mode of the ayu colorscheme (light, mirage, dark)
 let ayucolor="mirage"
 
-colorscheme ayu
+colorscheme edge
 
 " FZF settings
 noremap <C-p> :GFiles<CR>
@@ -203,23 +204,26 @@ let g:nrrw_rgn_resize_window = 'relative'
 let g:nrrw_rgn_wdth = 50
 
 " airline settings
-let g:airline_theme='base16'
-if !exists('g:airline_symbols')
-	let g:airline_symbols = {}
-endif
-let g:airline_symbols.branch=''
-let g:airline_left_sep = ''
-let g:airline_left_alt_sep = ''
-let g:airline_right_sep = ''
-let g:airline_right_alt_sep = ''
-let g:airline#extensions#default#section_truncate_width = {
-\  'y': 101,
-\  'x': 81,
-\}
-" %t is tail of the current file path (see :help filename-modifiers)
-" %m is the modified flag
-" %r is the read only flag
-let g:airline_section_c = '%t%m%r'
+"let g:airline_theme='base16'
+"if !exists('g:airline_symbols')
+	"let g:airline_symbols = {}
+"endif
+"let g:airline_symbols.branch=''
+"let g:airline_left_sep = ''
+"let g:airline_left_alt_sep = ''
+"let g:airline_right_sep = ''
+"let g:airline_right_alt_sep = ''
+"let g:airline#extensions#default#section_truncate_width = {
+"\  'y': 101,
+"\  'x': 81,
+"\}
+"" %t is tail of the current file path (see :help filename-modifiers)
+"" %m is the modified flag
+"" %r is the read only flag
+"let g:airline_section_c = '%t%m%r'
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ }
 
 " vim_tmux_navigator_config
 " This allows using the same keys to switch tmux panes and vim windows
