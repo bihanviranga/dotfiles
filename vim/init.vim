@@ -135,7 +135,6 @@ call plug#begin('~/.vim/plugged')
 	Plug 'kristijanhusak/vim-hybrid-material'
 	Plug 'drewtempelmeyer/palenight.vim'
 	Plug 'issadarkthing/vim-rex'
-	"Plug 'vim-airline/vim-airline-themes'
 	Plug 'morhetz/gruvbox'
 	Plug 'embark-theme/vim', { 'as': 'embark' }
 	Plug 'sainnhe/gruvbox-material'
@@ -150,7 +149,6 @@ call plug#begin('~/.vim/plugged')
 	"Plug 'OmniSharp/omnisharp-vim'
 "-------------- Interface -----------------"
 	"Plug 'ryanoasis/vim-devicons'
-	"Plug 'vim-airline/vim-airline'
 	Plug 'Yggdroot/indentLine'
 	Plug 'itchyny/lightline.vim'
 "-------------- Commands ------------------"
@@ -167,7 +165,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'junegunn/fzf.vim'
 	Plug 'scrooloose/nerdcommenter'
 	Plug 'christoomey/vim-tmux-navigator'
-	"Plug 'wakatime/vim-wakatime'
+	Plug 'wakatime/vim-wakatime'
 	"Plug 'tweekmonster/startuptime.vim'
 call plug#end()
 
@@ -177,7 +175,7 @@ call plug#end()
 " let g:gruvbox_italic=1
 
 " mode of the ayu colorscheme (light, mirage, dark)
-let ayucolor="mirage"
+"let ayucolor="mirage"
 
 colorscheme edge
 
@@ -222,8 +220,10 @@ let g:nrrw_rgn_wdth = 50
 "" %r is the read only flag
 "let g:airline_section_c = '%t%m%r'
 let g:lightline = {
-      \ 'colorscheme': 'wombat',
-      \ }
+  \ 'colorscheme': 'material',
+	\ 'separator': { 'left': '', 'right': ''},
+	\ 'subseparator': { 'left': '', 'right': ''}
+\ }
 
 " vim_tmux_navigator_config
 " This allows using the same keys to switch tmux panes and vim windows
