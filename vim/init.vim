@@ -52,6 +52,7 @@ autocmd BufWritePre * %s/\s\+$//e
 
 " Set filetype for extension
 au BufRead,BufNewFile *.vtl set filetype=vtl
+au BufRead,BufNewFile *.eslintrc set filetype=json
 
 " set custom indentation per file type
 "autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
