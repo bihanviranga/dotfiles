@@ -14,7 +14,6 @@
 		"css",
 		"scss"
 	],
-	"prettier.eslintIntegration": true,
 	"javascript.updateImportsOnFileMove.enable": true,
 	"typescript.updateImportsOnFileMove.enable": true,
 	"eslint.alwaysShowStatus": true,
@@ -23,7 +22,10 @@
 	"eslint.codeAction.showDocumentation": {
 		"enable": true
 	},
-	"prettier.singleQuote": true,
-	"suggest.autoTrigger": "none"
+	"eslint.autoFixOnSave": true,
+	"suggest.autoTrigger": "none",
+	"prettier.requireConfig": true,
+	//"prettier.singleQuote": true,
+	"prettier.eslintIntegration": true
 }
 
