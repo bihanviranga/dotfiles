@@ -26,6 +26,9 @@
 	"suggest.autoTrigger": "none",
 	"prettier.requireConfig": true,
 	//"prettier.singleQuote": true,
-	"prettier.eslintIntegration": true
+	"prettier.eslintIntegration": true,
+	"diagnostic.errorSign": "",
+	"diagnostic.warningSign": "",
+	"diagnostic.infoSign": ""
 }
 
