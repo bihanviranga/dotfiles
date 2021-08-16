@@ -242,7 +242,8 @@ let g:lightline = {
 	\ 'component_function': {
 	\ 	'gitbranch': 'FugitiveHead',
 	\ 	'cocstatus': 'coc#status',
-	\ 	'fileformat': 'LightlineFileFormat'
+	\ 	'fileformat': 'LightlineFileFormat',
+	\ 	'filetype': 'LightlineFileType'
 	\ }
 \ }
 " Use autocmd to formce lightline update
@@ -251,6 +252,11 @@ autocmd User CocStatusChange,CocDiagnosticChange call lightline#update()
 " It is only shown if window size is > 100
 function! LightlineFileFormat()
 	return winwidth(0) > 100 ? &fileformat : ''
+endfunction
+" This function controls the visibility of the lightline's filetype field
+" It is only shown if window size is > 80
+function! LightlineFileType()
+	return winwidth(0) > 80 ? (&filetype !=# '' ? &filetype : 'No ft') : ''
 endfunction
 """""""""""""""""""""""""""""""""""""""
 
