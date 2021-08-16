@@ -233,17 +233,35 @@ let g:lightline = {
 	\ 'separator': { 'left': '', 'right': ''},
 	\ 'subseparator': { 'left': '', 'right': ''},
 	\ 'active': {
+	\   'left': [
+	\     ['mode', 'paste'],
+	\     ['readonly', 'filename', 'modified']
+	\   ],
 	\ 	'right': [
-	\              ['cocstatus', 'lineinfo'],
-	\              [],
-	\              ['gitbranch', 'filetype', 'fileformat']
+	\     ['lineinfo'],
+	\     [],
+	\     ['gitbranch', 'filetype', 'fileformat'],
+	\     ['coc_error', 'coc_warning', 'coc_info', 'coc_hint', 'coc_fix']
 	\   ]
 	\ },
 	\ 'component_function': {
 	\ 	'gitbranch': 'FugitiveHead',
-	\ 	'cocstatus': 'coc#status',
 	\ 	'fileformat': 'LightlineFileFormat',
-	\ 	'filetype': 'LightlineFileType'
+	\ 	'filetype': 'LightlineFileType',
+	\ },
+	\ 'component_expand': {
+	\   'coc_error': 'LightlineCocErrors',
+	\   'coc_warning': 'LightlineCocWarnings',
+	\   'coc_info': 'LightlineCocInfos',
+	\   'coc_hint': 'LightlineCocHints',
+	\   'coc_fix': 'LightlineCocFixes',
+	\ },
+	\ 'component_type': {
+	\   'coc_error': 'error',
+	\   'coc_warning': 'warning',
+	\   'coc_info': 'warning',
+	\   'coc_hint': 'middle',
+	\   'coc_fix': 'middle'
 	\ }
 \ }
 " Use autocmd to formce lightline update
@@ -257,6 +275,22 @@ endfunction
 " It is only shown if window size is > 80
 function! LightlineFileType()
 	return winwidth(0) > 80 ? (&filetype !=# '' ? &filetype : 'No ft') : ''
+endfunction
+" Functions to get Coc diagnostics to use them in the lightline
+function! LightlineCocErrors() abort
+	return s:lightline_coc_diagnostic('error', '')
+endfunction
+function! LightlineCocWarnings() abort
+	return s:lightline_coc_diagnostic('warning', '')
+endfunction
+function! LightlineCocInfos() abort
+	return s:lightline_coc_diagnostic('information', '')
+endfunction
+function! LightlineCocHints() abort
+	return s:lightline_coc_diagnostic('hints', '')
+endfunction
+function! LightlineCocFixes() abort
+	return s:lightline_coc_diagnostic('fix', '')
 endfunction
 """""""""""""""""""""""""""""""""""""""
 
@@ -396,7 +430,7 @@ command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organize
 " Add (Neo)Vim's native statusline support.
 " NOTE: Please see `:h coc-status` for integrations with external plugins that
 " provide custom statusline: lightline.vim, vim-airline.
-set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+" set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 " Mappings for CoCList
 " Show all diagnostics.
@@ -418,3 +452,14 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
 " Show actions
 nnoremap <silent><nowait> <leader>. :CocAction<CR>
+
+" This function returns the requested diagnostic from coc_diagnostic_info
+" Use like s:lightline_coc_diagnostic('error', 'error')
+" Written for use in lightline
+function! s:lightline_coc_diagnostic(kind, sign) abort
+	let info = get(b:, 'coc_diagnostic_info', 0)
+	if empty(info) || get(info, a:kind, 0) == 0
+		return ''
+	endif
+	return printf('%s %d', a:sign, info[a:kind])
+endfunction
