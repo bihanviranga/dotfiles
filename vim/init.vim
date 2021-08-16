@@ -221,23 +221,38 @@ let g:nrrw_rgn_wdth = 50
 "" %r is the read only flag
 "let g:airline_section_c = '%t%m%r'
 
+"""""""""""""""""""""""""""""""""""""""
 " lightline config
+"""""""""""""""""""""""""""""""""""""""
 " The empty array ensures that 'filetype' and 'lineinfo' doesn't end up
 " inside the same 'seperator'
+" cocstatus related info was taken from :h coc-status
+"
 let g:lightline = {
   \ 'colorscheme': 'material',
 	\ 'separator': { 'left': '', 'right': ''},
 	\ 'subseparator': { 'left': '', 'right': ''},
 	\ 'active': {
-	\ 	'right': [ ['lineinfo'],
-	\ 						 [],
-	\ 						 ['gitbranch', 'filetype', 'fileformat']
-	\ 					 ]
+	\ 	'right': [
+	\              ['cocstatus', 'lineinfo'],
+	\              [],
+	\              ['gitbranch', 'filetype', 'fileformat']
+	\   ]
 	\ },
 	\ 'component_function': {
-	\ 	'gitbranch': 'FugitiveHead'
+	\ 	'gitbranch': 'FugitiveHead',
+	\ 	'cocstatus': 'coc#status',
+	\ 	'fileformat': 'LightlineFileFormat'
 	\ }
 \ }
+" Use autocmd to formce lightline update
+autocmd User CocStatusChange,CocDiagnosticChange call lightline#update()
+" This function controls the visibility of the lightline's fileformat field
+" It is only shown if window size is > 100
+function! LightlineFileFormat()
+	return winwidth(0) > 100 ? &fileformat : ''
+endfunction
+"""""""""""""""""""""""""""""""""""""""
 
 " vim_tmux_navigator_config
 " This allows using the same keys to switch tmux panes and vim windows
