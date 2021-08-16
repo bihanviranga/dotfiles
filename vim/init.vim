@@ -178,7 +178,7 @@ call plug#end()
 " mode of the ayu colorscheme (light, mirage, dark)
 "let ayucolor="mirage"
 
-colorscheme edge
+colorscheme ayu
 
 " FZF settings
 noremap <C-p> :GFiles<CR>
@@ -220,10 +220,23 @@ let g:nrrw_rgn_wdth = 50
 "" %m is the modified flag
 "" %r is the read only flag
 "let g:airline_section_c = '%t%m%r'
+
+" lightline config
+" The empty array ensures that 'filetype' and 'lineinfo' doesn't end up
+" inside the same 'seperator'
 let g:lightline = {
   \ 'colorscheme': 'material',
 	\ 'separator': { 'left': '', 'right': ''},
-	\ 'subseparator': { 'left': '', 'right': ''}
+	\ 'subseparator': { 'left': '', 'right': ''},
+	\ 'active': {
+	\ 	'right': [ ['lineinfo'],
+	\ 						 [],
+	\ 						 ['gitbranch', 'filetype', 'fileformat']
+	\ 					 ]
+	\ },
+	\ 'component_function': {
+	\ 	'gitbranch': 'FugitiveHead'
+	\ }
 \ }
 
 " vim_tmux_navigator_config
