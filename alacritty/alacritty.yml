@@ -16,12 +16,12 @@ scrolling:
 
 font:
   normal:
-    family: Fantasque Sans Mono
+    family: JetBrains Mono
     style: Light
   bold:
-    family: Fantasque Sans Mono
+    family: JetBrains Mono
     style: Bold
-  size: 11.0
+  size: 9.0
 
 #bell:
   #animation: Ease

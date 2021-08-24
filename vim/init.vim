@@ -86,6 +86,9 @@ nnoremap <M-n> :bnext<CR>
 nnoremap <M-p> :bprevious<CR>
 " Close/delete buffer with alt+x
 nnoremap <M-x> :bd<CR>
+" Close/delete buffer without closing the window/split
+" (using qpkorr/vim-bufkill)
+nnoremap <M-z> :BD<CR>
 " View unsaved changes in file
 nnoremap <leader>vu :w !diff % -<CR>
 " Mappings for window switching
@@ -160,6 +163,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'tpope/vim-surround'
 	Plug 'kana/vim-textobj-user'
 	Plug 'kana/vim-textobj-line'
+	Plug 'qpkorr/vim-bufkill'
 "-------------- Integrations --------------"
 	Plug 'tpope/vim-fugitive'
 	Plug 'junegunn/fzf'
