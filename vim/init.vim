@@ -144,12 +144,13 @@ call plug#begin('~/.vim/plugged')
 	Plug 'sainnhe/gruvbox-material'
 	Plug 'sainnhe/edge'
 	Plug 'ayu-theme/ayu-vim'
+	Plug 'sainnhe/sonokai'
 "-------------- Language ------------------"
 	Plug 'mattn/emmet-vim'
 	Plug 'raimondi/delimitmate'
 	Plug 'sheerun/vim-polyglot'
 	Plug 'neoclide/coc.nvim', {'branch': 'release'}
-	"Plug 'leafoftree/vim-svelte-plugin'
+	Plug 'leafoftree/vim-svelte-plugin'
 	"Plug 'OmniSharp/omnisharp-vim'
 "-------------- Interface -----------------"
 	"Plug 'ryanoasis/vim-devicons'
@@ -174,6 +175,10 @@ call plug#begin('~/.vim/plugged')
 	"Plug 'tweekmonster/startuptime.vim'
 call plug#end()
 
+
+"""""""""""""""""""""""""""""""""""""""
+" Colorscheme config
+"""""""""""""""""""""""""""""""""""""""
 " Gruvbox only enables italics for GUI Vim.
 " Since my terminal supports italics, this line
 " manually enables it
@@ -182,7 +187,12 @@ call plug#end()
 " mode of the ayu colorscheme (light, mirage, dark)
 "let ayucolor="mirage"
 
+" Settings for sonokai colorscheme
+"let g:sonokai_enable_itallic = 1
+"let g:sonokai_style = 'maia'
+
 colorscheme ayu
+"""""""""""""""""""""""""""""""""""""""
 
 " FZF settings
 noremap <C-p> :GFiles<CR>
