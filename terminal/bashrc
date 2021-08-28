@@ -30,6 +30,7 @@ alias gitdo='gitdo -v'
 alias nnn='n -e'
 alias files='pcmanfm-qt'
 alias ytmp3='youtube-dl --extract-audio --audio-format mp3'
+alias define='tuxi define'
 
 alias gs='git status'
 alias gc='git checkout'
