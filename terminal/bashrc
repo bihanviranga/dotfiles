@@ -69,6 +69,7 @@ export ANDROID_HOME="/home/bv/bin/Android/Sdk"
 export JUNIT_HOME="/home/bv/src/lib"
 export CLASSPATH="$CLASSPATH:$JUNIT_HOME/junit-4.13.jar:$JUNIT_HOME/hamcrest-core-1.3.jar:."
 export BAT_THEME=zenburn
+export PLAYLIST_ROOT="/path/to/playlist"
 
 ##################################################
 # PATH extensions
