@@ -24,3 +24,4 @@ Currently using
 - [sdcv](http://dushistov.github.io/sdcv/) - terminal dictionary
 - [delta](https://github.com/dandavison/delta) - git diff viewer
 - [nnn](https://github.com/jarun/nnn) - file manager for terminal
+- [dust](https://github.com/bootandy/dust) - `du` alternative
