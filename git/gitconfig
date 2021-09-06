@@ -8,5 +8,6 @@
 	minus-style = "syntax #340001"
 	syntax-theme = zenburn
 	navigate = true
+	line-numbers = true
 [interactive]
 	diffFilter = delta --color-only
