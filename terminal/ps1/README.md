@@ -32,7 +32,7 @@ COL_87FF00="\[\033[01;38;5;118m\]"
 COL_RESET="\[\033[0m\]"
 PS1=" ${COL_DFFF00}\W ${COL_87FF00}${COL_RESET} "
 ```
-[PS1](6.png)
+![PS1](6.png)
 
 ```bash
 COL_5FAFFF="\[\033[01;38;5;75m\]"
