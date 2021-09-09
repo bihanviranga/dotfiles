@@ -208,13 +208,20 @@ let g:user_emmet_leader_key='<C-x>'
 " Stop vimwiki from treating all markdown files as vimwiki entries
 "let g:vimwiki_global_ext = 0
 
+"""""""""""""""""""""""""""""""""""""""
 " NrrwRgn settings
+"""""""""""""""""""""""""""""""""""""""
 " Open new buffer in a vertical split
 let g:nrrw_rgn_vert = 1
 " Set the size (absolute=rows or cols, relative=percentage)
 let g:nrrw_rgn_resize_window = 'relative'
-" Set the new buffer width
-let g:nrrw_rgn_wdth = 50
+" Set the new buffer size
+let g:nrrw_rgn_wdth = 20
+let g:nrrw_rgn_rel_min = 50
+let g:nrrw_rgn_rel_max = 50
+" Increment narrowed window size
+nmap <leader>ni <Plug>NrrwrgnWinIncr
+"""""""""""""""""""""""""""""""""""""""
 
 " airline settings
 "let g:airline_theme='base16'
