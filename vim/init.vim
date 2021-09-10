@@ -33,6 +33,8 @@ set splitbelow splitright
 set noshowmode
 " Enable 24-bit color
 set termguicolors
+" When scrolling up/down, keep a gap of 5 lines
+set scrolloff=5
 
 " enable syntax processing
 syntax enable
