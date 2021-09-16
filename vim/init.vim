@@ -104,6 +104,8 @@ nnoremap <leader>vu :w !diff % -<CR>
 noremap <M-o> <C-w>o
 " Create vertical split
 nnoremap vv :vsplit<CR>
+" Select all and copy
+nnoremap <leader>sa :%y<CR>
 " jk is escape
 inoremap jk <esc>
 " For opening a new line between two curly braces when you press { and enter.
@@ -193,7 +195,7 @@ call plug#end()
 "let g:sonokai_enable_itallic = 1
 "let g:sonokai_style = 'maia'
 
-colorscheme ayu
+colorscheme embark
 """""""""""""""""""""""""""""""""""""""
 
 " FZF settings
