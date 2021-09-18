@@ -106,6 +106,10 @@ noremap <M-o> <C-w>o
 nnoremap vv :vsplit<CR>
 " Select all and copy
 nnoremap <leader>sa :%y<CR>
+" New tab
+nnoremap <leader>tn :tabnew<CR>
+" Close tab
+nnoremap <leader>tc :tabclose<CR>
 " jk is escape
 inoremap jk <esc>
 " For opening a new line between two curly braces when you press { and enter.
