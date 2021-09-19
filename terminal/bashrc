@@ -148,3 +148,8 @@ n ()
             rm -f "$NNN_TMPFILE" > /dev/null
     fi
 }
+
+# Create a folder and cd into it
+mkd () {
+    mkdir -p "$@" && cd "$_";
+}
