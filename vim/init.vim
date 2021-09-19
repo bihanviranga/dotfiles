@@ -34,7 +34,11 @@ set noshowmode
 " Enable 24-bit color
 set termguicolors
 " When scrolling up/down, keep a gap of 5 lines
-set scrolloff=5
+set scrolloff=3
+" Set the g flag to search and replace by default
+set gdefault
+" Ignore case of searches
+set ignorecase
 
 " enable syntax processing
 syntax enable
@@ -153,6 +157,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'sainnhe/edge'
 	Plug 'ayu-theme/ayu-vim'
 	Plug 'sainnhe/sonokai'
+	Plug 'ishan9299/modus-theme-vim'
 "-------------- Language ------------------"
 	Plug 'mattn/emmet-vim'
 	Plug 'raimondi/delimitmate'
@@ -199,7 +204,10 @@ call plug#end()
 "let g:sonokai_enable_itallic = 1
 "let g:sonokai_style = 'maia'
 
-colorscheme embark
+" Settings for srcery theme
+let g:srcery_italic=1
+
+colorscheme srcery
 """""""""""""""""""""""""""""""""""""""
 
 " FZF settings
