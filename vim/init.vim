@@ -23,8 +23,8 @@ set foldlevelstart=10
 set foldnestmax=10
 " fold based on indent level
 set foldmethod=indent
-" required for vimwiki
-"set nocompatible
+" required for setting modelines
+set nocompatible
 " Use system keyboard
 set clipboard+=unnamedplus
 " new splits get added to right or below
@@ -39,6 +39,8 @@ set scrolloff=3
 set gdefault
 " Ignore case of searches
 set ignorecase
+" Set modelines
+set modeline
 
 " enable syntax processing
 syntax enable
