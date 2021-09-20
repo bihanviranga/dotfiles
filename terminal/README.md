@@ -1,17 +1,29 @@
-# Terminal Emulator and Bash
+# Bash and other things
 
-![Terminal](e6bef84.png)
+![Terminal](cc6b273.png)
+
+These files contain my settings for the bash terminal. For terminal emulator settings, see [here.](https://github.com/bihanviranga/dotfiles/tree/master/kitty) For tmux settings, see [here.](https://github.com/bihanviranga/dotfiles/tree/master/tmux)
+Older screenshots are in the `old` directory. The filename is also a commit hash, showing the repository's latest commit when the screenshot was taken.
 
 Currently using
 - ~~Qterminal~~
 - ~~Konsole~~
-- Alacritty
+- ~~Alacritty~~
+- Kitty
+
+## Files
+Bash aliases and functions are split into seperate files. These files are sourced from `.bashrc`
+- `bashrc_alias`: Contains all the bash aliases.
+- `bashrc_functions`: Contains bash functions.
 
 ## Functions
-- `activate()`: Once called, activates any virtual environment in thecurrent directory. By default it searches for a __env__ or __venv__ folder, and activates by sourcing that folder+__/bin/activate__. Default folders and activate path can be easily changed.
+- `activate()`: Once called, activates any Python virtual environment in the current directory. By default it searches for a __env__ or __venv__ folder, and activates by sourcing that folder+ __/bin/activate__.
+- `mkd()`: Create a folder and cd into it.
 
 ## Fonts
 - [FiraCode Nerd Font](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/FiraCode)
+- [JetBrains Mono](https://www.jetbrains.com/lp/mono/)
+- [Fantasque Sans Mono](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/FantasqueSansMono)(Pictured)
 
 ## Utilities and tools
 - [LSD](https://github.com/Peltoche/lsd) - `ls` command with more features - LSDelux
@@ -26,3 +38,4 @@ Currently using
 - [nnn](https://github.com/jarun/nnn) - file manager for terminal
 - [dust](https://github.com/bootandy/dust) - `du` alternative
 - [hexyl](https://github.com/sharkdp/hexyl) - hex viewer
+- [tuxi](https://github.com/Bugswriter/tuxi) - Do quick web searches from the terminal
