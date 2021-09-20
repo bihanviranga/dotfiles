@@ -72,52 +72,8 @@ fi
 source /usr/share/nvm/init-nvm.sh
 
 ##################################################
-# Functions
+# Load the functions
 ##################################################
-
-# virtual environment activate
-activate() {
-	ENV_NAMES=(env venv)
-	ACTIVATE_PATH="bin/activate"
-	for env_name in "${ENV_NAMES[@]}"
-	do
-		if [ -d ${env_name} ]; then
-			source $env_name/$ACTIVATE_PATH
-			return
-		fi
-	done
-}
-
-# For nnn file manager - CD to directory when quitting with ^G
-n ()
-{
-    # Block nesting of nnn in subshells
-    if [ -n $NNNLVL ] && [ "${NNNLVL:-0}" -ge 1 ]; then
-        echo "nnn is already running"
-        return
-    fi
-
-    # The default behaviour is to cd on quit (nnn checks if NNN_TMPFILE is set)
-    # To cd on quit only on ^G, remove the "export" as in:
-    #     NNN_TMPFILE="${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.lastd"
-    # NOTE: NNN_TMPFILE is fixed, should not be modified
-    NNN_TMPFILE="${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.lastd"
-
-    # Unmask ^Q (, ^V etc.) (if required, see `stty -a`) to Quit nnn
-    # stty start undef
-    # stty stop undef
-    # stty lwrap undef
-    # stty lnext undef
-
-    nnn "$@"
-
-    if [ -f "$NNN_TMPFILE" ]; then
-            . "$NNN_TMPFILE"
-            rm -f "$NNN_TMPFILE" > /dev/null
-    fi
-}
-
-# Create a folder and cd into it
-mkd () {
-    mkdir -p "$@" && cd "$_";
-}
+if [ -f ~/.bashrc_functions ]; then
+    source ~/.bashrc_functions
+fi
