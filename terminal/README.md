@@ -25,3 +25,4 @@ Currently using
 - [delta](https://github.com/dandavison/delta) - git diff viewer
 - [nnn](https://github.com/jarun/nnn) - file manager for terminal
 - [dust](https://github.com/bootandy/dust) - `du` alternative
+- [hexyl](https://github.com/sharkdp/hexyl) - hex viewer

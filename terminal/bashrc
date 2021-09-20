@@ -19,6 +19,7 @@ alias move='rsync -ah --progress --remove-source-files'
 alias ..='cd ..'
 alias :q='exit'
 alias man="PAGER=\"bat -p\" man"
+alias xxd="hexyl"
 
 alias ls='lsd -l'
 alias cat='bat'
