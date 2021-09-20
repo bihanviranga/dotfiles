@@ -6,44 +6,11 @@
 [[ $- != *i* ]] && return
 
 ##################################################
-# All the aliases
+# Load the aliases
 ##################################################
-alias grep='grep --color=auto'
-alias fgrep='fgrep --color=auto'
-alias egrep='egrep --color=auto'
-alias diff='diff --color=auto'
-alias pacman='pacman --color=auto'
-alias xclip='xclip -selection "clipboard"'
-alias copy='rsync -ah --progress'
-alias move='rsync -ah --progress --remove-source-files'
-alias ..='cd ..'
-alias :q='exit'
-alias man="PAGER=\"bat -p\" man"
-alias xxd="hexyl"
-
-alias ls='lsd -l'
-alias cat='bat'
-alias vim='nvim'
-alias gitlog='git log --oneline -n 10'
-alias wiki='vim ~/Documents/wiki/index.md'
-alias dic='sdcv --color'
-alias wifi='nmcli device wifi'
-alias gitdo='gitdo -v'
-alias nnn='n -e'
-alias files='pcmanfm-qt'
-alias ytmp3='youtube-dl --extract-audio --audio-format mp3'
-alias define='tuxi define'
-alias du='dust -br'
-
-alias gs='git status'
-alias gc='git checkout'
-alias gl='git log --oneline -n 10'
-alias gb='git branch'
-alias gd='git diff'
-alias gd2='git -c delta.side-by-side=true diff'
-alias gds='git diff --staged'
-alias gds2='git -c delta.side-by-side=true diff --staged'
-alias gap='git add --patch'
+if [ -f ~/.bashrc_alias ]; then
+    source ~/.bashrc_alias
+fi
 
 ##################################################
 # Prompt
