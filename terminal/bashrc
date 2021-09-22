@@ -15,12 +15,16 @@ fi
 ##################################################
 # Prompt
 ##################################################
+# Ref: https://www.shellhacks.com/bash-colors/
 COL_DFFF00="\[\033[01;38;5;190m\]"
 COL_87FF00="\[\033[01;38;5;118m\]"
 COL_5FAFFF="\[\033[01;38;5;75m\]"
 COL_5F5FFF="\[\033[01;38;5;63m\]"
+COL_AF005F_BG="\[\033[48;5;125m\]"
+COL_AF005F_FG="\[\033[38;5;125m\]"
+COL_FFDF00="\[\033[38;5;220m\]"
 COL_RESET="\[\033[0m\]"
-PS1=" ${COL_5FAFFF}\W ${COL_5F5FFF}${COL_RESET} "
+PS1="${COL_AF005F_BG} ${COL_FFDF00}\W ${COL_RESET}${COL_AF005F_FG}${COL_RESET} "
 
 ##################################################
 # MAN page colouring

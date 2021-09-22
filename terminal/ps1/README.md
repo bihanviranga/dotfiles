@@ -40,3 +40,15 @@ COL_5F5FFF="\[\033[01;38;5;63m\]"
 COL_RESET="\[\033[0m\]"
 PS1=" ${COL_5FAFFF}\W ${COL_5F5FFF}${COL_RESET} "
 ```
+---
+
+![PS1](7.png)
+
+
+```bash
+COL_AF005F_BG="\[\033[48;5;125m\]"
+COL_AF005F_FG="\[\033[38;5;125m\]"
+COL_FFDF00="\[\033[38;5;220m\]"
+COL_RESET="\[\033[0m\]"
+PS1="${COL_AF005F_BG} ${COL_FFDF00}\W ${COL_RESET}${COL_AF005F_FG}${COL_RESET} "
+```
