@@ -210,12 +210,23 @@ call plug#end()
 let g:srcery_italic=1
 
 colorscheme srcery
-"""""""""""""""""""""""""""""""""""""""
 
+"""""""""""""""""""""""""""""""""""""""
 " FZF settings
-noremap <C-p> :GFiles<CR>
+"""""""""""""""""""""""""""""""""""""""
+" <C-p> search among version-controlled files in the
+" directory vim was launched from.
+" Adding this option because I need it in monorepos
+let dirname = getcwd()
+nnoremap <C-p> :execute ":GFiles" . dirname<CR>
+" Search among all version-controlled files in the repo
+nnoremap <leader>gf :GFiles<CR>
+" Search among all (incl. non vc) files in the
+" directory vim was launched from
 noremap <leader>f :FZF<CR>
+" Open the selected file in a split/tab
 let g:fzf_action = {'ctrl-t':'tab split', 'ctrl-s':'split', 'ctrl-v':'vsplit'}
+"""""""""""""""""""""""""""""""""""""""
 
 " emmet-vim plugin
 let g:user_emmet_leader_key='<C-x>'
