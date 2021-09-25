@@ -116,6 +116,8 @@ nnoremap <leader>sa :%y<CR>
 nnoremap <leader>tn :tabnew<CR>
 " Close tab
 nnoremap <leader>tc :tabclose<CR>
+" Open todo file
+nnoremap <leader>td :vsplit ~/todo<CR>
 " jk is escape
 inoremap jk <esc>
 " For opening a new line between two curly braces when you press { and enter.
@@ -420,6 +422,12 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
+" Go to definition shorcuts.
+" Opens the definition in the same window, vsplit, split, or new tab
+nnoremap <silent> <leader>dd :call CocAction('jumpDefinition', 'edit')<CR>
+nnoremap <silent> <leader>dv :call CocAction('jumpDefinition', 'vsplit')<CR>
+nnoremap <silent> <leader>ds :call CocAction('jumpDefinition', 'split')<CR>
+nnoremap <silent> <leader>dt :call CocAction('jumpDefinition', 'tabe')<CR>
 
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<CR>
