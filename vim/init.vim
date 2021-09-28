@@ -77,14 +77,14 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 autocmd Filetype javascript,typescript,javascriptreact,typescriptreact inoremap <buffer> /** /**  */<esc>hhi
 
 " Open vimrc file in a vertical split
-nnoremap <leader>ev :vsplit $MYVIMRC<CR>
+nnoremap <silent> <leader>ev :vsplit $MYVIMRC<CR>
 " Source vimrc file
 nnoremap <leader>sv :source $MYVIMRC<CR>
 " Swap line with the line below/above
 nnoremap - ddp
 nnoremap _ ddkP
 " Stop hightlighting search results
-nnoremap <leader><space> :nohlsearch<CR>
+nnoremap <silent> <leader><space> :nohlsearch<CR>
 " Space open/closes folds
 "nnoremap <space> za
 " List buffers. Enter buffer number/name to switch
@@ -220,9 +220,9 @@ colorscheme srcery
 " directory vim was launched from.
 " Adding this option because I need it in monorepos
 let dirname = getcwd()
-nnoremap <C-p> :execute ":GFiles" . dirname<CR>
+nnoremap <silent> <C-p> :execute ":GFiles" . dirname<CR>
 " Search among all version-controlled files in the repo
-nnoremap <leader>gf :GFiles<CR>
+nnoremap <silent> <leader>gf :GFiles<CR>
 " Search among all (incl. non vc) files in the
 " directory vim was launched from
 noremap <leader>f :FZF<CR>
