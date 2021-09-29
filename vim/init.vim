@@ -189,6 +189,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'scrooloose/nerdcommenter'
 	Plug 'christoomey/vim-tmux-navigator'
 	Plug 'wakatime/vim-wakatime'
+	Plug 'editorconfig/editorconfig-vim'
 	"Plug 'tweekmonster/startuptime.vim'
 call plug#end()
 
