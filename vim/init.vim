@@ -112,6 +112,8 @@ noremap <M-o> <C-w>o
 nnoremap vv :vsplit<CR>
 " Select all and copy
 nnoremap <leader>sa :%y<CR>
+" Select all without copy
+nnoremap <leader>sA ggvG
 " New tab
 nnoremap <leader>tn :tabnew<CR>
 " Close tab
