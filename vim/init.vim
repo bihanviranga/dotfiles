@@ -164,6 +164,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'ayu-theme/ayu-vim'
 	Plug 'sainnhe/sonokai'
 	Plug 'ishan9299/modus-theme-vim'
+	Plug 'Yagua/nebulous.nvim'
 "-------------- Language ------------------"
 	Plug 'mattn/emmet-vim'
 	Plug 'raimondi/delimitmate'
@@ -213,6 +214,23 @@ call plug#end()
 
 " Settings for srcery theme
 let g:srcery_italic=1
+
+" Settings for nebulous
+"lua << EOF
+"require("nebulous").setup {
+	"variant = "twilight",
+	"disable = {
+		"background = false,
+		"endOfBuffer = false,
+	"},
+	"italic = {
+		"comments = true,
+		"keywords = false,
+		"functions = false,
+		"variables = false,
+	"}
+"}
+"EOF
 
 colorscheme srcery
 
