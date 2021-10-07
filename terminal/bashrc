@@ -48,6 +48,7 @@ export BAT_THEME=zenburn
 export PLAYLIST_ROOT="/path/to/playlist"
 export EDITOR=nvim
 export PAGER=bat
+export NNN_TMPFILE="${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.lastd"
 
 ##################################################
 # PATH extensions
