@@ -110,6 +110,8 @@ nnoremap <leader>vu :w !diff % -<CR>
 noremap <M-o> <C-w>o
 " Create vertical split
 nnoremap vv :vsplit<CR>
+" Create horizontal split
+nnoremap ss :split<CR>
 " Select all and copy
 nnoremap <leader>sa :%y<CR>
 " Select all without copy
@@ -213,7 +215,7 @@ call plug#end()
 "let g:sonokai_style = 'maia'
 
 " Settings for srcery theme
-let g:srcery_italic=1
+"let g:srcery_italic=1
 
 " Settings for nebulous
 "lua << EOF
@@ -232,7 +234,7 @@ let g:srcery_italic=1
 "}
 "EOF
 
-colorscheme srcery
+colorscheme nebulous
 
 """""""""""""""""""""""""""""""""""""""
 " FZF settings

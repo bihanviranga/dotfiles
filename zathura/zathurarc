@@ -1,3 +1,6 @@
+# Enable copy to clipboard
+set selection-clipboard clipboard
+
 # Lighthaus Color theme for Zathura
 # GIT: https://github.com/lighthaus-theme/zathura
 # Author: Adhiraj Sirohi (https://github.com/brutuski)
