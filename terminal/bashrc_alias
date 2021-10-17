@@ -4,7 +4,7 @@
 # ~/.bashrc_alias
 ##################################################
 
-# Built in commands with extra params
+# Commands with extra params
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
@@ -16,6 +16,7 @@ alias man="PAGER=\"bat -p\" man"
 #alias move='rsync -ah --progress --remove-source-files'
 alias ..='cd ..'
 alias :q='exit'
+alias svcstat='svcstat -o'
 
 # Externally installed tools
 alias ls='lsd -l'
