@@ -41,6 +41,8 @@ set gdefault
 set ignorecase
 " Set modelines
 set modeline
+" Set color column
+set colorcolumn=81
 
 " enable syntax processing
 syntax enable
@@ -198,14 +200,14 @@ call plug#begin('~/.vim/plugged')
 	"Plug 'tweekmonster/startuptime.vim'
 call plug#end()
 
-
 """""""""""""""""""""""""""""""""""""""
 " Colorscheme config
 """""""""""""""""""""""""""""""""""""""
 " Gruvbox only enables italics for GUI Vim.
 " Since my terminal supports italics, this line
 " manually enables it
-" let g:gruvbox_italic=1
+"let g:gruvbox_italic=1
+"let g:gruvbox_contrast_dark="hard"
 
 " mode of the ayu colorscheme (light, mirage, dark)
 "let ayucolor="mirage"
@@ -218,21 +220,21 @@ call plug#end()
 "let g:srcery_italic=1
 
 " Settings for nebulous
-"lua << EOF
-"require("nebulous").setup {
-	"variant = "twilight",
-	"disable = {
-		"background = false,
-		"endOfBuffer = false,
-	"},
-	"italic = {
-		"comments = true,
-		"keywords = false,
-		"functions = false,
-		"variables = false,
-	"}
-"}
-"EOF
+lua << EOF
+require("nebulous").setup {
+  variant = "night",
+  disable = {
+    background = false,
+    endOfBuffer = false,
+  },
+  italic = {
+    comments = true,
+    keywords = false,
+    functions = false,
+    variables = false,
+  }
+}
+EOF
 
 colorscheme nebulous
 
