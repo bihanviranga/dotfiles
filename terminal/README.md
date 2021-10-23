@@ -19,6 +19,8 @@ Bash aliases and functions are split into seperate files. These files are source
 ## Functions
 - `activate()`: Once called, activates any Python virtual environment in the current directory. By default it searches for a __env__ or __venv__ folder, and activates by sourcing that folder+ __/bin/activate__.
 - `mkd()`: Create a folder and cd into it.
+- `n()`: NNN file manager with CD-on-quit feature.
+- `gitlog_screen()`: Print `git log --oneline` to fill the entire terminal screen.
 
 ## Fonts
 - [FiraCode Nerd Font](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/FiraCode)

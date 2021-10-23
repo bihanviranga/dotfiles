@@ -50,3 +50,16 @@ n ()
 mkd () {
     mkdir -p "$@" && cd "$_";
 }
+
+# Print a long one-line git log to fill the entire screen.
+# The `margin_lines` is set to 2, so that the screen won't scroll
+# when the command is executed, for better visibility.
+# If your PS1 takes 2 lines, set the margin to 4.
+gitlog_screen () {
+    screen_height_cmd="tput lines"
+    screen_height=`$screen_height_cmd`
+    margin_lines=2
+    output_lines=$((screen_height-margin_lines))
+    gitcmd="git log --oneline -n $output_lines"
+    eval $gitcmd
+}

@@ -38,6 +38,7 @@ alias xxd="hexyl"
 alias gs='git status'
 alias gc='git checkout'
 alias gl='git log --oneline -n 10'
+alias gL='gitlog_screen'
 alias gb='git branch'
 alias gd='git diff'
 alias gd2='git -c delta.side-by-side=true diff'
