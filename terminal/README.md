@@ -15,6 +15,7 @@ Currently using
 Bash aliases and functions are split into seperate files. These files are sourced from `.bashrc`
 - `bashrc_alias`: Contains all the bash aliases.
 - `bashrc_functions`: Contains bash functions.
+- `lesskey`: Settings for `less` pager. Place this in `~/.lesskey`
 
 ## Functions
 - `activate()`: Once called, activates any Python virtual environment in the current directory. By default it searches for a __env__ or __venv__ folder, and activates by sourcing that folder+ __/bin/activate__.
