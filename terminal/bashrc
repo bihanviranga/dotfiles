@@ -82,3 +82,10 @@ source /usr/share/nvm/init-nvm.sh
 if [ -f ~/.bashrc_functions ]; then
     source ~/.bashrc_functions
 fi
+
+##################################################
+# shopts
+##################################################
+shopt -s autocd
+shopt -s cdspell
+shopt -s nocaseglob
