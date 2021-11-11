@@ -149,6 +149,20 @@ inoremap <C-j> <esc>jo
 " Jump to the end of the line without leaving insert mode
 inoremap <C-l> <esc>A
 
+" Enable paragraph mode
+nnoremap <leader>ep :call EnterParagraphMode()<CR>
+
+"""""""""""""""""""""""""""""""""""""""
+" Functions
+"""""""""""""""""""""""""""""""""""""""
+" This function is useful when writing text paragraphs, to make j,k move
+" using visible lines, not physical lines
+function EnterParagraphMode()
+  echom "Paragraph mode on"
+  nnoremap <silent> k gk
+  nnoremap <silent> j gj
+endfunction
+
 """""""""""""""""""""""""""""""""""""""
 " netrw settings
 """""""""""""""""""""""""""""""""""""""
