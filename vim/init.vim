@@ -1,3 +1,6 @@
+"""""""""""""""""""""""""""""""""""""""
+" Set commands
+"""""""""""""""""""""""""""""""""""""""
 " number of VISUAL spaces per TAB
 set tabstop=2
 set shiftwidth=2
@@ -55,6 +58,9 @@ filetype plugin on
 " leader is comma
 let mapleader=","
 
+"""""""""""""""""""""""""""""""""""""""
+" Auto commands
+"""""""""""""""""""""""""""""""""""""""
 " When entering insert mode, vertically center current line
 "autocmd InsertEnter * norm zz
 " Strip trailing whitespace on save
@@ -78,10 +84,14 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 " JSDoc shortcut
 autocmd Filetype javascript,typescript,javascriptreact,typescriptreact inoremap <buffer> /** /**  */<esc>hhi
 
+"""""""""""""""""""""""""""""""""""""""
+" Remaps
+"""""""""""""""""""""""""""""""""""""""
 " Open vimrc file in a vertical split
 nnoremap <silent> <leader>ev :vsplit $MYVIMRC<CR>
 " Source vimrc file
 nnoremap <leader>sv :source $MYVIMRC<CR>
+
 " Swap line with the line below/above
 nnoremap - ddp
 nnoremap _ ddkP
@@ -89,6 +99,7 @@ nnoremap _ ddkP
 nnoremap <silent> <leader><space> :nohlsearch<CR>
 " Space open/closes folds
 "nnoremap <space> za
+
 " List buffers. Enter buffer number/name to switch
 nnoremap <leader>p :Buffers<CR>
 " Switch between buffers with alt+n alt+p
@@ -99,15 +110,10 @@ nnoremap <M-x> :bd<CR>
 " Close/delete buffer without closing the window/split
 " (using qpkorr/vim-bufkill)
 nnoremap <M-z> :BD<CR>
+
 " View unsaved changes in file
 nnoremap <leader>vu :w !diff % -<CR>
-" Mappings for window switching
-" Now managed by vim-tmux-navigator
-" See vim_tmux_navigator_config
-"noremap <M-h> <C-w>h
-"noremap <M-l> <C-w>l
-"noremap <M-j> <C-w>j
-"noremap <M-k> <C-w>k
+
 " Close all windows except current
 noremap <M-o> <C-w>o
 " Create vertical split
@@ -124,6 +130,7 @@ nnoremap <leader>tn :tabnew<CR>
 nnoremap <leader>tc :tabclose<CR>
 " Open todo file
 nnoremap <leader>td :vsplit ~/todo<CR>
+
 " jk is escape
 inoremap jk <esc>
 " For opening a new line between two curly braces when you press { and enter.
@@ -142,12 +149,16 @@ inoremap <C-j> <esc>jo
 " Jump to the end of the line without leaving insert mode
 inoremap <C-l> <esc>A
 
+"""""""""""""""""""""""""""""""""""""""
 " netrw settings
+"""""""""""""""""""""""""""""""""""""""
 let g:netrw_banner = 0
 let g:netrw_liststyle = 3
 let g:netrw_altv = 1
 
-" Plug plugins
+"""""""""""""""""""""""""""""""""""""""
+" Plugins
+"""""""""""""""""""""""""""""""""""""""
 call plug#begin('~/.vim/plugged')
 "-------------- Colorschemes --------------"
 	Plug 'nanotech/jellybeans.vim'
@@ -167,12 +178,11 @@ call plug#begin('~/.vim/plugged')
 	Plug 'sainnhe/edge'
 	Plug 'ayu-theme/ayu-vim'
 	Plug 'sainnhe/sonokai'
-	Plug 'ishan9299/modus-theme-vim'
 	Plug 'Yagua/nebulous.nvim'
 "-------------- Language ------------------"
 	Plug 'mattn/emmet-vim'
 	Plug 'raimondi/delimitmate'
-	Plug 'sheerun/vim-polyglot'
+	"Plug 'sheerun/vim-polyglot'
 	Plug 'neoclide/coc.nvim', {'branch': 'release'}
 	Plug 'leafoftree/vim-svelte-plugin'
 	"Plug 'OmniSharp/omnisharp-vim'
@@ -203,6 +213,8 @@ call plug#end()
 """""""""""""""""""""""""""""""""""""""
 " Colorscheme config
 """""""""""""""""""""""""""""""""""""""
+" Uncomment the section relevant to the current colorscheme
+
 " Gruvbox only enables italics for GUI Vim.
 " Since my terminal supports italics, this line
 " manually enables it
@@ -220,23 +232,23 @@ call plug#end()
 "let g:srcery_italic=1
 
 " Settings for nebulous
-lua << EOF
-require("nebulous").setup {
-  variant = "night",
-  disable = {
-    background = false,
-    endOfBuffer = false,
-  },
-  italic = {
-    comments = true,
-    keywords = false,
-    functions = false,
-    variables = false,
-  }
-}
-EOF
+"lua << EOF
+"require("nebulous").setup {
+  "variant = "night",
+  "disable = {
+    "background = false,
+    "endOfBuffer = false,
+  "},
+  "italic = {
+    "comments = true,
+    "keywords = false,
+    "functions = false,
+    "variables = false,
+  "}
+"}
+"EOF
 
-colorscheme nebulous
+colorscheme moonfly
 
 """""""""""""""""""""""""""""""""""""""
 " FZF settings
@@ -277,29 +289,9 @@ let g:nrrw_rgn_rel_min = 50
 let g:nrrw_rgn_rel_max = 50
 " Increment narrowed window size
 nmap <leader>ni <Plug>NrrwrgnWinIncr
-"""""""""""""""""""""""""""""""""""""""
-
-" airline settings
-"let g:airline_theme='base16'
-"if !exists('g:airline_symbols')
-	"let g:airline_symbols = {}
-"endif
-"let g:airline_symbols.branch=''
-"let g:airline_left_sep = ''
-"let g:airline_left_alt_sep = ''
-"let g:airline_right_sep = ''
-"let g:airline_right_alt_sep = ''
-"let g:airline#extensions#default#section_truncate_width = {
-"\  'y': 101,
-"\  'x': 81,
-"\}
-"" %t is tail of the current file path (see :help filename-modifiers)
-"" %m is the modified flag
-"" %r is the read only flag
-"let g:airline_section_c = '%t%m%r'
 
 """""""""""""""""""""""""""""""""""""""
-" lightline config
+" Lightline config
 """""""""""""""""""""""""""""""""""""""
 " The empty array ensures that 'filetype' and 'lineinfo' doesn't end up
 " inside the same 'seperator'
@@ -341,37 +333,45 @@ let g:lightline = {
 	\   'coc_fix': 'middle'
 	\ }
 \ }
-" Use autocmd to formce lightline update
+" Use autocmd to force lightline update
 autocmd User CocStatusChange,CocDiagnosticChange call lightline#update()
+
 " This function controls the visibility of the lightline's fileformat field
 " It is only shown if window size is > 100
 function! LightlineFileFormat()
 	return winwidth(0) > 100 ? &fileformat : ''
 endfunction
+
 " This function controls the visibility of the lightline's filetype field
 " It is only shown if window size is > 80
 function! LightlineFileType()
 	return winwidth(0) > 80 ? (&filetype !=# '' ? &filetype : 'No ft') : ''
 endfunction
+
 " Functions to get Coc diagnostics to use them in the lightline
 function! LightlineCocErrors() abort
 	return s:lightline_coc_diagnostic('error', '')
 endfunction
+
 function! LightlineCocWarnings() abort
 	return s:lightline_coc_diagnostic('warning', '')
 endfunction
+
 function! LightlineCocInfos() abort
 	return s:lightline_coc_diagnostic('information', '')
 endfunction
+
 function! LightlineCocHints() abort
 	return s:lightline_coc_diagnostic('hints', '')
 endfunction
+
 function! LightlineCocFixes() abort
 	return s:lightline_coc_diagnostic('fix', '')
 endfunction
-"""""""""""""""""""""""""""""""""""""""
 
-" vim_tmux_navigator_config
+"""""""""""""""""""""""""""""""""""""""
+" vim-tmux-navigator config
+"""""""""""""""""""""""""""""""""""""""
 " This allows using the same keys to switch tmux panes and vim windows
 nnoremap <silent> <M-h> :TmuxNavigateLeft<cr>
 nnoremap <silent> <M-j> :TmuxNavigateDown<cr>
@@ -379,8 +379,9 @@ nnoremap <silent> <M-k> :TmuxNavigateUp<cr>
 nnoremap <silent> <M-l> :TmuxNavigateRight<cr>
 "nnoremap <silent> {Previous-Mapping} :TmuxNavigatePrevious<cr>
 
-""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""
 " COC config
+"""""""""""""""""""""""""""""""""""""""
 " TextEdit might fail if hidden is not set.
 set hidden
 
