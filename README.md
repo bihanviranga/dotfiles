@@ -10,8 +10,9 @@ I use this setup for coding and browsing the web. The settings are mostly useful
 
 I use Arch (btw) with LXQt + Openbox. My preferred editor is [Neovim](https://neovim.io/) and my terminal emulator is [kitty](https://sw.kovidgoyal.net/kitty/), inside which I usually run tmux.
 
-
-![image](5c1cbdb.png)
+![image1](images/378a58b-2.png)
+![image2](images/378a58b.png)
+![image3](images/5c1cbdb.png)
 
 ## Utilities and tools
 - [LSD](https://github.com/Peltoche/lsd) - `ls` command with more features - LSDelux

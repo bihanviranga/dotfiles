@@ -4,7 +4,7 @@
 # ~/.bashrc_alias
 ##################################################
 
-# Commands with extra params
+# Shortcuts and commands with extra params
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
@@ -20,6 +20,7 @@ alias svcstat='svcstat -o'
 
 # Externally installed tools
 alias ls='lsd -l'
+alias tree='lsd --tree'
 alias cat='bat'
 alias vim='nvim'
 alias gitlog='git log --oneline -n 10'

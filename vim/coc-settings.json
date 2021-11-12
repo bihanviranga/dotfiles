@@ -12,7 +12,8 @@
 		"python",
 		"cs",
 		"css",
-		"scss"
+		"scss",
+		"java"
 	],
 	"javascript.updateImportsOnFileMove.enable": true,
 	"typescript.updateImportsOnFileMove.enable": true,
