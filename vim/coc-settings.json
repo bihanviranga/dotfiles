@@ -1,35 +1,37 @@
 {
-	"coc.preferences.formatOnSaveFiletypes": [
-		"javascript",
-		"javascriptreact",
-		"html",
-		"svelte",
-		"htmldjango",
-		"c",
-		"cpp",
-		"typescript",
-		"typescriptreact",
-		"python",
-		"cs",
-		"css",
-		"scss",
-		"java"
-	],
-	"javascript.updateImportsOnFileMove.enable": true,
-	"typescript.updateImportsOnFileMove.enable": true,
-	"eslint.alwaysShowStatus": true,
-	"eslint.run": "onSave",
-	"eslint.format.enable": true,
-	"eslint.codeAction.showDocumentation": {
-		"enable": true
-	},
-	"eslint.autoFixOnSave": true,
-	"suggest.autoTrigger": "none",
-	"prettier.requireConfig": true,
-	//"prettier.singleQuote": true,
-	"prettier.eslintIntegration": true,
-	"diagnostic.errorSign": "",
-	"diagnostic.warningSign": "",
-	"diagnostic.infoSign": ""
+  "coc.preferences.formatOnSaveFiletypes": [
+    "javascript",
+    "javascriptreact",
+    "html",
+    "svelte",
+    "htmldjango",
+    "c",
+    "cpp",
+    "typescript",
+    "typescriptreact",
+    "python",
+    "cs",
+    "css",
+    "scss",
+    "java"
+  ],
+  "javascript.updateImportsOnFileMove.enable": true,
+  "typescript.updateImportsOnFileMove.enable": true,
+  "eslint.alwaysShowStatus": true,
+  "eslint.run": "onSave",
+  "eslint.format.enable": true,
+  "eslint.codeAction.showDocumentation": {
+    "enable": true
+  },
+  "eslint.autoFixOnSave": true,
+  //"suggest.autoTrigger": "none",
+  "prettier.requireConfig": true,
+  //"prettier.singleQuote": true,
+  "prettier.eslintIntegration": true,
+  "diagnostic.errorSign": "",
+  "diagnostic.warningSign": "",
+  "diagnostic.infoSign": "",
+  "svelte.enable-ts-plugin": true,
+  "java.format.settings.url": "/home/bv/.config/coc/extensions/node_modules/redhat.java/eclipse-formatter.xml"
 }
 

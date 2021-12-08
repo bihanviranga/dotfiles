@@ -2,9 +2,9 @@
 " Set commands
 """""""""""""""""""""""""""""""""""""""
 " number of VISUAL spaces per TAB
+" Use spaces instead of tabs
 set tabstop=2
 set shiftwidth=2
-" Use spaces instead of tabs
 set expandtab
 " enable line numbers
 set number
@@ -175,53 +175,54 @@ let g:netrw_altv = 1
 """""""""""""""""""""""""""""""""""""""
 call plug#begin('~/.vim/plugged')
 "-------------- Colorschemes --------------"
-	Plug 'nanotech/jellybeans.vim'
-	Plug 'roosta/srcery'
-	Plug 'tomasr/molokai'
-	Plug 'cocopon/iceberg.vim'
-	Plug 'jaredgorski/spacecamp'
-	Plug 'bluz71/vim-moonfly-colors'
-	Plug 'djjcast/mirodark'
-	Plug 'fenetikm/falcon'
-	Plug 'kristijanhusak/vim-hybrid-material'
-	Plug 'drewtempelmeyer/palenight.vim'
-	Plug 'issadarkthing/vim-rex'
-	Plug 'morhetz/gruvbox'
-	Plug 'embark-theme/vim', { 'as': 'embark' }
-	Plug 'sainnhe/gruvbox-material'
-	Plug 'sainnhe/edge'
-	Plug 'ayu-theme/ayu-vim'
-	Plug 'sainnhe/sonokai'
-	Plug 'Yagua/nebulous.nvim'
+  Plug 'nanotech/jellybeans.vim'
+  Plug 'roosta/srcery'
+  Plug 'tomasr/molokai'
+  Plug 'cocopon/iceberg.vim'
+  Plug 'jaredgorski/spacecamp'
+  Plug 'bluz71/vim-moonfly-colors'
+  Plug 'djjcast/mirodark'
+  Plug 'fenetikm/falcon'
+  Plug 'kristijanhusak/vim-hybrid-material'
+  Plug 'drewtempelmeyer/palenight.vim'
+  Plug 'issadarkthing/vim-rex'
+  Plug 'morhetz/gruvbox'
+  Plug 'embark-theme/vim', { 'as': 'embark' }
+  Plug 'sainnhe/gruvbox-material'
+  Plug 'sainnhe/edge'
+  Plug 'ayu-theme/ayu-vim'
+  Plug 'sainnhe/sonokai'
+  Plug 'Yagua/nebulous.nvim'
+  Plug 'nikolvs/vim-sunbather'
 "-------------- Language ------------------"
-	Plug 'mattn/emmet-vim'
-	Plug 'raimondi/delimitmate'
-	"Plug 'sheerun/vim-polyglot'
-	Plug 'neoclide/coc.nvim', {'branch': 'release'}
-	Plug 'leafoftree/vim-svelte-plugin'
-	"Plug 'OmniSharp/omnisharp-vim'
+  Plug 'mattn/emmet-vim'
+  Plug 'raimondi/delimitmate'
+  "Plug 'sheerun/vim-polyglot'
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  Plug 'leafoftree/vim-svelte-plugin'
+  "Plug 'OmniSharp/omnisharp-vim'
 "-------------- Interface -----------------"
-	"Plug 'ryanoasis/vim-devicons'
-	Plug 'Yggdroot/indentLine'
-	Plug 'itchyny/lightline.vim'
+  "Plug 'ryanoasis/vim-devicons'
+  Plug 'Yggdroot/indentLine'
+  Plug 'itchyny/lightline.vim'
 "-------------- Commands ------------------"
-	"Plug 'yuttie/comfortable-motion.vim'
-	"Plug 'vimwiki/vimwiki'
-	Plug 'chrisbra/NrrwRgn'
-	Plug 'godlygeek/tabular'
-	Plug 'tpope/vim-surround'
-	Plug 'kana/vim-textobj-user'
-	Plug 'kana/vim-textobj-line'
-	Plug 'qpkorr/vim-bufkill'
+  "Plug 'yuttie/comfortable-motion.vim'
+  "Plug 'vimwiki/vimwiki'
+  Plug 'chrisbra/NrrwRgn'
+  Plug 'godlygeek/tabular'
+  Plug 'tpope/vim-surround'
+  Plug 'kana/vim-textobj-user'
+  Plug 'kana/vim-textobj-line'
+  Plug 'qpkorr/vim-bufkill'
 "-------------- Integrations --------------"
-	Plug 'tpope/vim-fugitive'
-	Plug 'junegunn/fzf'
-	Plug 'junegunn/fzf.vim'
-	Plug 'scrooloose/nerdcommenter'
-	Plug 'christoomey/vim-tmux-navigator'
-	Plug 'wakatime/vim-wakatime'
-	Plug 'editorconfig/editorconfig-vim'
-	"Plug 'tweekmonster/startuptime.vim'
+  Plug 'tpope/vim-fugitive'
+  Plug 'junegunn/fzf'
+  Plug 'junegunn/fzf.vim'
+  Plug 'scrooloose/nerdcommenter'
+  Plug 'christoomey/vim-tmux-navigator'
+  Plug 'wakatime/vim-wakatime'
+  Plug 'editorconfig/editorconfig-vim'
+  "Plug 'tweekmonster/startuptime.vim'
 call plug#end()
 
 """""""""""""""""""""""""""""""""""""""
@@ -314,39 +315,39 @@ nmap <leader>ni <Plug>NrrwrgnWinIncr
 "
 let g:lightline = {
   \ 'colorscheme': 'material',
-	\ 'separator': { 'left': '', 'right': ''},
-	\ 'subseparator': { 'left': '', 'right': ''},
-	\ 'active': {
-	\   'left': [
-	\     ['mode', 'paste'],
-	\     ['readonly', 'filename', 'modified']
-	\   ],
-	\ 	'right': [
-	\     ['lineinfo'],
-	\     [],
-	\     ['gitbranch', 'filetype', 'fileformat'],
-	\     ['coc_error', 'coc_warning', 'coc_info', 'coc_hint', 'coc_fix']
-	\   ]
-	\ },
-	\ 'component_function': {
-	\ 	'gitbranch': 'FugitiveHead',
-	\ 	'fileformat': 'LightlineFileFormat',
-	\ 	'filetype': 'LightlineFileType',
-	\ },
-	\ 'component_expand': {
-	\   'coc_error': 'LightlineCocErrors',
-	\   'coc_warning': 'LightlineCocWarnings',
-	\   'coc_info': 'LightlineCocInfos',
-	\   'coc_hint': 'LightlineCocHints',
-	\   'coc_fix': 'LightlineCocFixes',
-	\ },
-	\ 'component_type': {
-	\   'coc_error': 'error',
-	\   'coc_warning': 'warning',
-	\   'coc_info': 'warning',
-	\   'coc_hint': 'middle',
-	\   'coc_fix': 'middle'
-	\ }
+  \ 'separator': { 'left': '', 'right': ''},
+  \ 'subseparator': { 'left': '', 'right': ''},
+  \ 'active': {
+  \   'left': [
+  \     ['mode', 'paste'],
+  \     ['readonly', 'filename', 'modified']
+  \   ],
+  \   'right': [
+  \     ['lineinfo'],
+  \     [],
+  \     ['gitbranch', 'filetype', 'fileformat'],
+  \     ['coc_error', 'coc_warning', 'coc_info', 'coc_hint', 'coc_fix']
+  \   ]
+  \ },
+  \ 'component_function': {
+  \   'gitbranch': 'FugitiveHead',
+  \   'fileformat': 'LightlineFileFormat',
+  \   'filetype': 'LightlineFileType',
+  \ },
+  \ 'component_expand': {
+  \   'coc_error': 'LightlineCocErrors',
+  \   'coc_warning': 'LightlineCocWarnings',
+  \   'coc_info': 'LightlineCocInfos',
+  \   'coc_hint': 'LightlineCocHints',
+  \   'coc_fix': 'LightlineCocFixes',
+  \ },
+  \ 'component_type': {
+  \   'coc_error': 'error',
+  \   'coc_warning': 'warning',
+  \   'coc_info': 'warning',
+  \   'coc_hint': 'middle',
+  \   'coc_fix': 'middle'
+  \ }
 \ }
 " Use autocmd to force lightline update
 autocmd User CocStatusChange,CocDiagnosticChange call lightline#update()
@@ -354,34 +355,34 @@ autocmd User CocStatusChange,CocDiagnosticChange call lightline#update()
 " This function controls the visibility of the lightline's fileformat field
 " It is only shown if window size is > 100
 function! LightlineFileFormat()
-	return winwidth(0) > 100 ? &fileformat : ''
+  return winwidth(0) > 100 ? &fileformat : ''
 endfunction
 
 " This function controls the visibility of the lightline's filetype field
 " It is only shown if window size is > 80
 function! LightlineFileType()
-	return winwidth(0) > 80 ? (&filetype !=# '' ? &filetype : 'No ft') : ''
+  return winwidth(0) > 80 ? (&filetype !=# '' ? &filetype : 'No ft') : ''
 endfunction
 
 " Functions to get Coc diagnostics to use them in the lightline
 function! LightlineCocErrors() abort
-	return s:lightline_coc_diagnostic('error', '')
+  return s:lightline_coc_diagnostic('error', '')
 endfunction
 
 function! LightlineCocWarnings() abort
-	return s:lightline_coc_diagnostic('warning', '')
+  return s:lightline_coc_diagnostic('warning', '')
 endfunction
 
 function! LightlineCocInfos() abort
-	return s:lightline_coc_diagnostic('information', '')
+  return s:lightline_coc_diagnostic('information', '')
 endfunction
 
 function! LightlineCocHints() abort
-	return s:lightline_coc_diagnostic('hints', '')
+  return s:lightline_coc_diagnostic('hints', '')
 endfunction
 
 function! LightlineCocFixes() abort
-	return s:lightline_coc_diagnostic('fix', '')
+  return s:lightline_coc_diagnostic('fix', '')
 endfunction
 
 """""""""""""""""""""""""""""""""""""""
@@ -556,9 +557,9 @@ nnoremap <silent><nowait> <leader>. :CocAction<CR>
 " Use like s:lightline_coc_diagnostic('error', 'error')
 " Written for use in lightline
 function! s:lightline_coc_diagnostic(kind, sign) abort
-	let info = get(b:, 'coc_diagnostic_info', 0)
-	if empty(info) || get(info, a:kind, 0) == 0
-		return ''
-	endif
-	return printf('%s %d', a:sign, info[a:kind])
+  let info = get(b:, 'coc_diagnostic_info', 0)
+  if empty(info) || get(info, a:kind, 0) == 0
+    return ''
+  endif
+  return printf('%s %d', a:sign, info[a:kind])
 endfunction
