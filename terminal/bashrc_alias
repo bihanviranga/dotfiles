@@ -17,6 +17,7 @@ alias man="PAGER=\"bat -p\" man"
 alias ..='cd ..'
 alias :q='exit'
 alias svcstat='svcstat -o'
+alias hexedit='hexedit --color'
 
 # Externally installed tools
 alias ls='lsd -l'

@@ -49,17 +49,18 @@ export PLAYLIST_ROOT="/path/to/playlist"
 export EDITOR=nvim
 export PAGER=bat
 export NNN_TMPFILE="${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.lastd"
+export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
 
 ##################################################
 # PATH extensions
 ##################################################
 export PATH="$PATH:/home/bv/bin/flutter/bin"
 export PATH="$PATH:/home/bv/bin/android-studio/bin"
-export PATH="$PATH:/home/bv/.gem/ruby/2.7.0/bin"
 export PATH="$PATH:/home/bv/.dotnet/tools"
 export PATH="$PATH:/home/bv/.yarn/bin"
 export PATH="$PATH:/home/bv/.local/bin"
 export PATH="$PATH:/home/bv/bin"
+export PATH="$PATH:$GEM_HOME/bin"
 
 ##################################################
 # Loading bash-completion

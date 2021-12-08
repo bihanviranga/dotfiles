@@ -262,7 +262,8 @@ call plug#end()
 "}
 "EOF
 
-colorscheme moonfly
+" set-colorscheme
+colorscheme sunbather
 
 """""""""""""""""""""""""""""""""""""""
 " FZF settings
