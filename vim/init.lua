@@ -97,6 +97,13 @@ function imap(shortcut, command, silent)
   map('i', shortcut, command, silent)
 end
 
+-- Make j,k move using visible lines, not physical lines
+function _G.enterParagraphMode()
+  print("Paragraph mode on")
+  nmap("k", "gk", true)
+  nmap("j", "gj", true)
+end
+
 ----------------------------------
 -- Remaps
 ----------------------------------
@@ -159,19 +166,8 @@ imap("<M-CR>", "<esc>A;<esc>o")
 -- Jump to the end of the line without leaving insert mode
 imap("<C-l>", "<esc>A")
 
--- TODO: Enable paragraph mode
--- nnoremap <leader>ep :call EnterParagraphMode()<CR>
-
-----------------------------------
--- TODO: Functions
-----------------------------------
---" This function is useful when writing text paragraphs, to make j,k move
---" using visible lines, not physical lines
---function EnterParagraphMode()
-  --echom "Paragraph mode on"
-  --nnoremap <silent> k gk
-  --nnoremap <silent> j gj
---endfunction
+-- Enable paragraph mode
+nmap("<leader>ep", ":lua enterParagraphMode()<CR>")
 
 ----------------------------------
 -- netrw settings
