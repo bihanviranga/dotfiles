@@ -29,8 +29,7 @@ vim.opt.foldmethod = 'indent'
 -- required for setting modelines
 vim.opt.compatible = false
 -- Use system keyboard
--- TODO: need this
---vim.opt.clipboard += 'unnamedplus'
+vim.opt.clipboard = 'unnamedplus'
 -- new splits get added to right or below
 vim.opt.splitbelow = true
 vim.opt.splitright = true
@@ -50,7 +49,7 @@ vim.opt.modeline = true
 vim.opt.colorcolumn = '81'
 
 ----------------------------------
--- TODO
+-- TODO: convert to lua
 ----------------------------------
 --" enable syntax processing
 vim.cmd("syntax enable")
@@ -166,3 +165,28 @@ imap("(;<CR>", "(<CR>);<ESC>O")
 imap("<M-CR>", "<esc>A;<esc>o")
 -- Jump to the end of the line without leaving insert mode
 imap("<C-l>", "<esc>A")
+
+-- TODO: Enable paragraph mode
+-- nnoremap <leader>ep :call EnterParagraphMode()<CR>
+
+----------------------------------
+-- TODO: Functions
+----------------------------------
+--" This function is useful when writing text paragraphs, to make j,k move
+--" using visible lines, not physical lines
+--function EnterParagraphMode()
+  --echom "Paragraph mode on"
+  --nnoremap <silent> k gk
+  --nnoremap <silent> j gj
+--endfunction
+
+----------------------------------
+-- netrw settings
+----------------------------------
+vim.g.netrw_banner = 0
+vim.g.netrw_liststyle = 3
+vim.g.netrw_altv = 1
+
+----------------------------------
+-- TODO: Plugins
+----------------------------------
