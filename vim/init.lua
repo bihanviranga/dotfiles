@@ -1,5 +1,5 @@
 ----------------------------------
--- vim.opt.commands
+-- Options
 ----------------------------------
 -- indentation
 vim.opt.tabstop = 2
@@ -48,9 +48,7 @@ vim.opt.modeline = true
 -- vim.opt.color column
 vim.opt.colorcolumn = '81'
 
-----------------------------------
 -- TODO: convert to lua
-----------------------------------
 --" enable syntax processing
 vim.cmd("syntax enable")
 --" load filetype-specific indent files
@@ -62,30 +60,25 @@ vim.cmd("filetype plugin on")
 vim.g.mapleader = ","
 
 ----------------------------------
--- Auto commands - TODO
+-- Auto commands
 ----------------------------------
---" When entering insert mode, vertically center current line
---"autocmd InsertEnter * norm zz
---" Strip trailing whitespace on save
---autocmd BufWritePre * %s/\s\+$//e
+-- When entering insert mode, vertically center current line
+--vim.cmd([[autocmd InsertEnter * norm zz]])
+
+-- Strip trailing whitespace on save
+vim.cmd([[autocmd BufWritePre * %s/\s\+$//e]])
 
 --" Set filetype for extension
---au BufRead,BufNewFile *.vtl set filetype=vtl
---au BufRead,BufNewFile *.eslintrc set filetype=json
+vim.cmd([[au BufRead,BufNewFile *.eslintrc set filetype=json]])
 
---" set custom indentation per file type
---"autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
---autocmd FileType cs setlocal shiftwidth=4 tabstop=4
---autocmd FileType vtl setlocal shiftwidth=4 tabstop=4
+-- set custom indentation per file type
+--vim.cmd([[autocmd FileType cs setlocal shiftwidth=4 tabstop=4]])
 
---" Disable automatic comment insertion
---" Means that when you enter a comment and create a newline,
---" the newline becomes a comment line too.
---" This disables it for all filetypes
---autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+-- Disable automatic comment insertion on next line
+vim.cmd([[autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o]])
 
 --" JSDoc shortcut
---autocmd Filetype javascript,typescript,javascriptreact,typescriptreact inoremap <buffer> /** /**  */<esc>hhi
+vim.cmd([[autocmd Filetype javascript,typescript,javascriptreact,typescriptreact inoremap <buffer> /** /**  */<esc>hhi]])
 
 ----------------------------------
 -- Functions
