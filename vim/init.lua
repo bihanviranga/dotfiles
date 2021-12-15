@@ -59,7 +59,6 @@ vim.cmd("filetype plugin on")
 -- leader is comma
 vim.g.mapleader = ","
 
-vim.cmd([[colorscheme embark]])
 ----------------------------------
 -- Auto commands
 ----------------------------------
@@ -188,3 +187,42 @@ vim.g.netrw_altv = 1
 -- Uncomment the require line below and
 -- Run with nvim --startuptime /tmp/nvim-startuptime
 --require 'nvim-startup'.setup()
+
+----------------------------------
+-- Colorscheme config
+----------------------------------
+-- Uncomment the section relevant to the current colorscheme
+
+-- Gruvbox only enables italics for GUI Vim.
+-- Since my terminal supports italics, this line
+-- manually enables it
+--vim.g.gruvbox_italic = 1
+--vim.g.gruvbox_contrast_dark = "hard"
+
+-- mode of the ayu colorscheme (light, mirage, dark)
+--vim.g.ayucolor="mirage"
+
+-- Settings for sonokai colorscheme
+--let vim.g.sonokai_enable_itallic = 1
+--let vim.g.sonokai_style = "maia"
+
+-- Settings for srcery theme
+--vim.g.srcery_italic = 1
+
+-- Settings for nebulous
+--require("nebulous").setup {
+  --variant = "night",
+  --disable = {
+    --background = false,
+    --endOfBuffer = false,
+  --},
+  --italic = {
+    --comments = true,
+    --keywords = false,
+    --functions = false,
+    --variables = false,
+  --}
+--}
+
+-- set-colorscheme
+vim.cmd([[colorscheme ayu]])
