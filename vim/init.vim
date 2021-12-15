@@ -194,6 +194,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'sainnhe/sonokai'
   Plug 'Yagua/nebulous.nvim'
   Plug 'nikolvs/vim-sunbather'
+  Plug 'owickstrom/vim-colors-paramount'
 "-------------- Language ------------------"
   Plug 'mattn/emmet-vim'
   Plug 'raimondi/delimitmate'
@@ -264,7 +265,7 @@ call plug#end()
 "EOF
 
 " set-colorscheme
-colorscheme sunbather
+colorscheme paramount
 
 """""""""""""""""""""""""""""""""""""""
 " FZF settings

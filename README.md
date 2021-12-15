@@ -28,6 +28,7 @@ I use Arch (btw) with LXQt + Openbox. My preferred editor is [Neovim](https://gi
 - [hexyl](https://github.com/sharkdp/hexyl) - hex viewer
 - [tuxi](https://github.com/Bugswriter/tuxi) - do quick web searches from the terminal
 - [newsboat](https://newsboat.org/) - Terminal RSS/Atom feed reader
+- [gcalcli](https://github.com/insanum/gcalcli/) - Google Calendar CLI client
 
 Distros I have tried and liked, from oldest to latest:
 - Ubuntu 14.04
