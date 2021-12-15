@@ -226,3 +226,26 @@ vim.g.netrw_altv = 1
 
 -- set-colorscheme
 vim.cmd([[colorscheme ayu]])
+
+----------------------------------
+-- NrrwRgn settings
+----------------------------------
+-- Open new buffer in a vertical split
+vim.g.nrrw_rgn_vert = 1
+-- Set the size (absolute=rows or cols, relative=percentage)
+vim.g.nrrw_rgn_resize_window = 'relative'
+-- Set the new buffer size
+vim.g.nrrw_rgn_wdth = 20
+vim.g.nrrw_rgn_rel_min = 50
+vim.g.nrrw_rgn_rel_max = 50
+-- Increment narrowed window size
+-- DOESN'T WORK: nmap("<leader>ni", "<Plug>NrrwrgnWinIncr")
+
+----------------------------------
+-- vim-tmux-navigator config
+----------------------------------
+-- This allows using the same keys to switch tmux panes and vim windows
+nmap('<M-h>', '<CMD>TmuxNavigateLeft<CR>', true)
+nmap('<M-j>', '<CMD>TmuxNavigateDown<CR>', true)
+nmap('<M-k>', '<CMD>TmuxNavigateUp<CR>', true)
+nmap('<M-l>', '<CMD>TmuxNavigateRight<CR>', true)
