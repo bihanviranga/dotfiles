@@ -59,6 +59,7 @@ vim.cmd("filetype plugin on")
 -- leader is comma
 vim.g.mapleader = ","
 
+vim.cmd([[colorscheme embark]])
 ----------------------------------
 -- Auto commands
 ----------------------------------
@@ -105,13 +106,18 @@ function _G.enterParagraphMode()
 end
 
 ----------------------------------
+-- Plugins
+----------------------------------
+require('plugins')
+
+----------------------------------
 -- Remaps
 ----------------------------------
 -- TODO: set $MYVIMRC
 -- Open vimrc file in a vertical split
-nmap("<leader>ev", "<CMD>:vsplit $MYVIMRC<CR>", true)
+--nmap("<leader>ev", "<CMD>:vsplit $MYVIMRC<CR>", true)
 -- Source vimrc file
-nmap("<leader>sv", "<CMD>source $MYVIMRC<CR>")
+--nmap("<leader>sv", "<CMD>source $MYVIMRC<CR>")
 
 -- Swap a line with the line below/above
 nmap("-", "ddp")
@@ -177,5 +183,8 @@ vim.g.netrw_liststyle = 3
 vim.g.netrw_altv = 1
 
 ----------------------------------
--- TODO: Plugins
+-- nvim-startup.lua settings
 ----------------------------------
+-- Uncomment the require line below and
+-- Run with nvim --startuptime /tmp/nvim-startuptime
+--require 'nvim-startup'.setup()
