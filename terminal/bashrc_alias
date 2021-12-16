@@ -18,6 +18,7 @@ alias ..='cd ..'
 alias :q='exit'
 alias svcstat='svcstat -o'
 alias hexedit='hexedit --color'
+alias vi='nvim -u /home/bv/src/hobbies/dotfiles/vim/minimal.vim'
 
 # Externally installed tools
 alias ls='lsd -l'
