@@ -265,7 +265,7 @@ call plug#end()
 "EOF
 
 " set-colorscheme
-colorscheme paramount
+colorscheme hybrid_reverse
 
 """""""""""""""""""""""""""""""""""""""
 " FZF settings
