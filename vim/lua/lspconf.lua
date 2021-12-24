@@ -24,11 +24,16 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', ']d', '<CMD>lua vim.diagnostic.goto_next()<CR>', opts)
 end
 
+-- Completion plugin settings
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+
 -- Pass the config to all servers
 local servers = { 'eslint', 'tsserver' }
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
     on_attach = on_attach,
+    capabilities = capabilities,
     flags = {
       debounce_text_changes = 150,
     }
@@ -36,4 +41,40 @@ for _, lsp in ipairs(servers) do
 end
 
 -- Auto format using eslint
-vim.cmd([[autocmd BufWritePre <buffer> EslintFixAll]])
+vim.cmd([[autocmd BufWritePre *.js,*.jsx,*.ts,*.tsx EslintFixAll]])
+
+-- Completion plugin settings continued
+vim.o.completeopt = 'menuone,noselect'
+
+local cmp = require 'cmp'
+cmp.setup {
+  mapping = {
+    ['<C-p>'] = cmp.mapping.select_prev_item(),
+    ['<C-n>'] = cmp.mapping.select_next_item(),
+    ['<C-d>'] = cmp.mapping.scroll_docs(-4),
+    ['<C-f>'] = cmp.mapping.scroll_docs(4),
+    ['<C-Space>'] = cmp.mapping.complete(),
+    ['<C-e>'] = cmp.mapping.close(),
+    ['<CR>'] = cmp.mapping.confirm {
+      behavior = cmp.ConfirmBehavior.Replace,
+      select = true,
+    },
+    ['<Tab>'] = function(fallback)
+      if cmp.visible() then
+        cmp.select_next_item()
+      else
+        fallback()
+      end
+    end,
+    ['<S-Tab>'] = function(fallback)
+      if cmp.visible() then
+        cmp.select_prev_item()
+      else
+        fallback()
+      end
+    end,
+  },
+  sources = {
+    { name = 'nvim_lsp' },
+  },
+}
