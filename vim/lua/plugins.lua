@@ -26,21 +26,22 @@ return require('packer').startup(function()
   ----- Language -----
   use 'raimondi/delimitmate'
   use 'scrooloose/nerdcommenter'
+  use 'neovim/nvim-lspconfig'
 
   ----- Interface -----
   use 'Yggdroot/indentLine'
 
   ----- Commands -----
-  use 'chrisbra/NrrwRgn' -- TODO: fix config
+  use {'chrisbra/NrrwRgn', opt = true}
   use 'godlygeek/tabular'
   use 'tpope/vim-surround'
   use 'kana/vim-textobj-user'
   use 'kana/vim-textobj-line'
   use 'qpkorr/vim-bufkill'
-  use 'henriquehbr/nvim-startup.lua'
+  --use 'henriquehbr/nvim-startup.lua'
 
   ----- Integrations -----
-  use 'christoomey/vim-tmux-navigator' -- TODO: fix config
+  use 'christoomey/vim-tmux-navigator'
   use 'wakatime/vim-wakatime'
   use 'editorconfig/editorconfig-vim'
 end)

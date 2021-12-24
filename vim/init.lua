@@ -132,10 +132,9 @@ nmap("<M-n>", "<CMD>:bnext<CR>")
 nmap("<M-p>", "<CMD>:bprevious<CR>")
 -- Close/delete buffer with alt+x
 nmap("<M-x>", "<CMD>:bd<CR>")
--- TODO:
 -- Close/delete buffer without closing the window/split
---" (using qpkorr/vim-bufkill)
--- nnoremap <M-z> :BD<CR>
+-- (using qpkorr/vim-bufkill)
+nmap("<M-z>", "<CMD>BD<CR>")
 
 -- View unsaved changes in file
 nmap("<leader>vu", "<CMD>w !diff % -<CR>")
@@ -249,3 +248,8 @@ nmap('<M-h>', '<CMD>TmuxNavigateLeft<CR>', true)
 nmap('<M-j>', '<CMD>TmuxNavigateDown<CR>', true)
 nmap('<M-k>', '<CMD>TmuxNavigateUp<CR>', true)
 nmap('<M-l>', '<CMD>TmuxNavigateRight<CR>', true)
+
+----------------------------------
+-- LSP configuration
+----------------------------------
+require('lspconf')
