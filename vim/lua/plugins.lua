@@ -32,6 +32,7 @@ return require('packer').startup(function()
 
   ----- Interface -----
   use 'Yggdroot/indentLine'
+  use 'nvim-lualine/lualine.nvim'
 
   ----- Commands -----
   use {'chrisbra/NrrwRgn', opt = true}

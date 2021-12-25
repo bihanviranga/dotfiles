@@ -256,3 +256,23 @@ require('lspconf')
 -- Load Telescope config
 ----------------------------------
 require('telescopeconf')
+
+----------------------------------
+-- Lualine config
+----------------------------------
+require'lualine'.setup {
+  options = {
+    icons_enabled = false,
+    theme = 'auto',
+    component_separators = '',
+    section_separators = ''
+  },
+  sections = {
+    lualine_a = {'mode'},
+    lualine_b = {'filename'},
+    lualine_c = {},
+    lualine_x = {'diagnostics'},
+    lualine_y = {'branch'},
+    lualine_z = {'location'},
+  },
+}
