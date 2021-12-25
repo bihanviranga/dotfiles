@@ -1,3 +1,6 @@
+----------------------------------
+-- LSP and treesitter config
+----------------------------------
 local nvim_lsp = require('lspconfig')
 
 -- Only maps these keys after the language server attaches
@@ -76,5 +79,12 @@ cmp.setup {
   },
   sources = {
     { name = 'nvim_lsp' },
+  },
+}
+
+-- Treesitter
+require'nvim-treesitter.configs'.setup {
+  highlight = {
+    enable = true,
   },
 }

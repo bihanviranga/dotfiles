@@ -46,4 +46,7 @@ return require('packer').startup(function()
   use 'christoomey/vim-tmux-navigator'
   use 'wakatime/vim-wakatime'
   use 'editorconfig/editorconfig-vim'
+  use {'nvim-telescope/telescope.nvim', requires = {{'nvim-lua/plenary.nvim'}}}
+  use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
+  use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 end)

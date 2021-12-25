@@ -125,8 +125,6 @@ nmap("_", "ddkP")
 -- Stop highlighting search results
 nmap("<leader><space>", "<CMD>nohlsearch<CR>", true)
 
--- List buffers. Enter buffer number/name to switch
-nmap("<leader>p", "<CMD>:Buffers<CR>")
 -- Switch between buffers with alt+n alt+p
 nmap("<M-n>", "<CMD>:bnext<CR>")
 nmap("<M-p>", "<CMD>:bprevious<CR>")
@@ -176,9 +174,9 @@ nmap("<leader>ep", ":lua enterParagraphMode()<CR>")
 ----------------------------------
 -- netrw settings
 ----------------------------------
-vim.g.netrw_banner = 0
-vim.g.netrw_liststyle = 3
-vim.g.netrw_altv = 1
+--vim.g.netrw_banner = 0
+--vim.g.netrw_liststyle = 3
+--vim.g.netrw_altv = 1
 
 ----------------------------------
 -- nvim-startup.lua settings
@@ -250,6 +248,11 @@ nmap('<M-k>', '<CMD>TmuxNavigateUp<CR>', true)
 nmap('<M-l>', '<CMD>TmuxNavigateRight<CR>', true)
 
 ----------------------------------
--- LSP configuration
+-- Load LSP and treesitter config
 ----------------------------------
 require('lspconf')
+
+----------------------------------
+-- Load Telescope config
+----------------------------------
+require('telescopeconf')
