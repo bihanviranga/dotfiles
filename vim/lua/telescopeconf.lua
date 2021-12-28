@@ -6,10 +6,13 @@ require('telescope').setup {
   defaults = {
     mappings = {
       i = {
-        ["<esc>"] = actions.close
+        ["<esc>"] = actions.close,
       },
     },
-  }
+    preview = {
+      hide_on_startup = true,
+    },
+  },
 }
 
 require('telescope').load_extension('fzf')
