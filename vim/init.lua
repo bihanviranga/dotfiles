@@ -222,7 +222,7 @@ nmap("<leader>ep", ":lua enterParagraphMode()<CR>")
 --}
 
 -- set-colorscheme
-vim.cmd([[colorscheme ayu]])
+vim.cmd([[colorscheme moonfly]])
 
 ----------------------------------
 -- NrrwRgn settings
