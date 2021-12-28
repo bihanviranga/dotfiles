@@ -80,3 +80,8 @@ rbenv() {
     command rbenv "$command" "$@";;
   esac
 }
+
+# Copy filename to clipboard
+fname() {
+  readlink -f "$1" | xclip
+}
