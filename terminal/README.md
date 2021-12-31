@@ -1,6 +1,6 @@
 # Bash and other things
 
-![Terminal](cc6b273.png)
+![Terminal](3467fe8.png)
 
 These files contain my settings for the bash terminal. For terminal emulator settings, see [here.](https://github.com/bihanviranga/dotfiles/tree/master/kitty) For tmux settings, see [here.](https://github.com/bihanviranga/dotfiles/tree/master/tmux)
 Older screenshots are in the `old` directory. The filename is also a commit hash, showing the repository's latest commit when the screenshot was taken.
@@ -24,6 +24,6 @@ Bash aliases and functions are split into seperate files. These files are source
 - `gitlog_screen()`: Print `git log --oneline` to fill the entire terminal screen.
 
 ## Fonts
-- [FiraCode Nerd Font](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/FiraCode)
+- [FiraCode Nerd Font](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/FiraCode)(Pictured)
 - [JetBrains Mono](https://www.jetbrains.com/lp/mono/)
-- [Fantasque Sans Mono](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/FantasqueSansMono)(Pictured)
+- [Fantasque Sans Mono](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/FantasqueSansMono)
