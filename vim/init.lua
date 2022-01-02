@@ -47,6 +47,8 @@ vim.opt.ignorecase = true
 vim.opt.modeline = true
 -- vim.opt.color column
 vim.opt.colorcolumn = '81'
+-- sign column
+vim.opt.signcolumn = 'yes:1'
 
 -- TODO: convert to lua
 --" enable syntax processing
