@@ -12,12 +12,14 @@ set number
 set clipboard+=unnamedplus
 " Ignore case of searches
 set ignorecase
+" Enable 24-bit color
+set termguicolors
 
 " jk is escape
 inoremap jk <esc>
 
 " set-colorscheme
-colorscheme paramount
+colorscheme blue-moon
 
 " leader is comma
 let mapleader=","

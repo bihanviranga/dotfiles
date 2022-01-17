@@ -6,11 +6,14 @@ return require('packer').startup(function()
   use 'jaredgorski/spacecamp'
   use 'bluz71/vim-moonfly-colors'
   use 'issadarkthing/vim-rex'
-  use 'morhetz/gruvbox'
-  use {'embark-theme/vim', as = 'embark'}
   use 'ayu-theme/ayu-vim'
   use 'nikolvs/vim-sunbather'
-  use 'owickstrom/vim-colors-paramount'
+  use {'catppuccin/nvim', as = 'catppuccin'}
+  use 'ray-x/aurora'
+  use 'kyazdani42/blue-moon'
+  use 'EdenEast/nightfox.nvim'
+  use 'navarasu/onedark.nvim'
+  use 'luisiacc/gruvbox-baby'
 
   ----- Language -----
   use 'raimondi/delimitmate'
