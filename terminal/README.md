@@ -16,12 +16,14 @@ Bash aliases and functions are split into seperate files. These files are source
 - `bashrc_alias`: Contains all the bash aliases.
 - `bashrc_functions`: Contains bash functions.
 - `lesskey`: Settings for `less` pager. Place this in `~/.lesskey`
+- `inputrc`: Bash inputrc file.
 
 ## Functions
 - `activate()`: Once called, activates any Python virtual environment in the current directory. By default it searches for a __env__ or __venv__ folder, and activates by sourcing that folder+ __/bin/activate__.
 - `mkd()`: Create a folder and cd into it.
 - `n()`: NNN file manager with CD-on-quit feature.
 - `gitlog_screen()`: Print `git log --oneline` to fill the entire terminal screen.
+- `fname()`: Get the name of a file and copy it to clipboard. (Eg: `fname somefile.cpp`, and the full path to somefile.cpp is in your clipboard now)
 
 ## Fonts
 - [FiraCode Nerd Font](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/FiraCode)(Pictured)

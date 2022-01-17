@@ -148,7 +148,7 @@ nmap("ss", "<CMD>split<CR>")
 -- Select all and copy
 nmap("<leader>sa", "<CMD>%y<CR>")
 -- Select all without copy
-nmap("<leader>sA", "ggvG")
+nmap("<leader>sA", "gg0vG$")
 -- New tab
 nmap("<leader>tn", "<CMD>tabnew<CR>")
 -- Close tab
