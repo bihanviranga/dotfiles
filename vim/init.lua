@@ -247,11 +247,11 @@ require'lualine'.setup {
     section_separators = ''
   },
   sections = {
-    lualine_a = {'mode'},
-    lualine_b = {'filename'},
-    lualine_c = {},
-    lualine_x = {'diagnostics'},
-    lualine_y = {'branch'},
-    lualine_z = {'location'},
+    lualine_a = {},
+    lualine_b = {},
+    lualine_c = {'mode', 'filename'},
+    lualine_x = {'diagnostics', 'branch', 'location'},
+    lualine_y = {},
+    lualine_z = {},
   },
 }
