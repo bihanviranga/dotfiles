@@ -201,7 +201,7 @@ nmap("<leader>ep", ":lua enterParagraphMode()<CR>")
 --}
 
 -- set-colorscheme
-vim.cmd([[colorscheme catppuccin]])
+vim.cmd([[colorscheme ayu]])
 
 ----------------------------------
 -- NrrwRgn settings

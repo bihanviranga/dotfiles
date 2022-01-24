@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "FiraCode Nerd Font:pixelsize=12:antialias=true:autohint=true";
+static char *font = "Gohu GohuFont:pixelsize=13:antialias=true:autohint=true";
 static int borderpx = 2;
 
 /*
@@ -15,8 +15,11 @@ static int borderpx = 2;
  * 3: SHELL environment variable
  * 4: value of shell in /etc/passwd
  * 5: value of shell in config.h
+ *
+ * NOTE: putting tmux here doesn't work for some reason.
+ * Instead I'm using "alias st='st -e tmux'"
  */
-static char *shell = "/usr/bin/tmux";
+static char *shell = "tmux";
 char *utmp = NULL;
 /* scroll program: to enable use a string like "scroll" */
 char *scroll = NULL;
