@@ -1,0 +1,83 @@
+#!/usr/bin/env bash
+: '
+A simple script combining systemctl commands I use often.
+'
+
+services=(httpd mysqld mssql-server mongodb docker bluetooth tor ModemManager i8kmon)
+
+GREEN='\033[1;32m'
+RED='\033[1;31m'
+RCOL='\033[0m'
+
+# Default options
+# can be "stat" or "stop" to determine what to do
+RUN_MODE="stat"
+# One line mode
+ONELINE=0
+
+# Parsing command line args
+case "$1" in
+	-stop)
+		RUN_MODE="stop"
+		;;
+	--oneline | -o)
+		ONELINE=1
+		;;
+esac
+
+if [ "$RUN_MODE" = "stat" ];
+then
+	for svc in "${services[@]}"
+	do
+		cmd="systemctl --no-pager status $svc"
+		result=`$cmd 2>/dev/null`
+		readarray -t lines <<<"$result"
+
+		# check if service does not exist
+		if [ ${#lines[@]} -eq 1 ];
+		then
+			echo -e "${RED}x${RCOL} Service ${svc} not found"
+			continue
+		fi
+
+		activeline="${lines[2]}"
+		isactive=${activeline:13:6}
+		if [ "$isactive" = "active" ]
+		then
+			if [[ $ONELINE == 1 ]]
+			then
+				echo -e "${GREEN}${lines[0]} - Active${RCOL}"
+			else
+				echo -e "${GREEN}${lines[0]}${RCOL}"
+				echo "${lines[2]}"
+			fi
+		else
+			isinactive=${activeline:13:8}
+			if [ "$isinactive" = "inactive" ]
+			then
+				if [[ $ONELINE == 1 ]]
+				then
+					echo "${lines[0]} - Inactive"
+				else
+					echo "${lines[0]}"
+					echo "${lines[2]}"
+				fi
+			fi
+		fi
+	done
+elif [ "$RUN_MODE" = "stop" ];
+then
+	# Check if running as root
+	if [ "$EUID" -ne 0 ]
+	then
+		echo "Stopping services require root privileges."
+		exit 1
+	fi
+
+	for svc in "${services[@]}"
+	do
+		eval "systemctl stop $svc"
+	done
+fi
+
+exit 0
