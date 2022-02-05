@@ -21,6 +21,7 @@ alias hexedit='hexedit --color'
 alias vi='nvim -u /home/bv/src/hobbies/dotfiles/vim/minimal.vim'
 alias st='st -e tmux'
 alias ff='firefox'
+alias cal='cal -m'
 
 # Externally installed tools
 alias ls='lsd -l'
