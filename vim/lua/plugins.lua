@@ -12,10 +12,8 @@ return require('packer').startup(function()
   use 'ray-x/aurora'
   use 'kyazdani42/blue-moon'
   use 'EdenEast/nightfox.nvim'
-  use 'navarasu/onedark.nvim'
   use 'luisiacc/gruvbox-baby'
-  use 'adigitoleo/vim-mellow'
-  use 'fcpg/vim-farout'
+  use 'windwp/wind-colors'
 
   ----- Language -----
   use 'raimondi/delimitmate'

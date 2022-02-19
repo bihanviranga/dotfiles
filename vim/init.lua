@@ -201,7 +201,7 @@ nmap("<leader>ep", ":lua enterParagraphMode()<CR>")
 --}
 
 -- set-colorscheme
-vim.cmd([[colorscheme gruvbox-baby]])
+vim.cmd([[colorscheme wind]])
 
 ----------------------------------
 -- NrrwRgn settings
