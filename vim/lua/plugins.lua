@@ -14,6 +14,8 @@ return require('packer').startup(function()
   use 'EdenEast/nightfox.nvim'
   use 'luisiacc/gruvbox-baby'
   use 'windwp/wind-colors'
+  use 'karoliskoncevicius/distilled-vim'
+  use 'zekzekus/menguless'
 
   ----- Language -----
   use 'raimondi/delimitmate'

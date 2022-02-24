@@ -201,7 +201,7 @@ nmap("<leader>ep", ":lua enterParagraphMode()<CR>")
 --}
 
 -- set-colorscheme
-vim.cmd([[colorscheme wind]])
+vim.cmd([[colorscheme menguless]])
 
 ----------------------------------
 -- NrrwRgn settings
