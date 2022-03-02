@@ -201,7 +201,7 @@ nmap("<leader>ep", ":lua enterParagraphMode()<CR>")
 --}
 
 -- set-colorscheme
-vim.cmd([[colorscheme menguless]])
+vim.cmd([[colorscheme moonfly]])
 
 ----------------------------------
 -- NrrwRgn settings
@@ -255,3 +255,8 @@ require'lualine'.setup {
     lualine_z = {},
   },
 }
+
+----------------------------------
+-- Indent-Blankline config
+----------------------------------
+require('indent_blankline').setup()
