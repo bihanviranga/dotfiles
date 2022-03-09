@@ -19,7 +19,7 @@ set termguicolors
 inoremap jk <esc>
 
 " set-colorscheme
-colorscheme blue-moon
+colorscheme moonfly
 
 " leader is comma
 let mapleader=","

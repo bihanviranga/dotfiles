@@ -259,4 +259,7 @@ require'lualine'.setup {
 ----------------------------------
 -- Indent-Blankline config
 ----------------------------------
+vim.g.indent_blankline_char = '¦'
+nmap('<leader>id', '<CMD>IndentBlanklineDisable!<CR>', true)
+nmap('<leader>ie', '<CMD>IndentBlanklineEnable!<CR>', true)
 require('indent_blankline').setup()
