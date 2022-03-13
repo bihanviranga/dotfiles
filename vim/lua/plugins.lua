@@ -5,11 +5,9 @@ return require('packer').startup(function()
   use 'tomasr/molokai'
   use 'jaredgorski/spacecamp'
   use 'bluz71/vim-moonfly-colors'
-  use 'issadarkthing/vim-rex'
   use 'ayu-theme/ayu-vim'
   use 'nikolvs/vim-sunbather'
   use {'catppuccin/nvim', as = 'catppuccin'}
-  use 'ray-x/aurora'
   use 'kyazdani42/blue-moon'
   use 'EdenEast/nightfox.nvim'
   use 'luisiacc/gruvbox-baby'

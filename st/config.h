@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Anonymice Nerd Font:pixelsize=13:antialias=true:autohint=true";
+static char *font = "Gohu GohuFont:pixelsize=14";
 static int borderpx = 2;
 
 /*
