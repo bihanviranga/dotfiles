@@ -200,8 +200,15 @@ nmap("<leader>ep", ":lua enterParagraphMode()<CR>")
   --style = 'deep'
 --}
 
+-- Tokyonight theme conf
+--vim.g.tokyonight_style = "night"
+
+
 -- set-colorscheme
-vim.cmd([[colorscheme catppuccin]])
+vim.cmd([[colorscheme rvcs]])
+
+-- Set background to black (any colorscheme)
+vim.cmd([[hi Normal guibg=black]])
 
 ----------------------------------
 -- NrrwRgn settings

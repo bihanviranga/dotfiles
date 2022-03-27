@@ -8,12 +8,14 @@ return require('packer').startup(function()
   use 'ayu-theme/ayu-vim'
   use 'nikolvs/vim-sunbather'
   use {'catppuccin/nvim', as = 'catppuccin'}
-  use 'kyazdani42/blue-moon'
-  use 'EdenEast/nightfox.nvim'
   use 'luisiacc/gruvbox-baby'
   use 'windwp/wind-colors'
   use 'karoliskoncevicius/distilled-vim'
   use 'zekzekus/menguless'
+  use 'folke/tokyonight.nvim'
+  use 'shaeinst/roshnivim-cs'
+  use 'Haron-Prime/Antares'
+  use 'fcpg/vim-orbital'
 
   ----- Language -----
   use 'raimondi/delimitmate'
