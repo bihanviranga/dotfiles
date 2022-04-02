@@ -205,10 +205,10 @@ nmap("<leader>ep", ":lua enterParagraphMode()<CR>")
 
 
 -- set-colorscheme
-vim.cmd([[colorscheme rvcs]])
+vim.cmd([[colorscheme antares]])
 
 -- Set background to black (any colorscheme)
-vim.cmd([[hi Normal guibg=black]])
+--vim.cmd([[hi Normal guibg=black]])
 
 ----------------------------------
 -- NrrwRgn settings
