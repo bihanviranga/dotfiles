@@ -18,37 +18,36 @@ activate() {
 }
 
 # For nnn file manager - cd to directory when quitting with ^g
-n ()
-{
-    # block nesting of nnn in subshells
-    if [ -n $NNNLVL ] && [ "${NNNLVL:-0}" -ge 1 ]; then
-        echo "nnn is already running"
-        return
-    fi
+n () {
+  # block nesting of nnn in subshells
+  if [ -n $NNNLVL ] && [ "${NNNLVL:-0}" -ge 1 ]; then
+    echo "nnn is already running"
+    return
+  fi
 
-    # the default behaviour is to cd on quit (nnn checks if nnn_tmpfile is set)
-    # to cd on quit only on ^g, remove the "export" as in:
-    #     nnn_tmpfile="${xdg_config_home:-$home/.config}/nnn/.lastd"
-    # note: nnn_tmpfile is fixed, should not be modified
-    NNN_TMPFILE="${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.lastd"
+  # the default behaviour is to cd on quit (nnn checks if nnn_tmpfile is set)
+  # to cd on quit only on ^g, remove the "export" as in:
+  #     nnn_tmpfile="${xdg_config_home:-$home/.config}/nnn/.lastd"
+  # note: nnn_tmpfile is fixed, should not be modified
+  NNN_TMPFILE="${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.lastd"
 
-    # unmask ^q (, ^v etc.) (if required, see `stty -a`) to quit nnn
-    # stty start undef
-    # stty stop undef
-    # stty lwrap undef
-    # stty lnext undef
+  # unmask ^q (, ^v etc.) (if required, see `stty -a`) to quit nnn
+  # stty start undef
+  # stty stop undef
+  # stty lwrap undef
+  # stty lnext undef
 
-    nnn "$@"
+  nnn "$@"
 
-    if [ -f "$NNN_TMPFILE" ]; then
-            . "$NNN_TMPFILE"
-            rm -f "$NNN_TMPFILE" > /dev/null
-    fi
+  if [ -f "$NNN_TMPFILE" ]; then
+    . "$NNN_TMPFILE"
+    rm -f "$NNN_TMPFILE" > /dev/null
+  fi
 }
 
 # Create a folder and cd into it
 mkd () {
-    mkdir -p "$@" && cd "$_";
+  mkdir -p "$@" && cd "$_";
 }
 
 # Print a long one-line git log to fill the entire screen.
@@ -56,12 +55,12 @@ mkd () {
 # when the command is executed, for better visibility.
 # If your PS1 takes 2 lines, set the margin to 4.
 gitlog_screen () {
-    screen_height_cmd="tput lines"
-    screen_height=`$screen_height_cmd`
-    margin_lines=2
-    output_lines=$((screen_height-margin_lines))
-    gitcmd="git log --oneline -n $output_lines"
-    eval $gitcmd
+  screen_height_cmd="tput lines"
+  screen_height=`$screen_height_cmd`
+  margin_lines=2
+  output_lines=$((screen_height-margin_lines))
+  gitcmd="git log --oneline -n $output_lines"
+  eval $gitcmd
 }
 
 # Rbenv invoke
