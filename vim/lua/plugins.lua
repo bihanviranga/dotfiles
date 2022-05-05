@@ -12,10 +12,10 @@ return require('packer').startup(function()
   use 'windwp/wind-colors'
   use 'karoliskoncevicius/distilled-vim'
   use 'zekzekus/menguless'
-  use 'folke/tokyonight.nvim'
   use 'shaeinst/roshnivim-cs'
   use 'Haron-Prime/Antares'
   use 'fcpg/vim-orbital'
+  use 'FrenzyExists/aquarium-vim'
 
   ----- Language -----
   use 'raimondi/delimitmate'

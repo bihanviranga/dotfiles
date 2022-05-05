@@ -200,10 +200,6 @@ nmap("<leader>ep", ":lua enterParagraphMode()<CR>")
   --style = 'deep'
 --}
 
--- Tokyonight theme conf
---vim.g.tokyonight_style = "night"
-
-
 -- set-colorscheme
 vim.cmd([[colorscheme antares]])
 
