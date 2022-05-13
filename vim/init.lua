@@ -204,7 +204,11 @@ nmap("<leader>ep", ":lua enterParagraphMode()<CR>")
 vim.cmd([[colorscheme antares]])
 
 -- Set background to black (any colorscheme)
---vim.cmd([[hi Normal guibg=black]])
+-- TODO: Maybe make this store current bg color so we can restore it?
+function _G.setBgToBlack()
+  vim.cmd([[hi Normal guibg=black]])
+end
+nmap("<leader>sb", ":lua setBgToBlack()<CR>")
 
 ----------------------------------
 -- NrrwRgn settings
