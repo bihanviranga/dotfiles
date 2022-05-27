@@ -106,6 +106,25 @@ function _G.enterParagraphMode()
   nmap("j", "gj", true)
 end
 
+-- Toggle background color between black and colorscheme's default color
+local initial_guibg = nil
+function _G.toggleBlackBg()
+  -- Extract the current background color
+  local highlights = vim.api.nvim_exec("hi Normal", true)
+  local extracted = nil
+  for tok in string.gmatch(highlights, "guibg.+") do
+    extracted = tok
+  end
+  local current_guibg = string.sub(extracted, 7)
+  -- Set the new background colour
+  if (current_guibg == "black") then
+    vim.cmd("hi Normal guibg=" .. initial_guibg)
+  else
+    initial_guibg = current_guibg
+    vim.cmd("hi Normal guibg=black")
+  end
+end
+
 ----------------------------------
 -- Plugins
 ----------------------------------
@@ -201,26 +220,9 @@ nmap("<leader>ep", ":lua enterParagraphMode()<CR>")
 --}
 
 -- set-colorscheme
-vim.cmd([[colorscheme antares]])
+vim.cmd([[colorscheme rvcs]])
 
--- Toggle background color between black and colorscheme's default color
-local initial_guibg = nil
-function _G.toggleBlackBg()
-  -- Extract the current background color
-  local highlights = vim.api.nvim_exec("hi Normal", true)
-  local extracted = nil
-  for tok in string.gmatch(highlights, "guibg.+") do
-    extracted = tok
-  end
-  local current_guibg = string.sub(extracted, 7)
-  -- Set the new background colour
-  if (current_guibg == "black") then
-    vim.cmd("hi Normal guibg=" .. initial_guibg)
-  else
-    initial_guibg = current_guibg
-    vim.cmd("hi Normal guibg=black")
-  end
-end
+-- toggle background to black or theme default color
 nmap("<leader>tb", ":lua toggleBlackBg()<CR>")
 
 ----------------------------------
