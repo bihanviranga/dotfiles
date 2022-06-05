@@ -16,6 +16,7 @@ RCOL='\033[0m'
 AUTO_MODE=0
 COMMIT_OK=0
 PUSH_OK=0
+ADD_OK=0
 
 REMOTE="origin"
 
@@ -25,7 +26,8 @@ function usage {
 	echo -e "\t-h\t\tDisplay this message and exit"
 	echo -e "\t-v\t\tEnable verbose mode"
 	echo -e "\t-a\t\tAuto-mode. Do not ask for confirmation after git status"
-	echo -e "\t-p\t\tPush changes to remote (default=origin)"
+  echo -e "\t-p\t\tPush changes to remote (default=origin)"
+  echo -e "\t-d\t\tAdd all changes in directory (equal to 'git add .')"
 	echo -e "\t-r <remote>\tSet remote to <remote>"
 }
 
@@ -37,7 +39,7 @@ function print_verbose {
 	fi
 }
 
-optstring=":hvapr:"
+optstring=":hvapdr:"
 
 # If no arguments are provided, exit.
 if [[ ${#} -eq 0 ]];
@@ -64,6 +66,9 @@ while getopts ${optstring} arg; do
 			AUTO_MODE=1
 			COMMIT_OK=1
 			;;
+    d)
+      ADD_OK=1
+      ;;
 		r)
 			if [ -n "${OPTARG}" ];
 			then
@@ -123,8 +128,11 @@ fi
 # Actually add and commit
 if [[ $AUTO_MODE == 1 ]] || [[ $COMMIT_OK == 1 ]]
 then
-	git add .
-	print_verbose "${GREEN}[+] Added.${RCOL}"
+  if [[ $ADD_OK == 1 ]]
+  then
+	  git add .
+	  print_verbose "${GREEN}[+] Added.${RCOL}"
+  fi
 	git commit -m "$@"
 	print_verbose "${GREEN}[+] Committed.${RCOL}"
 fi

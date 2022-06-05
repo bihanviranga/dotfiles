@@ -22,6 +22,8 @@ $ gitdo -pa "Commit message here"
 # Add, commit, and push to 'upstream' without confirmation
 $ gitdo -par upstream "Commit message here"
 ```
+
+If the -p flag isn't given, you can still make the script push by replying "yp" after the git status screen. The second letter 'p' indicates a command to push.
 <hr>
 </details>
 
