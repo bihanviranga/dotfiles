@@ -21,22 +21,22 @@ ADD_OK=0
 REMOTE="origin"
 
 function usage {
-	echo "Usage: $(basename $0) [OPTIONS] <commit message>"
-	echo "$(basename $0) supports the following options:"
-	echo -e "\t-h\t\tDisplay this message and exit"
-	echo -e "\t-v\t\tEnable verbose mode"
-	echo -e "\t-a\t\tAuto-mode. Do not ask for confirmation after git status"
+  echo "Usage: $(basename $0) [OPTIONS] <commit message>"
+  echo "$(basename $0) supports the following options:"
+  echo -e "\t-h\t\tDisplay this message and exit"
+  echo -e "\t-v\t\tEnable verbose mode"
+  echo -e "\t-a\t\tAuto-mode. Do not ask for confirmation after git status"
   echo -e "\t-p\t\tPush changes to remote (default=origin)"
   echo -e "\t-d\t\tAdd all changes in directory (equal to 'git add .')"
-	echo -e "\t-r <remote>\tSet remote to <remote>"
+  echo -e "\t-r <remote>\tSet remote to <remote>"
 }
 
 function print_verbose {
-	local message="${@}"
-	if [[ $VERBOSE -eq 1 ]];
-	then
-		echo -e "${message}"
-	fi
+  local message="${@}"
+  if [[ $VERBOSE -eq 1 ]];
+  then
+    echo -e "${message}"
+  fi
 }
 
 optstring=":hvapdr:"
@@ -44,57 +44,57 @@ optstring=":hvapdr:"
 # If no arguments are provided, exit.
 if [[ ${#} -eq 0 ]];
 then
-	echo -e "${RED}[x] Error: No arguments supplied.${RCOL}" >&2
-	echo "Use $(basename $0) -h for usage instructions." >&2
-	exit 1
+  echo -e "${RED}[x] Error: No arguments supplied.${RCOL}" >&2
+  echo "Use $(basename $0) -h for usage instructions." >&2
+  exit 1
 fi
 
 # Parse arguments
 while getopts ${optstring} arg; do
-	case ${arg} in
-		h)
-			usage
-			exit 0
-			;;
-		v)
-			VERBOSE=1
-			;;
-		p)
-			PUSH_OK=1
-			;;
-		a)
-			AUTO_MODE=1
-			COMMIT_OK=1
-			;;
+  case ${arg} in
+    h)
+      usage
+      exit 0
+      ;;
+    v)
+      VERBOSE=1
+      ;;
+    p)
+      PUSH_OK=1
+      ;;
+    a)
+      AUTO_MODE=1
+      COMMIT_OK=1
+      ;;
     d)
       ADD_OK=1
       ;;
-		r)
-			if [ -n "${OPTARG}" ];
-			then
-				REMOTE=$OPTARG
-			fi
-			;;
-		:)
-			echo -e "${RED}[x] Error: No argument supplied to -${OPTARG}${RCOL}" >&2
-			echo "Use $(basename $0) -h for usage instructions." >&2
-			exit 1
-			;;
-		?)
-			echo -e "${RED}[x] Error: Invalid option: -${OPTARG}${RCOL}" >&2
-			echo "Use $(basename $0) -h for usage instructions." >&2
-			exit 1
-			;;
-	esac
+    r)
+      if [ -n "${OPTARG}" ];
+      then
+        REMOTE=$OPTARG
+      fi
+      ;;
+    :)
+      echo -e "${RED}[x] Error: No argument supplied to -${OPTARG}${RCOL}" >&2
+      echo "Use $(basename $0) -h for usage instructions." >&2
+      exit 1
+      ;;
+    ?)
+      echo -e "${RED}[x] Error: Invalid option: -${OPTARG}${RCOL}" >&2
+      echo "Use $(basename $0) -h for usage instructions." >&2
+      exit 1
+      ;;
+  esac
 done
 
 # If no commit message is given, exit.
 shift $((OPTIND-1))
 if [[ -z "$@" ]];
 then
-	echo -e "${RED}[x] Error: No commit message provided.${RCOL}" >&2
-	echo "Use $(basename $0) -h for usage instructions." >&2
-	exit 1
+  echo -e "${RED}[x] Error: No commit message provided.${RCOL}" >&2
+  echo "Use $(basename $0) -h for usage instructions." >&2
+  exit 1
 fi
 
 # Display git status
@@ -104,16 +104,16 @@ git status
 # Set commit and push OK flags
 if [[ $AUTO_MODE -ne 1 ]]
 then
-	echo -e "${GREEN}[*] Continue ?${RCOL}"
-	read response
-	if [[ ${response:0:1} == "y" ]] || [[ ${response:0:1} == "Y" ]]
-	then
-		COMMIT_OK=1
-	fi
-	if [[ ${response:1:2} == "p" ]] || [[ ${response:1:2} == "P" ]]
-	then
-		PUSH_OK=1
-	fi
+  echo -e "${GREEN}[*] Continue ?${RCOL}"
+  read response
+  if [[ ${response:0:1} == "y" ]] || [[ ${response:0:1} == "Y" ]]
+  then
+    COMMIT_OK=1
+  fi
+  if [[ ${response:1:2} == "p" ]] || [[ ${response:1:2} == "P" ]]
+  then
+    PUSH_OK=1
+  fi
 fi
 
 # if COMMIT_OK is 0, no use taking this any further.
@@ -121,8 +121,8 @@ fi
 # Farewell!
 if [[ $COMMIT_OK == 0 ]]
 then
-	echo -e "${RED}[x] Aborted.${RCOL}"
-	exit 0
+  echo -e "${RED}[x] Aborted.${RCOL}"
+  exit 0
 fi
 
 # Actually add and commit
@@ -130,17 +130,17 @@ if [[ $AUTO_MODE == 1 ]] || [[ $COMMIT_OK == 1 ]]
 then
   if [[ $ADD_OK == 1 ]]
   then
-	  git add .
-	  print_verbose "${GREEN}[+] Added.${RCOL}"
+    git add .
+    print_verbose "${GREEN}[+] Added.${RCOL}"
   fi
-	git commit -m "$@"
-	print_verbose "${GREEN}[+] Committed.${RCOL}"
+  git commit -m "$@"
+  print_verbose "${GREEN}[+] Committed.${RCOL}"
 fi
 
 # If asked to, push
 if [[ $PUSH_OK == 1 ]]
 then
-	git push ${REMOTE} HEAD
-	print_verbose "${GREEN}[+] Pushed.${RCOL}"
+  git push ${REMOTE} HEAD
+  print_verbose "${GREEN}[+] Pushed.${RCOL}"
 fi
 
