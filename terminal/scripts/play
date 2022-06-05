@@ -11,66 +11,66 @@ VLC_VARIABLE_FLAGS=''
 VERBOSE_SCRIPT_OUTPUT=0
 
 function usage {
-	echo "Usage: $(basename $0) [-s] [KEYWORD]"
-	echo -e ""
+  echo "Usage: $(basename $0) [-s] [KEYWORD]"
+  echo -e ""
 
-	echo "This script needs PLAYLIST_ROOT to point to the media directory."
-	echo "It checks the PLAYLIST_ROOT in the following order:"
-	echo -e "\t1) If there's a playlist (.xspf file) with the name KEYWORD, it is played."
-	echo -e "\t2) If there's a directory under PLAYLIST_ROOT/Albums with the name KEYWORD, it is played."
-	echo -e "\t3) If there's no playlist or album, it plays all songs that contain KEYWORD in their name."
-	echo -e ""
+  echo "This script needs PLAYLIST_ROOT to point to the media directory."
+  echo "It checks the PLAYLIST_ROOT in the following order:"
+  echo -e "\t1) If there's a playlist (.xspf file) with the name KEYWORD, it is played."
+  echo -e "\t2) If there's a directory under PLAYLIST_ROOT/Albums with the name KEYWORD, it is played."
+  echo -e "\t3) If there's no playlist or album, it plays all songs that contain KEYWORD in their name."
+  echo -e ""
 
-	echo "If no KEYWORD is provided, the whole PLAYLIST_ROOT directory will be queued."
-	echo "The following options are supported:"
-	echo -e "\t-h: Print this message and exit."
-	echo -e "\t-s: Silent mode - redirect all output from vlc to /dev/null."
-	echo -e "\t-v: Verbose mode - print messages such as if a playlist/album was found."
+  echo "If no KEYWORD is provided, the whole PLAYLIST_ROOT directory will be queued."
+  echo "The following options are supported:"
+  echo -e "\t-h: Print this message and exit."
+  echo -e "\t-s: Silent mode - redirect all output from vlc to /dev/null."
+  echo -e "\t-v: Verbose mode - print messages such as if a playlist/album was found."
 }
 
 function print_verbose {
-	local message="${@}"
-	if [[ $VERBOSE_SCRIPT_OUTPUT -eq 1 ]];
-	then
-		echo -e "${message}"
-	fi
+  local message="${@}"
+  if [[ $VERBOSE_SCRIPT_OUTPUT -eq 1 ]];
+  then
+    echo -e "${message}"
+  fi
 }
 
 function exec_player {
-	local params="${@}"
-	eval "vlc -Z ${params} ${VLC_VARIABLE_FLAGS} &"
+  local params="${@}"
+  eval "vlc -Z ${params} ${VLC_VARIABLE_FLAGS} &"
 }
 
 function queue_array_and_exit {
-	local -n array=$1
-	cmdstr=""
-	for filename in $array;
-	do
-		cmdstr+=" '$filename'"
-	done
-	unset IFS
-	exec_player "$cmdstr"
-	exit 0
+  local -n array=$1
+  cmdstr=""
+  for filename in $array;
+  do
+    cmdstr+=" '$filename'"
+  done
+  unset IFS
+  exec_player "$cmdstr"
+  exit 0
 }
 
 # Parsing command line arguments
 optstring=":hsv"
 while getopts ${optstring} arg; do
-	case ${arg} in
-		h)
-			usage
-			exit 0
-			;;
-		s)
-			VLC_VARIABLE_FLAGS+=">/dev/null 2>/dev/null"
-			;;
-		v)
-			VERBOSE_SCRIPT_OUTPUT=1
-			;;
-		?)
-			echo "Unknown option: -${OPTARG}"
-			;;
-	esac
+  case ${arg} in
+    h)
+      usage
+      exit 0
+      ;;
+    s)
+      VLC_VARIABLE_FLAGS+=">/dev/null 2>/dev/null"
+      ;;
+    v)
+      VERBOSE_SCRIPT_OUTPUT=1
+      ;;
+    ?)
+      echo "Unknown option: -${OPTARG}"
+      ;;
+  esac
 done
 shift $((OPTIND-1))
 
@@ -79,24 +79,24 @@ shift $((OPTIND-1))
 # The script will exit with code 1 if the variable is not set
 if [ -z "$PLAYLIST_ROOT" ]
 then
-	echo "PLAYLIST_ROOT not set. Please set it to point to the music directory"
-	exit 1
+  echo "PLAYLIST_ROOT not set. Please set it to point to the music directory"
+  exit 1
 fi
 
 # If no argument is given
 if [ -z "$@" ]
 then
-	print_verbose "No argument provided. Playing all on shuffle.."
-	exec_player "$PLAYLIST_ROOT"
-	exit 0
+  print_verbose "No argument provided. Playing all on shuffle.."
+  exec_player "$PLAYLIST_ROOT"
+  exit 0
 fi
 
 # If a playlist with the given name exists
 if [ -f "$PLAYLIST_ROOT$@.xspf" ]
 then
-	print_verbose "Playing playlist $@.."
-	exec_player "$PLAYLIST_ROOT$@.xspf"
-	exit 0
+  print_verbose "Playing playlist $@.."
+  exec_player "$PLAYLIST_ROOT$@.xspf"
+  exit 0
 fi
 
 # Otherwise, try searching for directories
@@ -107,25 +107,25 @@ IFS=$'\n'
 dirList=$(find "$PLAYLIST_ROOT" -maxdepth 1 -type d -iname "*$@*")
 if [ -n "$dirList" ]
 then
-	print_verbose "Found top level directory with name. Playing.."
-	queue_array_and_exit dirList
+  print_verbose "Found top level directory with name. Playing.."
+  queue_array_and_exit dirList
 fi
 
 # Otherwise, look for albums with this name
 albumList=$(find "$PLAYLIST_ROOT/Albums" -maxdepth 1 -type d -iname "*$@*")
 if [ -n "$albumList" ]
 then
-	print_verbose "Albums for keyword found. Playing.."
-	queue_array_and_exit albumList
+  print_verbose "Albums for keyword found. Playing.."
+  queue_array_and_exit albumList
 fi
 
 # Else, look for files that contain this name
 fileList=$(find "$PLAYLIST_ROOT" -type f -iname "*$@*")
 if [ -n "$fileList" ]
 then
-	# Files found
-	print_verbose "Files for keyword found. Playing.."
-	queue_array_and_exit fileList
+  # Files found
+  print_verbose "Files for keyword found. Playing.."
+  queue_array_and_exit fileList
 fi
 
 # If nothing is found, play everything in root folder
