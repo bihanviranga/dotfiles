@@ -2,20 +2,15 @@ return require('packer').startup(function()
   use 'wbthomason/packer.nvim'
 
   ----- Colorschemes -----
-  use 'tomasr/molokai'
-  use 'jaredgorski/spacecamp'
   use 'bluz71/vim-moonfly-colors'
   use 'ayu-theme/ayu-vim'
   use 'nikolvs/vim-sunbather'
-  use {'catppuccin/nvim', as = 'catppuccin'}
   use 'luisiacc/gruvbox-baby'
   use 'windwp/wind-colors'
-  use 'karoliskoncevicius/distilled-vim'
   use 'zekzekus/menguless'
   use 'shaeinst/roshnivim-cs'
-  use 'Haron-Prime/Antares'
-  use 'fcpg/vim-orbital'
   use 'FrenzyExists/aquarium-vim'
+  use 'liuchengxu/space-vim-dark'
 
   ----- Language -----
   use 'raimondi/delimitmate'

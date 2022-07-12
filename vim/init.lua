@@ -214,10 +214,12 @@ nmap("<leader>ep", ":lua enterParagraphMode()<CR>")
 -- mode of the ayu colorscheme (light, mirage, dark)
 --vim.g.ayucolor="mirage"
 
--- Onedark theme conf
---require('onedark').setup {
-  --style = 'deep'
---}
+-- Configuration for the space-vim-dark theme
+--vim.g.space_vim_dark_background = 234
+-- These 2 lines come after the line where the colorscheme is set.
+--vim.cmd([[hi Comment cterm=italic]])
+--vim.cmd([[hi LineNr ctermbg=NONE guibg=NONE]])
+
 
 -- set-colorscheme
 vim.cmd([[colorscheme rvcs]])
