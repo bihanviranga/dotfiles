@@ -11,6 +11,7 @@ return require('packer').startup(function()
   use 'shaeinst/roshnivim-cs'
   use 'FrenzyExists/aquarium-vim'
   use 'liuchengxu/space-vim-dark'
+  use 'jaredgorski/fogbell.vim'
 
   ----- Language -----
   use 'raimondi/delimitmate'

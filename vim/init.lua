@@ -222,7 +222,7 @@ nmap("<leader>ep", ":lua enterParagraphMode()<CR>")
 
 
 -- set-colorscheme
-vim.cmd([[colorscheme rvcs]])
+vim.cmd([[colorscheme fogbell]])
 
 -- toggle background to black or theme default color
 nmap("<leader>tb", ":lua toggleBlackBg()<CR>")
@@ -283,7 +283,19 @@ require'lualine'.setup {
 ----------------------------------
 -- Indent-Blankline config
 ----------------------------------
+-- Can enable or disable indent lines using the key map mentioned below.
 vim.g.indent_blankline_char = '¦'
-nmap('<leader>id', '<CMD>IndentBlanklineDisable!<CR>', true)
-nmap('<leader>ie', '<CMD>IndentBlanklineEnable!<CR>', true)
+local indent_lines_enabled = true
+function _G.toggleIndentLines()
+  if (indent_lines_enabled) then
+    print("disabling")
+    vim.cmd("IndentBlanklineDisable!")
+    indent_lines_enabled = false
+  else
+    print("enabling")
+    vim.cmd("IndentBlanklineEnable!")
+    indent_lines_enabled = true
+  end
+end
 require('indent_blankline').setup()
+nmap("<leader>ti", ":lua toggleIndentLines()<CR>")
