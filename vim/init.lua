@@ -288,11 +288,9 @@ vim.g.indent_blankline_char = '¦'
 local indent_lines_enabled = true
 function _G.toggleIndentLines()
   if (indent_lines_enabled) then
-    print("disabling")
     vim.cmd("IndentBlanklineDisable!")
     indent_lines_enabled = false
   else
-    print("enabling")
     vim.cmd("IndentBlanklineEnable!")
     indent_lines_enabled = true
   end
