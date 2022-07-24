@@ -73,7 +73,7 @@ nvim_lsp.sumneko_lua.setup {
 }
 
 -- Auto format using eslint
-vim.cmd([[autocmd BufWritePre *.js,*.jsx,*.ts,*.tsx EslintFixAll]])
+vim.cmd([[autocmd BufWritePre *.js,*.jsx,*.ts,*.tsx silent! EslintFixAll]])
 
 -- luasnip setup
 local luasnip = require 'luasnip'
