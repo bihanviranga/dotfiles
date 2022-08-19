@@ -31,6 +31,11 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
 -- Configuration common to all servers
+-- NOTE on jdtls and lombok:
+--  For lombok to work the repo says to include this line:
+--  `export JDTLS_JVM_ARGS="-javaagent:$HOME/.local/share/java/lombok.jar"`
+--  However, in my case the lombok jar was at this location:
+--  `$HOME/.m2/repository/org/projectlombok/lombok/1.18.24/lombok-1.18.24.jar`
 local servers = { 'eslint', 'tsserver', 'clangd', 'jdtls' }
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {

@@ -55,6 +55,7 @@ export NNN_TMPFILE="${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.lastd"
 export PAGER=bat
 export PLAYLIST_ROOT="/path/to/playlist"
 export RBENV_SHELL=bash
+export JDTLS_JVM_ARGS="-javaagent:$HOME/.m2/repository/org/projectlombok/lombok/1.18.24/lombok-1.18.24.jar"
 
 ##################################################
 # PATH extensions
