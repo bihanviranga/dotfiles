@@ -9,6 +9,7 @@ require('telescope').setup {
         ["<esc>"] = actions.close,
         ["<C-j>"] = actions.move_selection_next,
         ["<C-k>"] = actions.move_selection_previous,
+        ["<C-h>"] = actions.select_horizontal,
       },
     },
     preview = {
