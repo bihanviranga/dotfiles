@@ -220,9 +220,11 @@ nmap("<leader>ep", ":lua enterParagraphMode()<CR>")
 --vim.cmd([[hi Comment cterm=italic]])
 --vim.cmd([[hi LineNr ctermbg=NONE guibg=NONE]])
 
+-- Configuration for adwaita
+--vim.g.adwaita_darker = true
 
 -- set-colorscheme
-vim.cmd([[colorscheme fogbell]])
+vim.cmd([[colorscheme rvcs]])
 
 -- toggle background to black or theme default color
 nmap("<leader>tb", ":lua toggleBlackBg()<CR>")

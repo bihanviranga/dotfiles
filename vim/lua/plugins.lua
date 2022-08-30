@@ -12,6 +12,7 @@ return require('packer').startup(function()
   use 'FrenzyExists/aquarium-vim'
   use 'liuchengxu/space-vim-dark'
   use 'jaredgorski/fogbell.vim'
+  use 'Mofiqul/adwaita.nvim'
 
   ----- Language -----
   use 'raimondi/delimitmate'
