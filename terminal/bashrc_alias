@@ -23,6 +23,7 @@ alias ff='firefox'
 alias cal='cal -m'
 alias gitdo='gitdo -v'
 alias nnn='nnn -e'
+alias todo='vim ~/todo'
 
 # Externally installed tools
 alias ls='lsd -l'
