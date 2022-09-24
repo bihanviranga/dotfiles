@@ -232,6 +232,9 @@ nmap("<leader>tb", ":lua toggleBlackBg()<CR>")
 ----------------------------------
 -- NrrwRgn settings
 ----------------------------------
+-- NrrwRgn is not loaded by default (optional plugin).
+-- Load it with :PackerLoad NrrwRgn
+
 -- Open new buffer in a vertical split
 vim.g.nrrw_rgn_vert = 1
 -- Set the size (absolute=rows or cols, relative=percentage)
