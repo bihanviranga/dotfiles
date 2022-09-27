@@ -1,0 +1,35 @@
+{
+    "window.menuBarVisibility": "toggle",
+    "breadcrumbs.enabled": false,
+    "editor.renderLineHighlight": "none",
+    "workbench.iconTheme": null,
+    "workbench.colorTheme": "Adwaita Dark",
+
+    "vim.incsearch": true,
+    "vim.useSystemClipboard": true,
+    "vim.leader": ",",
+    "vim.ignorecase": true,
+    "vim.surround": true,
+    "vim.gdefault": true,
+    "vim.useCtrlKeys": false,
+    "vim.insertModeKeyBindings": [
+        {
+            "before": ["j", "k"],
+            "after": ["<Esc>"]
+        }
+    ],
+    "vim.visualModeKeyBindings": [
+        {
+            "before": ["j", "k"],
+            "after": ["<Esc>"]
+        },
+        {
+            "before": [ ">" ],
+            "commands": [ "editor.action.indentLines" ]
+        },
+        {
+            "before": [ "<" ],
+            "commands": [ "editor.action.outdentLines" ]
+        }
+    ]
+}
