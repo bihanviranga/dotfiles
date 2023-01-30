@@ -5,8 +5,11 @@
     "editor.fontFamily": "'JetBrains Mono Light', Consolas, 'Courier New', monospace",
     "editor.minimap.enabled": false,
     "editor.tabSize": 2,
+    "editor.renderWhitespace": "trailing",
+    "eslint.format.enable": true,
+    "files.eol": "\n",
     "workbench.iconTheme": null,
-    "workbench.colorTheme": "Adwaita Dark",
+    "workbench.colorTheme": "plain-dark",
     "workbench.layoutControl.enabled": false,
     "workbench.activityBar.visible": false,
     "gitHistory.showEditorTitleMenuBarIcons": false,
@@ -25,14 +28,16 @@
     "vim.ignorecase": true,
     "vim.surround": true,
     "vim.gdefault": true,
-    "vim.useCtrlKeys": false,
+    "vim.useCtrlKeys": true,
     "vim.insertModeKeyBindings": [
+        // jk is escape
         {
             "before": ["j", "k"],
             "after": ["<Esc>"]
-        }
+        },
     ],
     "vim.normalModeKeyBindings": [
+      // navigate between errors/warnings
       {
         "before": ["]", "d"],
         "commands": ["editor.action.marker.next"]
@@ -40,6 +45,24 @@
       {
         "before": ["[", "d"],
         "commands": ["editor.action.marker.prev"]
+      }
+      // move opened file to the left/right pane
+      {
+        "before": ["<C-H>"],
+        "commands": ["workbench.action.moveEditorToLeftGroup"]
+      },
+      {
+        "before": ["<C-L>"],
+        "commands": ["workbench.action.moveEditorToRightGroup"]
+      }
+      // focus on the left/pane pane
+      {
+        "before": ["<leader>", "h"],
+        "commands": ["workbench.action.focusLeftGroup"]
+      },
+      {
+        "before": ["<leader>", "l"],
+        "commands": ["workbench.action.focusRightGroup"]
       }
     ],
     "vim.visualModeKeyBindings": [
