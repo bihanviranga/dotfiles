@@ -1,0 +1,33 @@
+" ----- Plugins
+set surround
+set highlightedyank
+set quickscope
+
+" Set the g flag to search and replace by default
+set gdefault
+" Ignore the case of searches
+set ignorecase
+" Search as you type
+set incsearch
+" Scroll off
+set so=3
+"
+set showmode
+" ?
+set nu
+
+" leader is comma
+let mapleader = ","
+
+" jk is escape
+inoremap jk <esc>
+" Append semicolon and inset line below
+inoremap <M-CR> <esc>A;<esc>o
+" Jump to the end of the line without leaving insert mode
+inoremap <C-l> <esc>A
+
+"
+map <leader>r <Action>(RenameElement)
+
+" Settings for ideavim-quickscope
+let g:qs_highlight_on_keys = ['f', 'F']
