@@ -29,6 +29,7 @@
     "vim.surround": true,
     "vim.gdefault": true,
     "vim.useCtrlKeys": true,
+    "vim.foldFix": true,
     "vim.insertModeKeyBindings": [
         // jk is escape
         {
