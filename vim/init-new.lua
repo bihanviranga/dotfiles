@@ -145,6 +145,100 @@ require("plugins")
 ----------------------------------
 -- Remaps
 ----------------------------------
+-- Stop highlighting search results
+nmap("<leader><space>", "<CMD>nohlsearch<CR>", true)
+
+-- Switch between buffers with alt+n alt+p
+nmap("<M-n>", "<CMD>:bnext<CR>")
+nmap("<M-p>", "<CMD>:bprevious<CR>")
+-- Close/delete buffer with alt+x
+nmap("<M-x>", "<CMD>:bd<CR>")
+-- Close/delete buffer without closing the window/split
+-- (using qpkorr/vim-bufkill)
+--nmap("<M-z>", "<CMD>BD<CR>")
+
+-- View unsaved changes in file
+--nmap("<leader>vu", "<CMD>w !diff % -<CR>")
+
+-- Close all windows except current
+nmap("<M-o>", "<C-w>o")
+-- Create vertical split
+nmap("vv", "<CMD>vsplit<CR>")
+-- Create horizontal split
+nmap("ss", "<CMD>split<CR>")
+-- Select all and copy
+nmap("<leader>sa", "<CMD>%y<CR>")
+-- Select all without copy
+nmap("<leader>sA", "gg0vG$")
+-- New tab
+nmap("<leader>tn", "<CMD>tabnew<CR>")
+-- Close tab
+nmap("<leader>tc", "<CMD>tabclose<CR>")
+-- Open todo file
+nmap("<leader>td", "<CMD>vsplit ~/todo<CR>")
+
+-- jk is escape
+imap("jk", "<esc>")
+-- For opening a new line between two curly braces when you press { and enter.
+imap("{<CR>", "{<CR>}<ESC>O")
+-- Same, but for square brackets
+imap("[<CR>", "[<CR>]<ESC>O")
+-- For opening a new line between two parentheses with a semicolon behind the
+-- second parentheses.
+imap("(;<CR>", "(<CR>);<ESC>O")
+-- Append semicolon and enter new line
+imap("<M-CR>", "<esc>A;<esc>o")
+-- Jump to the end of the line without leaving insert mode
+imap("<C-l>", "<esc>A")
+
+-- Enable paragraph mode
+nmap("<leader>ep", ":lua enterParagraphMode()<CR>")
+
+----------------------------------
+-- Colorscheme config
+----------------------------------
+vim.cmd([[colorscheme habamax]])
+
+-- toggle background to black or theme default color
+nmap("<leader>tb", ":lua toggleBlackBg()<CR>")
+
+----------------------------------
+-- Lualine config
+----------------------------------
+require'lualine'.setup {
+  options = {
+    icons_enabled = false,
+    theme = 'auto',
+    component_separators = '',
+    section_separators = ''
+  },
+  sections = {
+    lualine_a = {},
+    lualine_b = {},
+    lualine_c = {'mode', 'filename'},
+    lualine_x = {'diagnostics', 'branch', 'location'},
+    lualine_y = {},
+    lualine_z = {},
+  },
+}
+
+----------------------------------
+-- Indent-Blankline config
+----------------------------------
+-- Can enable or disable indent lines using the key map mentioned below.
+vim.g.indent_blankline_char = '¦'
+local indent_lines_enabled = true
+function _G.toggleIndentLines()
+  if (indent_lines_enabled) then
+    vim.cmd("IndentBlanklineDisable!")
+    indent_lines_enabled = false
+  else
+    vim.cmd("IndentBlanklineEnable!")
+    indent_lines_enabled = true
+  end
+end
+require('indent_blankline').setup()
+nmap("<leader>ti", ":lua toggleIndentLines()<CR>")
 
 ----------------------------------
 -- vim-tmux-navigator config
@@ -155,7 +249,9 @@ nmap('<M-j>', '<CMD>TmuxNavigateDown<CR>', true)
 nmap('<M-k>', '<CMD>TmuxNavigateUp<CR>', true)
 nmap('<M-l>', '<CMD>TmuxNavigateRight<CR>', true)
 
--- TEMP:
--- jk is escape
-imap("jk", "<esc>")
-vim.cmd([[colorscheme habamax]])
+----------------------------------
+-- netrw settings
+----------------------------------
+--vim.g.netrw_banner = 0
+--vim.g.netrw_liststyle = 3
+--vim.g.netrw_altv = 1
