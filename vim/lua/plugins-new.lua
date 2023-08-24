@@ -1,6 +1,17 @@
 require("lazy").setup({
   ----- Integrations -----
   "christoomey/vim-tmux-navigator",
+  {
+    "nvim-telescope/telescope.nvim",
+    tag = "0.1.2",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+  },
+  {
+    "nvim-telescope/telescope-fzf-native.nvim",
+    build = 'make'
+  },
 
   ----- Editing -----
   "tpope/vim-surround",

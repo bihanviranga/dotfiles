@@ -152,10 +152,9 @@ nmap("<leader><space>", "<CMD>nohlsearch<CR>", true)
 nmap("<M-n>", "<CMD>:bnext<CR>")
 nmap("<M-p>", "<CMD>:bprevious<CR>")
 -- Close/delete buffer with alt+x
-nmap("<M-x>", "<CMD>:bd<CR>")
--- Close/delete buffer without closing the window/split
--- (using qpkorr/vim-bufkill)
---nmap("<M-z>", "<CMD>BD<CR>")
+nmap("<M-x>", "<CMD>:BD<CR>")
+-- Close/delete buffer and close the window as well
+nmap("<M-z>", "<CMD>bd<CR>")
 
 -- View unsaved changes in file
 --nmap("<leader>vu", "<CMD>w !diff % -<CR>")
@@ -225,7 +224,6 @@ require'lualine'.setup {
 ----------------------------------
 -- Indent-Blankline config
 ----------------------------------
--- Can enable or disable indent lines using the key map mentioned below.
 vim.g.indent_blankline_char = '¦'
 local indent_lines_enabled = true
 function _G.toggleIndentLines()
@@ -262,6 +260,11 @@ require('Comment').setup {
     block = "<leader>b",
   },
 }
+
+----------------------------------
+-- Load Telescope config
+----------------------------------
+require('telescopeconf')
 
 ----------------------------------
 -- netrw settings
