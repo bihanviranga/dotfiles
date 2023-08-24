@@ -250,6 +250,20 @@ nmap('<M-k>', '<CMD>TmuxNavigateUp<CR>', true)
 nmap('<M-l>', '<CMD>TmuxNavigateRight<CR>', true)
 
 ----------------------------------
+-- Comment.nvim config
+----------------------------------
+require('Comment').setup {
+  toggler = {
+    line = "<leader>c",
+    block = "<leader>b",
+  },
+  opleader = {
+    line = "<leader>c",
+    block = "<leader>b",
+  },
+}
+
+----------------------------------
 -- netrw settings
 ----------------------------------
 --vim.g.netrw_banner = 0

@@ -1,15 +1,21 @@
 require("lazy").setup({
-  ----- Commands -----
-  "tpope/vim-surround",
-
   ----- Integrations -----
   "christoomey/vim-tmux-navigator",
 
   ----- Editing -----
+  "tpope/vim-surround",
   {
     "m4xshen/autoclose.nvim",
     opts = {},
   },
+  {
+    "numToStr/Comment.nvim",
+    lazy = false,
+  },
+
+  ----- Interface -----
+  "nvim-lualine/lualine.nvim",
+  "lukas-reineke/indent-blankline.nvim",
 
   ----- Colorschemes -----
   {
