@@ -12,10 +12,17 @@ require("lazy").setup({
     "numToStr/Comment.nvim",
     lazy = false,
   },
+  {
+    "godlygeek/tabular",
+    lazy = true,
+  },
 
   ----- Interface -----
   "nvim-lualine/lualine.nvim",
   "lukas-reineke/indent-blankline.nvim",
+
+  ----- Behaviour -----
+  "qpkorr/vim-bufkill",
 
   ----- Colorschemes -----
   {
