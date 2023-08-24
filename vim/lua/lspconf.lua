@@ -26,16 +26,13 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', ']d', '<CMD>lua vim.diagnostic.goto_next()<CR>', opts)
 end
 
--- Completion plugin settings
--- local capabilities = vim.lsp.protocol.make_client_capabilities()
--- capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
-
 -- Configuration common to all servers
 -- -- NOTE on jdtls and lombok:
 -- --  For lombok to work the repo says to include this line:
 -- --  `export JDTLS_JVM_ARGS="-javaagent:$HOME/.local/share/java/lombok.jar"`
 -- --  However, in my case the lombok jar was at this location:
 -- --  `$HOME/.m2/repository/org/projectlombok/lombok/1.18.24/lombok-1.18.24.jar`
+
 local servers = { 'eslint', 'tsserver' }
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
@@ -80,55 +77,6 @@ end
 -- Auto format using eslint
 vim.cmd([[autocmd BufWritePre *.js,*.jsx,*.ts,*.tsx silent! EslintFixAll]])
 
--- -- luasnip setup
--- local luasnip = require 'luasnip'
---
--- -- Completion plugin settings continued
--- vim.o.completeopt = 'menuone,noselect'
---
--- local cmp = require 'cmp'
--- cmp.setup {
---   snippet = {
---     expand = function(args)
---       require('luasnip').lsp_expand(args.body)
---     end,
---   },
---   mapping = {
---     ['<C-p>'] = cmp.mapping.select_prev_item(),
---     ['<C-n>'] = cmp.mapping.select_next_item(),
---     ['<C-d>'] = cmp.mapping.scroll_docs(-4),
---     ['<C-f>'] = cmp.mapping.scroll_docs(4),
---     ['<C-Space>'] = cmp.mapping.complete(),
---     ['<C-e>'] = cmp.mapping.close(),
---     ['<CR>'] = cmp.mapping.confirm {
---       behavior = cmp.ConfirmBehavior.Replace,
---       select = true,
---     },
---     ['<Tab>'] = function(fallback)
---       if cmp.visible() then
---         cmp.select_next_item()
---       elseif luasnip.expand_or_jumpable() then
---         luasnip.expand_or_jump()
---       else
---         fallback()
---       end
---     end,
---     ['<S-Tab>'] = function(fallback)
---       if cmp.visible() then
---         cmp.select_prev_item()
---       elseif luasnip.jumpable(-1) then
---         luasnip.jump(-1)
---       else
---         fallback()
---       end
---     end,
---   },
---   sources = {
---     { name = 'nvim_lsp' },
---     { name = 'luasnip' },
---   },
--- }
---
 -- -- Treesitter
 -- require'nvim-treesitter.configs'.setup {
 --   highlight = {
