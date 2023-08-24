@@ -267,6 +267,11 @@ require('Comment').setup {
 require('telescopeconf')
 
 ----------------------------------
+-- Load LSP and treesitter config
+----------------------------------
+require('lspconf')
+
+----------------------------------
 -- netrw settings
 ----------------------------------
 --vim.g.netrw_banner = 0

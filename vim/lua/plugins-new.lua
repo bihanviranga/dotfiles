@@ -35,6 +35,9 @@ require("lazy").setup({
   ----- Behaviour -----
   "qpkorr/vim-bufkill",
 
+  ----- Language -----
+  "neovim/nvim-lspconfig",
+
   ----- Colorschemes -----
   {
     "mofiqul/adwaita.nvim",
