@@ -21,8 +21,7 @@ require('telescope').setup {
 require('telescope').load_extension('fzf')
 
 -- Telescope key mappings
-nmap("<C-p>", "<CMD>Telescope find_files<CR>")
+nmap("-", "<CMD>Telescope find_files<CR>")
 nmap("<leader>p", "<CMD>Telescope buffers<CR>")
-nmap("<leader>fb", "<CMD>Telescope file_browser<CR>")
 nmap("<leader>ds", "<CMD>Telescope lsp_document_symbols<CR>")
 nmap("<leader>dd", "<CMD>Telescope diagnostics<CR>")

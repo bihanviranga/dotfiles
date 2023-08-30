@@ -10,8 +10,6 @@ vim.opt.expandtab = true
 vim.opt.number = true
 -- Minimum width of line numbers column
 vim.opt.numberwidth = 3
--- highlight current line
---vim.opt.cursorline = true
 -- visual autocomplete for command menu
 vim.opt.wildmenu = true
 -- redraw only when needed
@@ -64,23 +62,23 @@ vim.g.mapleader = ","
 ----------------------------------
 -- Auto commands
 ----------------------------------
--- When entering insert mode, vertically bring to top current line
---vim.cmd([[autocmd InsertEnter * norm zt]])
-
 -- Strip trailing whitespace on save
 vim.cmd([[autocmd BufWritePre * %s/\s\+$//e]])
 
---" Set filetype for extension
+-- Set filetype for extension
 vim.cmd([[au BufRead,BufNewFile *.eslintrc set filetype=json]])
-
--- set custom indentation per file type
---vim.cmd([[autocmd FileType cs setlocal shiftwidth=4 tabstop=4]])
 
 -- Disable automatic comment insertion on next line
 vim.cmd([[autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o]])
 
+-- set custom indentation per file type
+--vim.cmd([[autocmd FileType cs setlocal shiftwidth=4 tabstop=4]])
+
+-- When entering insert mode, vertically bring to top current line
+--vim.cmd([[autocmd InsertEnter * norm zt]])
+
 --" JSDoc shortcut
-vim.cmd([[autocmd Filetype javascript,typescript,javascriptreact,typescriptreact inoremap <buffer> /** /**  */<esc>hhi]])
+--vim.cmd([[autocmd Filetype javascript,typescript,javascriptreact,typescriptreact inoremap <buffer> /** /**  */<esc>hhi]])
 
 ----------------------------------
 -- Functions
@@ -128,21 +126,25 @@ end
 ----------------------------------
 -- Plugins
 ----------------------------------
-require('plugins')
+-- bootstrap lazy.nvim package manager
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
+end
+vim.opt.rtp:prepend(lazypath)
+
+require("plugins")
 
 ----------------------------------
 -- Remaps
 ----------------------------------
--- TODO: set $MYVIMRC
--- Open vimrc file in a vertical split
---nmap("<leader>ev", "<CMD>:vsplit $MYVIMRC<CR>", true)
--- Source vimrc file
---nmap("<leader>sv", "<CMD>source $MYVIMRC<CR>")
-
--- Swap a line with the line below/above
-nmap("-", "ddp")
-nmap("_", "ddkP")
-
 -- Stop highlighting search results
 nmap("<leader><space>", "<CMD>nohlsearch<CR>", true)
 
@@ -150,13 +152,12 @@ nmap("<leader><space>", "<CMD>nohlsearch<CR>", true)
 nmap("<M-n>", "<CMD>:bnext<CR>")
 nmap("<M-p>", "<CMD>:bprevious<CR>")
 -- Close/delete buffer with alt+x
-nmap("<M-x>", "<CMD>:bd<CR>")
--- Close/delete buffer without closing the window/split
--- (using qpkorr/vim-bufkill)
-nmap("<M-z>", "<CMD>BD<CR>")
+nmap("<M-x>", "<CMD>:BD<CR>")
+-- Close/delete buffer and close the window as well
+nmap("<M-z>", "<CMD>bd<CR>")
 
 -- View unsaved changes in file
-nmap("<leader>vu", "<CMD>w !diff % -<CR>")
+--nmap("<leader>vu", "<CMD>w !diff % -<CR>")
 
 -- Close all windows except current
 nmap("<M-o>", "<C-w>o")
@@ -193,77 +194,12 @@ imap("<C-l>", "<esc>A")
 nmap("<leader>ep", ":lua enterParagraphMode()<CR>")
 
 ----------------------------------
--- netrw settings
-----------------------------------
---vim.g.netrw_banner = 0
---vim.g.netrw_liststyle = 3
---vim.g.netrw_altv = 1
-
-----------------------------------
--- nvim-startup.lua settings
-----------------------------------
--- Uncomment the require line below and
--- Run with nvim --startuptime /tmp/nvim-startuptime
---require 'nvim-startup'.setup()
-
-----------------------------------
 -- Colorscheme config
 ----------------------------------
--- Uncomment the section relevant to the current colorscheme
-
--- mode of the ayu colorscheme (light, mirage, dark)
---vim.g.ayucolor="mirage"
-
--- Configuration for the space-vim-dark theme
---vim.g.space_vim_dark_background = 234
--- These 2 lines come after the line where the colorscheme is set.
---vim.cmd([[hi Comment cterm=italic]])
---vim.cmd([[hi LineNr ctermbg=NONE guibg=NONE]])
-
--- Configuration for adwaita
---vim.g.adwaita_darker = true
-
--- set-colorscheme
-vim.cmd([[colorscheme rvcs]])
+vim.cmd([[colorscheme habamax]])
 
 -- toggle background to black or theme default color
 nmap("<leader>tb", ":lua toggleBlackBg()<CR>")
-
-----------------------------------
--- NrrwRgn settings
-----------------------------------
--- NrrwRgn is not loaded by default (optional plugin).
--- Load it with :PackerLoad NrrwRgn
-
--- Open new buffer in a vertical split
-vim.g.nrrw_rgn_vert = 1
--- Set the size (absolute=rows or cols, relative=percentage)
-vim.g.nrrw_rgn_resize_window = 'relative'
--- Set the new buffer size
-vim.g.nrrw_rgn_wdth = 20
-vim.g.nrrw_rgn_rel_min = 50
-vim.g.nrrw_rgn_rel_max = 50
--- Increment narrowed window size
--- DOESN'T WORK: nmap("<leader>ni", "<Plug>NrrwrgnWinIncr")
-
-----------------------------------
--- vim-tmux-navigator config
-----------------------------------
--- This allows using the same keys to switch tmux panes and vim windows
-nmap('<M-h>', '<CMD>TmuxNavigateLeft<CR>', true)
-nmap('<M-j>', '<CMD>TmuxNavigateDown<CR>', true)
-nmap('<M-k>', '<CMD>TmuxNavigateUp<CR>', true)
-nmap('<M-l>', '<CMD>TmuxNavigateRight<CR>', true)
-
-----------------------------------
--- Load LSP and treesitter config
-----------------------------------
-require('lspconf')
-
-----------------------------------
--- Load Telescope config
-----------------------------------
-require('telescopeconf')
 
 ----------------------------------
 -- Lualine config
@@ -288,7 +224,6 @@ require'lualine'.setup {
 ----------------------------------
 -- Indent-Blankline config
 ----------------------------------
--- Can enable or disable indent lines using the key map mentioned below.
 vim.g.indent_blankline_char = '¦'
 local indent_lines_enabled = true
 function _G.toggleIndentLines()
@@ -302,3 +237,43 @@ function _G.toggleIndentLines()
 end
 require('indent_blankline').setup()
 nmap("<leader>ti", ":lua toggleIndentLines()<CR>")
+
+----------------------------------
+-- vim-tmux-navigator config
+----------------------------------
+-- This allows using the same keys to switch tmux panes and vim windows
+nmap('<M-h>', '<CMD>TmuxNavigateLeft<CR>', true)
+nmap('<M-j>', '<CMD>TmuxNavigateDown<CR>', true)
+nmap('<M-k>', '<CMD>TmuxNavigateUp<CR>', true)
+nmap('<M-l>', '<CMD>TmuxNavigateRight<CR>', true)
+
+----------------------------------
+-- Comment.nvim config
+----------------------------------
+require('Comment').setup {
+  toggler = {
+    line = "<leader>c",
+    block = "<leader>b",
+  },
+  opleader = {
+    line = "<leader>c",
+    block = "<leader>b",
+  },
+}
+
+----------------------------------
+-- Load Telescope config
+----------------------------------
+require('telescopeconf')
+
+----------------------------------
+-- Load LSP and treesitter config
+----------------------------------
+require('lspconf')
+
+----------------------------------
+-- netrw settings
+----------------------------------
+--vim.g.netrw_banner = 0
+--vim.g.netrw_liststyle = 3
+--vim.g.netrw_altv = 1

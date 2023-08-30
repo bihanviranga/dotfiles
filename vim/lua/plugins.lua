@@ -1,46 +1,48 @@
-return require('packer').startup(function()
-  use 'wbthomason/packer.nvim'
+require("lazy").setup({
+  ----- Integrations -----
+  "christoomey/vim-tmux-navigator",
+  {
+    "nvim-telescope/telescope.nvim",
+    tag = "0.1.2",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+  },
+  {
+    "nvim-telescope/telescope-fzf-native.nvim",
+    build = 'make'
+  },
 
-  ----- Colorschemes -----
-  use 'bluz71/vim-moonfly-colors'
-  use 'ayu-theme/ayu-vim'
-  use 'nikolvs/vim-sunbather'
-  use 'luisiacc/gruvbox-baby'
-  use 'windwp/wind-colors'
-  use 'zekzekus/menguless'
-  use 'shaeinst/roshnivim-cs'
-  use 'FrenzyExists/aquarium-vim'
-  use 'liuchengxu/space-vim-dark'
-  use 'jaredgorski/fogbell.vim'
-  use 'Mofiqul/adwaita.nvim'
-
-  ----- Language -----
-  use 'raimondi/delimitmate'
-  use 'scrooloose/nerdcommenter'
-  use 'neovim/nvim-lspconfig'
-  use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
-  use 'hrsh7th/cmp-nvim-lsp' -- LSP source for nvim-cmp
-  use 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
-  use 'L3MON4D3/LuaSnip' -- Snippets plugin
+  ----- Editing -----
+  "tpope/vim-surround",
+  {
+    "m4xshen/autoclose.nvim",
+    opts = {},
+  },
+  {
+    "numToStr/Comment.nvim",
+    lazy = false,
+  },
+  {
+    "godlygeek/tabular",
+    lazy = true,
+  },
 
   ----- Interface -----
-  use 'nvim-lualine/lualine.nvim'
-  use 'lukas-reineke/indent-blankline.nvim'
+  "nvim-lualine/lualine.nvim",
+  "lukas-reineke/indent-blankline.nvim",
 
-  ----- Commands -----
-  use {'chrisbra/NrrwRgn', opt = true}
-  use 'godlygeek/tabular'
-  use 'tpope/vim-surround'
-  use 'kana/vim-textobj-user'
-  use 'kana/vim-textobj-line'
-  use 'qpkorr/vim-bufkill'
-  --use 'henriquehbr/nvim-startup.lua'
+  ----- Behaviour -----
+  "qpkorr/vim-bufkill",
 
-  ----- Integrations -----
-  use 'christoomey/vim-tmux-navigator'
-  use 'wakatime/vim-wakatime'
-  use 'editorconfig/editorconfig-vim'
-  use {'nvim-telescope/telescope.nvim', requires = {{'nvim-lua/plenary.nvim'}}}
-  use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
-  use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
-end)
+  ----- Language -----
+  "neovim/nvim-lspconfig",
+
+  ----- Colorschemes -----
+  {
+    "mofiqul/adwaita.nvim",
+    lazy = false,
+    priority = 1000,
+  },
+})
+
