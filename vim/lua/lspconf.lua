@@ -10,7 +10,6 @@ nvim_lsp.eslint.setup {}
 nvim_lsp.tsserver.setup {}
 
 -- Global mappings
-vim.keymap.set('n', '<leader>od', vim.diagnostic.open_float)
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
 
