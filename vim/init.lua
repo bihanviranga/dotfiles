@@ -114,12 +114,12 @@ function _G.toggleBlackBg()
     extracted = tok
   end
   local current_guibg = string.sub(extracted, 7)
-  -- Set the new background colour
-  if (current_guibg == "black") then
+  -- Set the new background color
+  if (current_guibg == "Black") then
     vim.cmd("hi Normal guibg=" .. initial_guibg)
   else
     initial_guibg = current_guibg
-    vim.cmd("hi Normal guibg=black")
+    vim.cmd("hi Normal guibg=Black")
   end
 end
 
