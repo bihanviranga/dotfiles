@@ -44,5 +44,9 @@ require("lazy").setup({
     lazy = false,
     priority = 1000,
   },
+  {
+    "huyvohcmc/atlas.vim",
+    priority = 1000,
+  },
 })
 

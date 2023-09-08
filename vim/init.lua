@@ -196,7 +196,7 @@ nmap("<leader>ep", ":lua enterParagraphMode()<CR>")
 ----------------------------------
 -- Colorscheme config
 ----------------------------------
-vim.cmd([[colorscheme habamax]])
+vim.cmd([[colorscheme atlas]])
 
 -- toggle background to black or theme default color
 nmap("<leader>tb", ":lua toggleBlackBg()<CR>")
