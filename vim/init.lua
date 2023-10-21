@@ -196,7 +196,7 @@ nmap("<leader>ep", ":lua enterParagraphMode()<CR>")
 ----------------------------------
 -- Colorscheme config
 ----------------------------------
-vim.cmd([[colorscheme atlas]])
+vim.cmd([[colorscheme komau]])
 
 -- toggle background to black or theme default color
 nmap("<leader>tb", ":lua toggleBlackBg()<CR>")
@@ -207,7 +207,7 @@ nmap("<leader>tb", ":lua toggleBlackBg()<CR>")
 require'lualine'.setup {
   options = {
     icons_enabled = false,
-    theme = 'auto',
+    theme = 'wombat',
     component_separators = '',
     section_separators = ''
   },

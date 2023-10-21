@@ -45,8 +45,9 @@ require("lazy").setup({
     priority = 1000,
   },
   {
-    "huyvohcmc/atlas.vim",
+    "ntk148v/komau.vim",
+    lazy = false,
     priority = 1000,
-  },
+  }
 })
 
