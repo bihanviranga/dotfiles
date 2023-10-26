@@ -1,14 +1,11 @@
 # Bash and other things
 
-![Terminal](3467fe8.png)
+![Terminal](8b7d3be.png)
 
 These files contain my settings for the bash terminal. For terminal emulator settings, see [here.](https://github.com/bihanviranga/dotfiles/tree/master/kitty) For tmux settings, see [here.](https://github.com/bihanviranga/dotfiles/tree/master/tmux)
 Older screenshots are in the `old` directory. The filename is also a commit hash, showing the repository's latest commit when the screenshot was taken.
 
 Currently using
-- ~~Qterminal~~
-- ~~Konsole~~
-- ~~Alacritty~~
 - Kitty
 
 ## Files
