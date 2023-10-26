@@ -6,8 +6,7 @@ Inside folders such as `vim`, or `terminal`, there are more READMEs and screensh
 
 I use Arch (btw) with LXQt + Openbox. My preferred editor is [Neovim](https://github.com/bihanviranga/dotfiles/tree/master/vim) and my terminal emulator is [kitty](https://github.com/bihanviranga/dotfiles/tree/master/terminal), inside which I usually run tmux. I use this setup for coding. The settings will be mostly useful for writing code and navigating the system in the terminal.
 
-![image1](images/378a58b-2.png)
-![image2](images/378a58b.png)
+![image](images/e43f2ae.png)
 
 ## Installing
 There's no install/bootstrap script since I don't think that's how dotfiles should be used (and I don't switch computers often). My personal setup is to symlink the files in this repo to my home directory (i.e: `ln -s <dotfiles-repo>/terminal/bashrc ~/.bashrc`).
