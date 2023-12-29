@@ -8,6 +8,16 @@ local nvim_lsp = require('lspconfig')
 -- Setup language servers
 nvim_lsp.eslint.setup {}
 nvim_lsp.tsserver.setup {}
+-- On Windows with Git Bash, the above lines had to be change to:
+--[[
+nvim_lsp.eslint.setup {
+  cmd = { "vscode-eslint-language-server.cmd", "--stdio" }
+}
+nvim_lsp.tsserver.setup {
+  cmd = { "typescript-language-server.cmd", "--stdio" }
+}
+]]--
+
 nvim_lsp.lua_ls.setup {
   settings = {
     Lua = {
