@@ -27,8 +27,13 @@ inoremap <M-CR> <esc>A;<esc>o
 inoremap <C-l> <esc>A
 " Go to file
 nmap - <Action>(GotoFile)
+" Go to next/prev error
+nmap ]d <Action>(GotoNextError)
+nmap [d <Action>(GotoPreviousError)
+" Run project with the selected configuration
+nmap <leader>rp <Action>(Run)
 
-"
+" Rename element
 map <leader>r <Action>(RenameElement)
 
 " Settings for ideavim-quickscope
