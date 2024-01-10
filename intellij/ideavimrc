@@ -25,6 +25,8 @@ inoremap jk <esc>
 inoremap <M-CR> <esc>A;<esc>o
 " Jump to the end of the line without leaving insert mode
 inoremap <C-l> <esc>A
+" Go to file
+nmap - <Action>(GotoFile)
 
 "
 map <leader>r <Action>(RenameElement)
