@@ -48,6 +48,11 @@ require("lazy").setup({
     "ntk148v/komau.vim",
     lazy = false,
     priority = 1000,
+  },
+  {
+    "jaredgorski/Mies.vim",
+    lazy = false,
+    priority = 1000,
   }
 })
 
