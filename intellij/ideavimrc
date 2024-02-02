@@ -34,7 +34,7 @@ nmap [d <Action>(GotoPreviousError)
 nmap <leader>rp <Action>(Run)
 
 " Rename element
-map <leader>r <Action>(RenameElement)
+map <leader>rn <Action>(RenameElement)
 
 " Settings for ideavim-quickscope
 let g:qs_highlight_on_keys = ['f', 'F']
