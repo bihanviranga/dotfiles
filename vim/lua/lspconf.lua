@@ -18,6 +18,10 @@ nvim_lsp.tsserver.setup {
 }
 ]]--
 
+-- Java language server
+-- For lombok settings, refer to nvim lsp docs for jdtls
+nvim_lsp.jdtls.setup {}
+
 nvim_lsp.lua_ls.setup {
   settings = {
     Lua = {
