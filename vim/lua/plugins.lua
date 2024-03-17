@@ -17,7 +17,6 @@ require("lazy").setup({
   "tpope/vim-surround",
   {
     "m4xshen/autoclose.nvim",
-    opts = {},
   },
   {
     "numToStr/Comment.nvim",

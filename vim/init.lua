@@ -272,6 +272,15 @@ require('telescopeconf')
 require('lspconf')
 
 ----------------------------------
+-- autoclose settings
+----------------------------------
+require('autoclose').setup({
+  options = {
+    disable_when_touch = true
+  }
+})
+
+----------------------------------
 -- netrw settings
 ----------------------------------
 --vim.g.netrw_banner = 0
