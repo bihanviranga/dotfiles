@@ -47,6 +47,8 @@ vim.opt.modeline = true
 vim.opt.colorcolumn = '81'
 -- sign column
 vim.opt.signcolumn = 'yes:1'
+-- stop LSP autocomplete from opening a small split
+vim.cmd([[set completeopt-=preview]])
 
 -- TODO: convert to lua
 --" enable syntax processing
