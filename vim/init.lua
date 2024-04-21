@@ -49,6 +49,8 @@ vim.opt.colorcolumn = '81'
 vim.opt.signcolumn = 'yes:1'
 -- stop LSP autocomplete from opening a small split
 vim.cmd([[set completeopt-=preview]])
+-- relative line numbers
+vim.wo.relativenumber = true
 
 -- TODO: convert to lua
 --" enable syntax processing
