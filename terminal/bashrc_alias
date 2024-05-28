@@ -26,7 +26,7 @@ alias nnn='nnn -e'
 alias todo='vim ~/todo'
 
 # Externally installed tools
-alias ls='lsd -l --icon never'
+alias ls='lsd -la --icon never'
 alias tree='lsd --tree'
 alias cat='bat'
 alias vim='nvim'
