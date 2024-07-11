@@ -217,8 +217,8 @@ require'lualine'.setup {
   },
   sections = {
     lualine_a = {},
-    lualine_b = {},
-    lualine_c = {'mode', 'filename'},
+    lualine_b = {'mode'},
+    lualine_c = {{'filename', path = 4}},
     lualine_x = {'diagnostics', 'branch', 'location'},
     lualine_y = {},
     lualine_z = {},

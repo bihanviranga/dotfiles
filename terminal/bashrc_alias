@@ -9,37 +9,37 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 alias diff='diff --color=auto'
-alias pacman='pacman --color=auto'
+#alias pacman='pacman --color=auto'
 alias xclip='xclip -selection "clipboard"'
-alias man="PAGER=\"bat -p\" man"
+#alias man="PAGER=\"bat -p\" man"
 #alias copy='rsync -ah --progress'
 #alias move='rsync -ah --progress --remove-source-files'
 alias ..='cd ..'
 alias :q='exit'
-alias svcstat='svcstat -o'
-alias hexedit='hexedit --color'
-alias st='st -e tmux'
-alias ff='firefox'
-alias cal='cal -m'
-alias gitdo='gitdo -v'
-alias nnn='nnn -e'
+#alias svcstat='svcstat -o'
+#alias hexedit='hexedit --color'
+#alias st='st -e tmux'
+#alias ff='firefox'
+#alias cal='cal -m'
+#alias gitdo='gitdo -v'
+#alias nnn='nnn -e'
 alias todo='vim ~/todo'
 
 # Externally installed tools
-alias ls='lsd -la --icon never'
-alias tree='lsd --tree'
-alias cat='bat'
+alias ls='eza -la'
+alias tree='eza --tree'
+#alias cat='bat'
 alias vim='nvim'
-alias wiki='vim ~/Documents/wiki/index.md'
+#alias wiki='vim ~/Documents/wiki/index.md'
 #alias dic='sdcv --color'
-alias wifi='nmcli device wifi'
-alias files='dolphin'
-alias ytmp3='youtube-dl --extract-audio --audio-format mp3'
-alias define='tuxi define'
-alias du='dust -br'
-alias xxd="hexyl"
-alias agenda="gcalcli agenda"
-alias week="gcalcli calw"
+#alias wifi='nmcli device wifi'
+#alias files='dolphin'
+#alias ytmp3='youtube-dl --extract-audio --audio-format mp3'
+#alias define='tuxi define'
+#alias du='dust -br'
+#alias xxd="hexyl"
+#alias agenda="gcalcli agenda"
+#alias week="gcalcli calw"
 
 # Git aliases
 alias gs='git status'
