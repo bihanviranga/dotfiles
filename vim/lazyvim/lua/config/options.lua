@@ -4,12 +4,3 @@
 
 vim.g.autoformat = false
 vim.opt.gdefault = true
-
-return {
-  {
-    "LazyVim/LazyVim",
-    opts = {
-      colorscheme = "yin",
-    },
-  },
-}
