@@ -3,7 +3,7 @@
 
 - Vim distribution : [NeoVim](https://neovim.io)
 
-> Currently I am experimenting with [LazyVim](https://www.lazyvim.org).
+> Currently I am experimenting with [LazyVim](https://www.lazyvim.org)
 
 Vim configuration is done using Lua. Refer to `init.lua`.
 A list of plugins I use can be found in the `lua/plugins.lua` file.
