@@ -10,3 +10,5 @@ export NVM_DIR="$HOME/.nvm"
 if [ -f ~/.zshrc_alias ]; then
     source ~/.zshrc_alias
 fi
+
+PROMPT='%K{#3465a4} %(?.%F{green}⏺.%F{#af005f}⏺)%f %1~ %k%F{#3465a4}%f '
