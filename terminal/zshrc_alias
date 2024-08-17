@@ -1,0 +1,27 @@
+####################
+# .zshrc alias
+####################
+
+# Shortcuts
+
+alias ..='cd ..'
+alias :q='exit'
+alias todo='vim ~/todo'
+
+# Tools
+
+alias vim='nvim'
+alias ls='eza -la'
+alias tree='eza --tree'
+alias cat='bat'
+
+# Git aliases
+
+alias gs='git status'
+alias gc='git checkout'
+alias gl='git log --oneline -n 10'
+alias gL='git log --oneline -n 50' # TODO implement gitlog_screen for zsh
+alias gb='git branch'
+alias gd='git diff'
+alias gds='git diff --staged'
+alias gap='git add --patch'

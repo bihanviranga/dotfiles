@@ -1,0 +1,12 @@
+eval "$(zoxide init zsh)"
+
+export EDITOR=nvim
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Load the aliases file
+if [ -f ~/.zshrc_alias ]; then
+    source ~/.zshrc_alias
+fi
