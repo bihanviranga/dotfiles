@@ -9,13 +9,14 @@ local opts = { noremap = true, silent = true }
 setKeymap("i", "jk", "<esc>")
 
 -- vim-tmux-navigator config
-setKeymap("n", "<M-h>", "<CMD>TmuxNavigateLeft<CR>", opts)
-setKeymap("n", "<M-j>", "<CMD>TmuxNavigateDown<CR>", opts)
-setKeymap("n", "<M-k>", "<CMD>TmuxNavigateUp<CR>", opts)
-setKeymap("n", "<M-l>", "<CMD>TmuxNavigateRight<CR>", opts)
+setKeymap("n", "<C-h>", "<CMD>TmuxNavigateLeft<CR>", opts)
+setKeymap("n", "<C-j>", "<CMD>TmuxNavigateDown<CR>", opts)
+setKeymap("n", "<C-k>", "<CMD>TmuxNavigateUp<CR>", opts)
+setKeymap("n", "<C-l>", "<CMD>TmuxNavigateRight<CR>", opts)
 
 -- Create vertical split
 setKeymap("n", "vv", "<CMD>vsplit<CR>")
+setKeymap("n", "vs", "<CMD>split<CR>")
 
 -- Switching between buffers
 -- vim.keymap.del("n", "<M-n>")
