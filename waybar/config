@@ -1,0 +1,10 @@
+{
+    "layer": "top",
+    "height": 20,
+    "modules-left": [],
+    "modules-center": ["hyprland/window"],
+    "modules-right": ["battery", "clock"],
+    "battery": {
+        "format": "{capacity}%",
+    }
+}
