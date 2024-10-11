@@ -6,4 +6,9 @@ return {
     "folke/noice.nvim",
     enabled = false,
   },
+
+  {
+    "wakatime/vim-wakatime",
+    lazy = false,
+  },
 }
