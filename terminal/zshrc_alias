@@ -15,6 +15,7 @@ alias ls='eza -la'
 alias tree='eza --tree'
 alias cat='bat'
 alias n='nnn'
+alias python='python3'
 
 # Git aliases
 
@@ -24,5 +25,7 @@ alias gl='git log --oneline -n 10'
 alias gL='git log --oneline -n 50' # TODO implement gitlog_screen for zsh
 alias gb='git branch'
 alias gd='git diff'
+alias gd2='git -c delta.side-by-side=true diff'
 alias gds='git diff --staged'
+alias gds2='git -c delta.side-by-side=true diff --staged'
 alias gap='git add --patch'
