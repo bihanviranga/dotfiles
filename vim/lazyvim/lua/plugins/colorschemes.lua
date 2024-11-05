@@ -3,9 +3,14 @@ return {
   "andreypopp/vim-colors-plain",
 
   {
+    "Mofiqul/adwaita.nvim",
+    lazy = false,
+  },
+
+  {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "plain",
+      colorscheme = "yin",
     },
   },
 }
