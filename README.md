@@ -9,12 +9,15 @@ I use openSUSE Tumbleweed with KDE. My preferred editor is [Neovim](https://gith
 ![image](images/e43f2ae.png)
 
 ## Installing
+
 There's no install/bootstrap script since I don't think that's how dotfiles should be used (and I don't switch computers often). My personal setup is to symlink the files in this repo to my home directory (i.e: `ln -s <dotfiles-repo>/terminal/bashrc ~/.bashrc`).
 
 ## Highlights
+
 Most of the tweaks happen in [Vim](https://github.com/bihanviranga/dotfiles/tree/master/vim) and [the terminal](https://github.com/bihanviranga/dotfiles/tree/master/terminal).
 
 ## Utilities and tools
+
 - [LSD](https://github.com/Peltoche/lsd) - `ls` command with more features
 - [Bat](https://github.com/sharkdp/bat) - a `cat` clone with wings
 - [Bash-completion](https://github.com/scop/bash-completion) - completions for bash commands
@@ -35,9 +38,9 @@ Most of the tweaks happen in [Vim](https://github.com/bihanviranga/dotfiles/tree
 - [zathura](https://github.com/pwmt/zathura) - document viewer
 
 Distros I have tried and liked, from oldest to latest:
+
 - Ubuntu 14.04
 - Debian 7
 - Crunchbangplusplus
 - Linux Mint 19 Tara
 - Arch Linux
-- openSUSE Tumbleweed
