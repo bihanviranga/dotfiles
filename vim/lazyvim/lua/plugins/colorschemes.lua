@@ -1,11 +1,8 @@
 return {
   "pgdouyon/vim-yin-yang",
   "andreypopp/vim-colors-plain",
-
-  {
-    "Mofiqul/adwaita.nvim",
-    lazy = false,
-  },
+  "Mofiqul/adwaita.nvim",
+  "aliqyan-21/darkvoid.nvim",
 
   {
     "LazyVim/LazyVim",
