@@ -4,3 +4,5 @@
 
 vim.g.autoformat = true
 vim.opt.gdefault = true
+
+vim.g.snacks_animate = false
