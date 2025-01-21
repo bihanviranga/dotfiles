@@ -4,7 +4,7 @@ This repository contains my dotfiles. Feel free to fork and customize to fit you
 
 Inside folders such as `vim`, or `terminal`, there are more READMEs and screenshots. I have also added descriptive comments where I felt like they were needed.
 
-I use openSUSE Tumbleweed with KDE. My preferred editor is [Neovim](https://github.com/bihanviranga/dotfiles/tree/master/vim) and my terminal emulator is [kitty](https://github.com/bihanviranga/dotfiles/tree/master/terminal), inside which I usually run tmux. I use this setup for coding. The settings will be mostly useful for writing code and navigating the system in the terminal.
+I use Arch (btw) with KDE. My preferred editor is [Neovim](https://github.com/bihanviranga/dotfiles/tree/master/vim) and my terminal emulator is [kitty](https://github.com/bihanviranga/dotfiles/tree/master/terminal), inside which I usually run tmux. I use this setup for coding. The settings will be mostly useful for writing code and navigating the system in the terminal.
 
 ![image](images/e43f2ae.png)
 
