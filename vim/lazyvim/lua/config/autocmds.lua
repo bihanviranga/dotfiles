@@ -6,12 +6,13 @@ vim.cmd([[autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatop
 
 local augroup = vim.api.nvim_create_augroup
 
-local general augroup("General", { clear = true })
+local general
+augroup("General", { clear = true })
 
 -- Fix conceallevel for json files
 vim.api.nvim_create_autocmd({ "FileType" }, {
   callback = function()
-    vim.opt.formatoptions:remove { "c", "r", "o"}
+    vim.opt.formatoptions:remove({ "c", "r", "o" })
   end,
   group = general,
   desc = "Disable comment on next line when pressing enter from a comment line",
