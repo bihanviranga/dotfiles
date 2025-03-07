@@ -1,0 +1,50 @@
+{
+  "keyMappings": "# Insert your preferred key mappings here.\nunmap J\nunmap K\nmap J nextTab\nmap K previousTab",
+  "settingsVersion": "2.1.2",
+  "exclusionRules": [
+    {
+      "passKeys": "",
+      "pattern": "https?://mail.google.com/*"
+    },
+    {
+      "passKeys": "j,k,l,f,m",
+      "pattern": "https?://www.youtube.com/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://web.whatsapp.com/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://www.nytimes.com/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://excalidraw.com/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://www.duolingo.com/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://doooooom.itch.io/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://*itch.io/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://lanttogames.itch.io/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://tagpro.koalabeast.com/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://monkeytype.com/*"
+    }
+  ]
+}
