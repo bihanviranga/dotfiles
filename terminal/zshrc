@@ -11,4 +11,9 @@ if [ -f ~/.zshrc_alias ]; then
     source ~/.zshrc_alias
 fi
 
-PROMPT='%K{#3465a4} %(?.%F{green}⏺.%F{#af005f}⏺)%f %1~ %k%F{#3465a4}%f '
+plugins=(ssh-agent)
+
+PROMPT='%K{#61ba73} %(?.%F{#035c1a}⏺.%F{#af005f}⏺)%f %F{black}%1~ %k%F{#61ba73}%f '
+
+# bun completions
+[ -s "/Users/bihan/.bun/_bun" ] && source "/Users/bihan/.bun/_bun"
