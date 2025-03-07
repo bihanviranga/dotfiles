@@ -6,7 +6,7 @@
 PROMPT='%(?.%F{green}√.%F{red}X:%?)%f %B%F{240}%1~ > %f%b'
 ```
 
-(Benchmark scores:)[https://github.com/romkatv/zsh-bench]
+[Benchmark scores:](https://github.com/romkatv/zsh-bench)
 
 ```
 creates_tty=0
