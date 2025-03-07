@@ -1,3 +1,36 @@
+# PS1 - zsh
+
+![PS1](9.png)
+
+```zsh
+PROMPT='%(?.%F{green}√.%F{red}X:%?)%f %B%F{240}%1~ > %f%b'
+```
+
+(Benchmark scores:)[https://github.com/romkatv/zsh-bench]
+
+```
+creates_tty=0
+has_compsys=1
+has_syntax_highlighting=0
+has_autosuggestions=0
+has_git_prompt=0
+first_prompt_lag_ms=341.352
+first_command_lag_ms=341.437
+command_lag_ms=0.058
+input_lag_ms=0.646
+exit_time_ms=344.064
+```
+
+---
+
+![PS1](8.png)
+
+```zsh
+PROMPT='%K{#61ba73} %(?.%F{#035c1a}⏺.%F{#af005f}⏺)%f %F{black}%1~ %k%F{#61ba73}%f '
+```
+
+---
+
 # PS1 - bash
 
 ![PS1](1.png)
@@ -50,12 +83,4 @@ COL_AF005F_FG="\[\033[38;5;125m\]"
 COL_FFDF00="\[\033[38;5;220m\]"
 COL_RESET="\[\033[0m\]"
 PS1="${COL_AF005F_BG} ${COL_FFDF00}\W ${COL_RESET}${COL_AF005F_FG}${COL_RESET} "
-```
----
-# PS1 - zsh
-
-![PS1](8.png)
-
-```zsh
-PROMPT='%K{#61ba73} %(?.%F{#035c1a}⏺.%F{#af005f}⏺)%f %F{black}%1~ %k%F{#61ba73}%f '
 ```
