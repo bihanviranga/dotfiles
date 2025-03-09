@@ -17,3 +17,7 @@ PROMPT='%K{#61ba73} %(?.%F{#035c1a}⏺.%F{#af005f}⏺)%f %F{black}%1~ %k%F{#61ba
 
 # bun completions
 [ -s "/Users/bihan/.bun/_bun" ] && source "/Users/bihan/.bun/_bun"
+
+# history options
+## share history among tmux panes/windows
+setopt inc_append_history

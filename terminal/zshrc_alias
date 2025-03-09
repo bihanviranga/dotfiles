@@ -7,6 +7,7 @@
 alias ..='cd ..'
 alias :q='exit'
 alias todo='vim ~/todo'
+alias history='history 1'
 
 # Tools
 
