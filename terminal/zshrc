@@ -10,6 +10,10 @@ export NVM_DIR="$HOME/.nvm"
 if [ -f ~/.zshrc_alias ]; then
     source ~/.zshrc_alias
 fi
+# Load the functions file
+if [ -f ~/.zshrc_functions ]; then
+    source ~/.zshrc_functions
+fi
 
 plugins=(ssh-agent)
 

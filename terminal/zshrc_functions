@@ -1,0 +1,11 @@
+# Alias to run emacs client.
+# Assumes the daemon is running.
+em() {
+    emacsclient -c --quiet "$@" &
+}
+
+# Alias to run emacs client in the terminal.
+# Assumes the daemon is running.
+emt() {
+    emacsclient -t "$@"
+}
