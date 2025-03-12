@@ -36,11 +36,11 @@
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
-(setq display-line-numbers-type t)
+(setq display-line-numbers-type 'relative)
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
-(setq org-directory "~/org/")
+(setq org-directory "~/Documents/org/")
 
 
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
@@ -81,6 +81,11 @@
 (setq doom-font (font-spec :family "JetBrains Mono ExtraLight" :size 11))
 
 (setq-default line-spacing 0.2)
+
+;; Disable LSP documentation window that pops up from the bottom
+;; See nummber 13 in:
+;; https://emacs-lsp.github.io/lsp-mode/tutorials/how-to-turn-off/
+(setq lsp-signature-render-documentation nil)
 
 ;; Go to next/prev buffers using shift+h/l
 (map! :n "H" #'previous-buffer
