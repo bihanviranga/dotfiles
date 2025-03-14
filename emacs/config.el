@@ -78,6 +78,11 @@
 ;; Cool monochrome theme:
 ;; (load-theme 'sketch-black t)
 
+;; Wakatime with Wakapi
+(use-package wakatime-mode :ensure t)
+;; Run Wakatime in all buffers.
+(global-wakatime-mode)
+
 (setq doom-font (font-spec :family "JetBrains Mono ExtraLight" :size 11))
 
 (setq-default line-spacing 0.2)
