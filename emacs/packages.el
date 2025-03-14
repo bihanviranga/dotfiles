@@ -53,3 +53,15 @@
 ;;   :recipe (:host github :repo "dawranliou/sketch-themes"))
 
 ;; (package! tao-theme)
+
+;; Other than adding this here, I also did:
+;;   * M-x package-list-packages
+;;   * Searched for wakatime-mode
+;;   * 'i' to mark for installation
+;;   * 'x' to execute
+;;   * doom sync
+;;   * M-x wakatime-prompt-api-key
+;;   * M-x global-wakatime-mode
+;; Also added (global-wakatime-mode) in config.el
+;; but I am not sure if it achieves anything.
+(package! wakatime-mode)
