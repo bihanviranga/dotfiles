@@ -78,6 +78,10 @@
 ;; Cool monochrome theme:
 ;; (load-theme 'sketch-black t)
 
+;; Set a default window size on load
+(add-to-list 'default-frame-alist '(height . 100))
+(add-to-list 'default-frame-alist '(width . 200))
+
 ;; Wakatime with Wakapi
 (use-package wakatime-mode :ensure t)
 ;; Run Wakatime in all buffers.
