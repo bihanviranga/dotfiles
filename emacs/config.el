@@ -28,6 +28,9 @@
 ;; up, `M-x eval-region' to execute elisp code, and 'M-x doom/reload-font' to
 ;; refresh your font settings. If Emacs still can't find your font, it likely
 ;; wasn't installed correctly. Font issues are rarely Doom issues!
+(setq doom-font (font-spec :family "JetBrains Mono" :size 11 :weight 'light))
+;; Variable pitch font affects the Org-mode.
+(setq doom-variable-pitch-font (font-spec :family "BlexMono Nerd Font" :size 11))
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
@@ -87,14 +90,27 @@
 ;; Run Wakatime in all buffers.
 (global-wakatime-mode)
 
-(setq doom-font (font-spec :family "JetBrains Mono ExtraLight" :size 11))
-
 (setq-default line-spacing 0.2)
 
 ;; Disable LSP documentation window that pops up from the bottom
 ;; See nummber 13 in:
 ;; https://emacs-lsp.github.io/lsp-mode/tutorials/how-to-turn-off/
 (setq lsp-signature-render-documentation nil)
+
+(setq menu-bar-mode -1
+      scroll-bar-mode -1
+      tool-bar-mode -1)
+
+(setq doom-modeline-height 30     ;; sets modeline height
+      doom-modeline-bar-width 5)  ;; sets right bar width
+
+;; Split settings
+(setq evil-vsplit-window-right t
+      evil-split-window-below t)
+
+;; Disable automatic code completion
+;; Can be triggered when needed with C-SPC
+(setq company-idle-delay .2)
 
 ;; Go to next/prev buffers using shift+h/l
 (map! :n "H" #'previous-buffer
@@ -106,4 +122,9 @@
       :n "C-k" #'evil-window-up
       :n "C-l" #'evil-window-right)
 
+;; Add fonts
 ;; (projectile-add-known-project "~/Code/dotfiles")
+
+;; Settings for org-mode
+(add-hook 'org-mode-hook 'variable-pitch-mode)
+(add-hook 'org-mode-hook 'display-line-numbers-mode 0)
