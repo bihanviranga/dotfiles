@@ -28,9 +28,10 @@
 ;; up, `M-x eval-region' to execute elisp code, and 'M-x doom/reload-font' to
 ;; refresh your font settings. If Emacs still can't find your font, it likely
 ;; wasn't installed correctly. Font issues are rarely Doom issues!
-(setq doom-font (font-spec :family "JetBrains Mono" :size 11 :weight 'light))
-;; Variable pitch font affects the Org-mode.
-(setq doom-variable-pitch-font (font-spec :family "BlexMono Nerd Font" :size 11))
+;; NOTE: if the doom-font is not a nerd font, some icons will break.
+(setq doom-font (font-spec :family "BlexMono Nerd Font" :size 11 :weight 'light))
+;; I've set org-mode to use variable-pitch-font
+(setq doom-variable-pitch-font (font-spec :family "Overpass" :size 13 :weight 'light))
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
@@ -45,9 +46,18 @@
 ;; change `org-directory'. It must be set before org loads!
 (setq org-directory "~/Documents/org/")
 
-;; Org mode hooks
-(add-hook 'org-mode-hook 'variable-pitch-mode)
-(add-hook 'org-mode-hook 'display-line-numbers-mode 0)
+;; Org mode customization
+(after! org
+  (setq org-hide-emphasis-markers t)
+  (custom-set-faces!
+    '(org-document-title :height 1.3 :weight bold)
+    '(org-block :inherit fixed-pitch)
+    '(org-code :inherit (shadow fixed-pitch)))
+  (add-hook! 'org-mode-hook
+                (variable-pitch-mode)
+                (display-line-numbers-mode -1)))
+(after! org-modern
+  (setq org-modern-star '("•" "◦" "▪" "▹")))
 
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
 ;; `after!' block, otherwise Doom's defaults may override your settings. E.g.
@@ -115,6 +125,17 @@
 ;; Split settings
 (setq evil-vsplit-window-right t
       evil-split-window-below t)
+;; Prompt which buffer to open in a split
+(defadvice! prompt-for-buffer (&rest _)
+  :after '(evil-window-split evil-window-vsplit)
+  (consult-buffer))
+;; Switch between windows using C-<vim navigation key>
+(map! :n "C-h" #'evil-window-left
+      :n "C-j" #'evil-window-down
+      :n "C-k" #'evil-window-up
+      :n "C-l" #'evil-window-right)
+;; Disable the messages that are shown when switching states
+(setq evil-echo-state nil)
 
 ;; Disable automatic code completion
 ;; Can be triggered when needed with C-SPC
@@ -123,12 +144,6 @@
 ;; Go to next/prev buffers using shift+h/l
 (map! :n "H" #'previous-buffer
       :n "L" #'next-buffer)
-
-;; Switch between windows using C-<vim navigation key>
-(map! :n "C-h" #'evil-window-left
-      :n "C-j" #'evil-window-down
-      :n "C-k" #'evil-window-up
-      :n "C-l" #'evil-window-right)
 
 ;; Add projects
 ;; (projectile-add-known-project "~/Code/dotfiles")
