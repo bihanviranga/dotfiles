@@ -45,6 +45,9 @@
 ;; change `org-directory'. It must be set before org loads!
 (setq org-directory "~/Documents/org/")
 
+;; Org mode hooks
+(add-hook 'org-mode-hook 'variable-pitch-mode)
+(add-hook 'org-mode-hook 'display-line-numbers-mode 0)
 
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
 ;; `after!' block, otherwise Doom's defaults may override your settings. E.g.
@@ -101,8 +104,13 @@
       scroll-bar-mode -1
       tool-bar-mode -1)
 
+;; Modeline settings
 (setq doom-modeline-height 30     ;; sets modeline height
       doom-modeline-bar-width 5)  ;; sets right bar width
+;; Disable the icon that says 'I', and fallback to the chars.
+(after! doom-modeline
+  (setq doom-modeline-modal-icon nil)
+  (setq doom-modeline-modal-modern-icon nil))
 
 ;; Split settings
 (setq evil-vsplit-window-right t
@@ -122,9 +130,5 @@
       :n "C-k" #'evil-window-up
       :n "C-l" #'evil-window-right)
 
-;; Add fonts
+;; Add projects
 ;; (projectile-add-known-project "~/Code/dotfiles")
-
-;; Settings for org-mode
-(add-hook 'org-mode-hook 'variable-pitch-mode)
-(add-hook 'org-mode-hook 'display-line-numbers-mode 0)
