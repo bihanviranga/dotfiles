@@ -151,3 +151,12 @@
 
 ;; Add projects
 ;; (projectile-add-known-project "~/Code/dotfiles")
+
+;; Random splash image
+(use-package random-splash-image
+  :ensure t
+  :config
+  (setq random-splash-image-dir (concat (getenv "HOME") "/Pictures/emacs"))
+  (unless (file-directory-p random-splash-image-dir)
+  (make-directory random-splash-image-dir t))
+  (random-splash-image-set))
