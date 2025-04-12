@@ -64,5 +64,3 @@
 ;;   * M-x global-wakatime-mode
 ;; Also added (global-wakatime-mode) in config.el
 (package! wakatime-mode)
-(package! random-splash-image
-          :recipe (:host github :repo "kakakaya/random-splash-image"))
