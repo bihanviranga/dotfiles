@@ -40,7 +40,8 @@
 ;; I don't like the default font color -- too unreadable.
 (after! doom-themes
   (custom-set-faces!
-    '(font-lock-comment-face :foreground "#636163" :slant italic)))
+    '(font-lock-comment-face :foreground "#808380" :slant italic)
+    '(marginalia-documentation :foreground "#808380")))
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
