@@ -60,7 +60,16 @@
     '(org-code :inherit (shadow fixed-pitch)))
   (add-hook! 'org-mode-hook
                 (variable-pitch-mode)
-                (display-line-numbers-mode -1)))
+                (display-line-numbers-mode -1))
+  (dolist (face `(org-level-1
+                  org-level-2
+                  org-level-3
+                  org-level-4
+                  org-level-5
+                  org-level-6
+                  org-level-7
+                  org-level-8))
+    (set-face-attribute face nil :slant 'normal)))
 (after! org-modern
   (setq org-modern-star '("•" "◦" "▪" "▹")))
 
