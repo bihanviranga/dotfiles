@@ -17,6 +17,7 @@ alias tree='eza --tree'
 alias cat='bat'
 alias n='nnn'
 alias python='python3'
+alias rm = 'rm -i'
 
 # Git aliases
 
