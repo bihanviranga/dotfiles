@@ -10,7 +10,7 @@
                          ('left  #'windmove-left)
                          ('down  #'windmove-down)
                          ('up    #'windmove-up)
-                         ('right #' windmove-right))))
+                         ('right #'windmove-right))))
       (unless (ignore-errors (funcall windmove-fn) t)
         (tmux-navigator--tmux direction))))
 

@@ -128,12 +128,14 @@
       tool-bar-mode -1)
 
 ;; Modeline settings
-(setq doom-modeline-height 30     ;; sets modeline height
-      doom-modeline-bar-width 5)  ;; sets right bar width
-;; Disable the icon that says 'I', and fallback to the chars.
 (after! doom-modeline
-  (setq doom-modeline-modal-icon nil)
-  (setq doom-modeline-modal-modern-icon nil))
+  (setq doom-modeline-height 30
+        doom-modeline-bar-width 5
+        ;; Disable the icon that says 'I', and fallback to the chars.
+        doom-modeline-modal-icon nil
+        doom-modeline-modal-modern-icon nil
+        doom-modeline-buffer-size nil)
+  (remove-hook 'doom-modeline-mode-hook #'size-indication-mode))
 
 ;; Split settings
 (setq evil-vsplit-window-right t
