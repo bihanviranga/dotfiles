@@ -68,8 +68,7 @@
                   org-level-5
                   org-level-6
                   org-level-7
-                  org-level-8))
-    (set-face-attribute face nil :slant 'normal)))
+                  org-level-8))))
 (after! org-modern
   (setq org-modern-star '("•" "◦" "▪" "▹")))
 
@@ -199,3 +198,5 @@
                    (+doom-dashboard--center +doom-dashboard--width msg)
                    "\n")))
        (delq #'doom-dashboard-widget-banner +doom-dashboard-functions)))
+
+(load! "tmux-navigator.el")
