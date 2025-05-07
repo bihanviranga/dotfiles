@@ -1,13 +1,29 @@
+[branch]
+	sort = -committerdate
+
 [core]
 	editor = nvim
 	pager = delta
-[init]
-	defaultBranch = main
+
 [delta]
 	plus-style = "syntax #012800"
 	minus-style = "syntax #340001"
 	syntax-theme = zenburn
 	navigate = true
 	line-numbers = true
+
+[diff]
+	algorithm = histogram
+	colorMoved = plain
+	mnemonicFix = true
+	renames = true
+
 [interactive]
 	diffFilter = delta --color-only
+
+[pull]
+	rebase = true
+
+[user]
+	name = "xxx"
+	email = "xxx@xxx.xxx"
