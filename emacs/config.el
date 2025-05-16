@@ -59,7 +59,8 @@
     '(org-block :inherit fixed-pitch)
     '(org-code :inherit (shadow fixed-pitch))
     '(org-modern-tag :foreground "#808380" :height 0.7)
-    '(org-modern-todo :background "#ed6a5e" :height 0.7))
+    '(org-modern-todo :background "#ed6a5e" :height 0.7)
+    '(org-table :inherit fixed-pitch))
   (add-hook! 'org-mode-hook
                 #'variable-pitch-mode
                 (display-line-numbers-mode -1))
