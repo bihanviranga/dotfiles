@@ -41,7 +41,11 @@
 (after! doom-themes
   (custom-set-faces!
     '(font-lock-comment-face :foreground "#808380" :slant italic)
-    '(marginalia-documentation :foreground "#808380")))
+    '(marginalia-documentation :foreground "#808380")
+    '(flycheck-error :underline (:style wave :color "Red1"))
+    '(flycheck-warning :underline (:style wave :color "Orange1"))
+    '(flycheck-info :underline (:style wave :color "DeepSkyBlue1"))
+    '(lsp-flycheck-info-unnecessary-face :underline (:style wave :color "SlateGray3") :foreground "SlateGray3")))
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
@@ -126,6 +130,9 @@
 ;; See nummber 13 in:
 ;; https://emacs-lsp.github.io/lsp-mode/tutorials/how-to-turn-off/
 (setq lsp-signature-render-documentation nil)
+;; Use flycheck-next-error because next-error sometimes doesn't work.
+(map! :n "] e" #'flycheck-next-error
+      :n "[ e" #'flycheck-previous-error)
 
 (setq menu-bar-mode -1
       scroll-bar-mode -1
