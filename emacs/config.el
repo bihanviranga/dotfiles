@@ -31,7 +31,7 @@
 ;; NOTE: if the doom-font is not a nerd font, some icons will break.
 (setq doom-font (font-spec :family "BlexMono Nerd Font" :size 11 :weight 'light))
 ;; I've set org-mode to use variable-pitch-font
-(setq doom-variable-pitch-font (font-spec :family "Overpass" :size 13 :weight 'light))
+(setq doom-variable-pitch-font (font-spec :family "Arial" :size 13 :weight 'regular))
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
@@ -57,9 +57,11 @@
   (custom-set-faces!
     '(org-document-title :height 1.3 :weight bold)
     '(org-block :inherit fixed-pitch)
-    '(org-code :inherit (shadow fixed-pitch)))
+    '(org-code :inherit (shadow fixed-pitch))
+    '(org-modern-tag :foreground "#808380" :height 0.7)
+    '(org-modern-todo :background "#ed6a5e" :height 0.7))
   (add-hook! 'org-mode-hook
-                (variable-pitch-mode)
+                #'variable-pitch-mode
                 (display-line-numbers-mode -1))
   (dolist (face `(org-level-1
                   org-level-2
@@ -68,7 +70,8 @@
                   org-level-5
                   org-level-6
                   org-level-7
-                  org-level-8))))
+                  org-level-8))
+    (set-face-attribute face nil :inherit 'default :weight 'regular :slant 'normal)))
 (after! org-modern
   (setq org-modern-star '("•" "◦" "▪" "▹")))
 
