@@ -143,10 +143,29 @@
   (setq doom-modeline-height 30
         doom-modeline-bar-width 5
         ;; Disable the icon that says 'I', and fallback to the chars.
-        doom-modeline-modal-icon nil
-        doom-modeline-modal-modern-icon nil
+        ;; doom-modeline-modal-icon nil
+        ;; doom-modeline-modal-modern-icon nil
         doom-modeline-buffer-size nil)
-  (remove-hook 'doom-modeline-mode-hook #'size-indication-mode))
+  (remove-hook 'doom-modeline-mode-hook #'size-indication-mode)
+  ;; Custom segment to show evil state
+  (doom-modeline-def-segment evil-state-dot
+    "Show a colored dot and one-letter indicator for Evil state."
+    (let* ((state (cond ((evil-insert-state-p) '(insert "I" "green"))
+                        ((evil-normal-state-p) '(normal "N" "orange"))
+                        ((evil-visual-state-p) '(visual "V" "purple"))
+                        ((evil-motion-state-p) '(motion "M" "yellow"))
+                        ((evil-replace-state-p) '(replace "R" "red"))
+                        ((evil-emacs-state-p) '(emacs "E" "blue"))
+                        (t '(unknown "?" "gray"))))
+           (label (nth 1 state))
+           (color (nth 2 state)))
+      (propertize (format " ● %s " label)
+                  'face `(:foreground ,color))))
+
+  ;; Override the default modeline to use our new segment
+  (doom-modeline-def-modeline 'main
+    '(bar evil-state-dot matches buffer-info buffer-position selection-info)
+    '(misc-info minor-modes major-mode vcs check)))
 
 ;; Split settings
 (setq evil-vsplit-window-right t
