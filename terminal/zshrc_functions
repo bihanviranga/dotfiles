@@ -1,7 +1,12 @@
 # Alias to run emacs client.
 # Assumes the daemon is running.
+# If we start using 'em' with no arguments, it usually
+# starts as a background window and does not get focus.
+# The sleep and the osascript lines fix this.
 em() {
     emacsclient -c --quiet "$@" &
+    sleep 0.05
+    osascript -e 'tell application "Emacs" to activate'
 }
 
 # Alias to run emacs client in the terminal.
