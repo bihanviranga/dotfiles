@@ -174,16 +174,27 @@
 (defadvice! prompt-for-buffer (&rest _)
   :after '(evil-window-split evil-window-vsplit)
   (consult-buffer))
+
 ;; Switch between windows using C-<vim navigation key>
 (map! :n "C-h" #'evil-window-left
       :n "C-j" #'evil-window-down
       :n "C-k" #'evil-window-up
       :n "C-l" #'evil-window-right)
+
+;; In C mode, it seems like the window navigation bindings are overwritten,
+;; so here I am adding them again with a C-mode hook.
+(defun bihanviranga/override-evil-window-bindings ()
+  (evil-define-key 'normal (current-local-map)
+    (kbd "C-h") 'evil-window-left
+    (kbd "C-j") 'evil-window-down
+    (kbd "C-k") 'evil-window-up
+    (kbd "C-l") 'evil-window-right))
+(add-hook 'c-mode-hook #'bihanviranga/override-evil-window-bindings)
+
 ;; Disable the messages that are shown when switching states
 (setq evil-echo-state nil)
 
-;; Disable automatic code completion
-;; Can be triggered when needed with C-SPC
+;; Configure automatic code completion
 (setq company-idle-delay .2)
 
 ;; Go to next/prev buffers using shift+h/l
