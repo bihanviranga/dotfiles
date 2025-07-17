@@ -243,3 +243,5 @@
        (delq #'doom-dashboard-widget-banner +doom-dashboard-functions)))
 
 (load! "tmux-navigator.el")
+
+(load! "typescript.el")
