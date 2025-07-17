@@ -1,1 +1,11 @@
-Currently using [[Doom Emacs][https://github.com/doomemacs/doomemacs]]
+#+title: Emacs Configuration
+#+description: Contains my Emacs configuration and related notes.
+
+: Currently using [[Doom Emacs][https://github.com/doomemacs/doomemacs]]
+
+* Javascript/Typescript setup
+** Installed the following node packages globally:
+#+begin_src bash -n 1
+npm install -g typescript typescript-language-server
+#+end_src
+** Enabled tree-sitter in src_bash{init.el} and added the src_bash{+lsp +tree-sitter} flags to the src_bash{javascript} entry.
