@@ -127,9 +127,10 @@
 (setq-default line-spacing 0.2)
 
 ;; Disable LSP documentation window that pops up from the bottom
-;; See nummber 13 in:
+;; See number 10 and 13 in:
 ;; https://emacs-lsp.github.io/lsp-mode/tutorials/how-to-turn-off/
 (setq lsp-signature-render-documentation nil)
+(setq lsp-eldoc-enable-hover nil)
 ;; Use flycheck-next-error because next-error sometimes doesn't work.
 (map! :n "] e" #'flycheck-next-error
       :n "[ e" #'flycheck-previous-error)
