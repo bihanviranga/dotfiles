@@ -1,16 +1,27 @@
-# Alias to run emacs client.
-# Assumes the daemon is running.
-# If we start using 'em' with no arguments, it usually
-# starts as a background window and does not get focus.
-# The sleep and the osascript lines fix this.
+# I run emacs-plus as a homebrew service.
+# These functions help to control the service.
+
+# Run graphical client
 em() {
-    emacsclient -c --quiet "$@" &
-    sleep 0.05
-    osascript -e 'tell application "Emacs" to activate'
+  emacsclient -c -n "$@"
 }
 
-# Alias to run emacs client in the terminal.
-# Assumes the daemon is running.
+# Run terminal client
 emt() {
-    emacsclient -t "$@"
+  emacsclient -nw "$@"
+}
+
+# Stop the service
+emstop() {
+  brew services stop emacs-plus@30
+}
+
+# Start the service
+emstart() {
+  brew services start emacs-plus@30
+}
+
+# Restart the service
+emrestart() {
+  brew services restart emacs-plus@30
 }
