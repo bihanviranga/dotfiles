@@ -63,4 +63,11 @@
 ;;   * M-x wakatime-prompt-api-key
 ;;   * M-x global-wakatime-mode
 ;; Also added (global-wakatime-mode) in config.el
+
 (package! wakatime-mode)
+(package! gruvbox-theme)
+
+(package! combobulate
+  :recipe (:host github :repo "mickeynp/combobulate"))
+
+(package! jtsx)
