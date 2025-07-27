@@ -192,6 +192,20 @@
     (kbd "C-l") 'evil-window-right))
 (add-hook 'c-mode-hook #'bihanviranga/override-evil-window-bindings)
 
+;; In evil insert mode, type jk to go to normal mode
+;; This works fine in my mac setup, but somehow in Mint
+;; I have to provide this manually.
+(defun bihanviranga/evil-insert-mode-to-normal-mode ()
+  (interactive)
+  (insert "j")
+  (let ((event (read-event nil)))
+    (if (= event ?k)
+        (progn
+          (backward-delete-char 1)
+          (evil-normal-state))
+      (push event unread-command-events))))
+(define-key evil-insert-state-map "j" 'bihanviranga/evil-insert-mode-to-normal-mode)
+
 ;; Disable the messages that are shown when switching states
 (setq evil-echo-state nil)
 
