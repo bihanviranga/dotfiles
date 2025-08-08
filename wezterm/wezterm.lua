@@ -12,4 +12,8 @@ config.default_prog = { "/opt/homebrew/bin/tmux" }
 
 config.enable_tab_bar = false
 
+config.font = wezterm.font "AporeticSansMono Nerd Font"
+
+config.font_size = 13
+
 return config
