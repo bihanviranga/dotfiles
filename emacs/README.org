@@ -4,8 +4,14 @@
 : Currently using [[Doom Emacs][https://github.com/doomemacs/doomemacs]]
 
 * Javascript/Typescript setup
-** Installed the following node packages globally:
+- Installed the following node packages globally:
+
 #+begin_src bash -n 1
+# For JS/TS
 npm install -g typescript typescript-language-server
+# For Angular:
+npm install -g @angular/language-service@next typescript @angular/language-server
 #+end_src
-** Enabled tree-sitter in src_bash{init.el} and added the src_bash{+lsp +tree-sitter} flags to the src_bash{javascript} entry.
+
+- Enabled tree-sitter in `init.el` and added the `+lsp +tree-sitter` flags to the `javascript` entry.
+- Enabled `web` in `init.el` for Angular templates.
