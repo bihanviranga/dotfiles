@@ -71,3 +71,7 @@
   :recipe (:host github :repo "mickeynp/combobulate"))
 
 (package! jtsx)
+
+(package! hydrangealess-theme
+  :recipe (:host sourcehut :repo "lthms/colorless-themes.el"
+                 :files ("hydrangealess-theme.el")))
