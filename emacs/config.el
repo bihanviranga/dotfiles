@@ -219,6 +219,14 @@
 ;; Add projects
 ;; (projectile-add-known-project "~/Code/dotfiles")
 
+;; For some reason, the stupid graphql server keeps starting up
+;; in /several/ projects, even when the project I open has nothing
+;; to do with GraphQL. I've disabled it in init.el but it keeps starting.
+;; So I'm disabling it manually now.
+;; GraphQL was a mistake. Go die and REST in peace, graphql-lsp!
+(after! lsp-mode
+  (setq lsp-disabled-clients `(graphql-lsp)))
+
 ;; Dashboard page config
 ;; Remove the menu
 (remove-hook '+doom-dashboard-functions #'doom-dashboard-widget-shortmenu)
