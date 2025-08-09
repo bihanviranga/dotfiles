@@ -15,3 +15,10 @@ npm install -g @angular/language-service@next typescript @angular/language-serve
 
 - Enabled tree-sitter in `init.el` and added the `+lsp +tree-sitter` flags to the `javascript` entry.
 - Enabled `web` in `init.el` for Angular templates.
+
+* Lua setup
+- For some reason, after enabling the '(lua +lsp +tree-sitter) ' in init.el the language server failed to download properly. It showed a list of LSPs (lua-language-server and some roblox thing) and when I selected the first one, it showed "Contacting host Github ..." something and then froze.
+- So as a workound, after reading some GitHub issues and whatnot, I ended up downloading the zip from LuaLS/lua-language-server.
+- Then I extracted the contents to ~/.config/emacs/.local/etc/lsp/lua-language-server
+- Once I restarted Emacs, it detected this as a successful installation.
+- Also had to mark the file as safe because macos complained about it. `xattr -d com.apple.quarantine path-to-lua-lsp-binary`
