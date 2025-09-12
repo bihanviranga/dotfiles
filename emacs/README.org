@@ -22,3 +22,18 @@ npm install -g @angular/language-service@next typescript @angular/language-serve
 - Then I extracted the contents to ~/.config/emacs/.local/etc/lsp/lua-language-server
 - Once I restarted Emacs, it detected this as a successful installation.
 - Also had to mark the file as safe because macos complained about it. `xattr -d com.apple.quarantine path-to-lua-lsp-binary`
+
+** LOVE2D
+- For setting up Love2d, I had to download the defitions from https://github.com/LuaCATS/love2d
+- I placed this repo at "~/.local/share/lua-addons/love2d"
+- Then I added a file '.luarc.json' at the project root with the following content:
+
+#+begin_src json
+{
+  "workspace": {
+    "library": [
+      "/Users/bihan/.local/share/lua-addons/love2d"
+    ]
+  }
+}
+#+end_src
