@@ -29,7 +29,7 @@
 ;; refresh your font settings. If Emacs still can't find your font, it likely
 ;; wasn't installed correctly. Font issues are rarely Doom issues!
 ;; NOTE: if the doom-font is not a nerd font, some icons will break.
-(setq doom-font (font-spec :family "BlexMono Nerd Font" :size 11 :weight 'light))
+(setq doom-font (font-spec :family "Monaspace Neon NF Light" :size 11 :weight 'regular))
 ;; I've set org-mode to use variable-pitch-font
 (setq doom-variable-pitch-font (font-spec :family "Arial" :size 13 :weight 'regular))
 
@@ -124,7 +124,7 @@
 ;; Run Wakatime in all buffers.
 (global-wakatime-mode)
 
-(setq-default line-spacing 0.2)
+(setq-default line-spacing 0.4)
 
 ;; Disable LSP documentation window that pops up from the bottom
 ;; See number 10 and 13 in:
