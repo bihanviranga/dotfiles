@@ -1,0 +1,22 @@
+#!/usr/bin/env sh
+
+# When cursor or codex CLI is run inside tmux, some of the keys
+# do not work. For example, shift-enter for multiline prompts.
+# This is a shortcut to open cursor agent in a new wezterm window
+# without tmux. Also we need to do a change in wezterm config
+# for this to work. See commit b8978bb for that change.
+
+AGENT_BIN="/Users/bihan/.local/bin/agent"
+
+# If we're inside tmux, open a new wezterm widnow and run agent there
+if [ -n "${TMUX-}" ]; then
+   # Launch in the current working directory; keep zsh open after agent exit
+   wezterm start --cwd "${PWD}" -- /bin/zsh -lc '
+           unset TMUX TMUX_PANE TMUX_PLUGIN_MANAGER_PATH
+           exec '"$AGENT_BIN"' "$@"
+           ' -- "$@" &
+   exit 0
+fi
+
+# Not in tmux; just run agent normally
+exec "$AGENT_BIN" "$@"
