@@ -1,0 +1,16 @@
+#!/usr/bin/env sh
+
+CLAUDE_BIN="/Users/bihan/.local/bin/claude"
+
+# If we're inside tmux, open a new wezterm window and run claude there
+if [ -n "${TMUX-}" ]; then
+   # Launch in the current working directory; keep zsh open after claude exit
+   wezterm start --cwd "${PWD}" -- /bin/zsh -lc '
+           unset TMUX TMUX_PANE TMUX_PLUGIN_MANAGER_PATH
+           exec '"$CLAUDE_BIN"' "$@"
+           ' -- "$@" &
+   exit 0
+fi
+
+# Not in tmux; just run claude normally
+exec "$CLAUDE_BIN" "$@"
