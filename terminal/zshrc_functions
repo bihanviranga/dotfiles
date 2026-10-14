@@ -26,6 +26,11 @@ emrestart() {
   brew services restart emacs-plus@30
 }
 
+# Create a folder and cd into it
+mkd() {
+  mkdir -p -- "$@" && cd -- "${@[-1]}"
+}
+
 # NNN file manager CD on quit
 n ()
 {
